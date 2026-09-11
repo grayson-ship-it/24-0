@@ -57,10 +57,23 @@ from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import f1pool  # noqa: E402
+import bt  # noqa: E402
 from team_decade import print_table, DRIVER_COLS  # noqa: E402
 
 RATING_PRIOR_RACES = f1pool.RATING_PRIOR_RACES
 MIN_H2H_RACES = f1pool.MIN_H2H_RACES
+RACE_WEIGHT = f1pool.RACE_WEIGHT
+
+
+def combine(race, quali, w=RACE_WEIGHT):
+    """Weighted mix of the two components on the 0-100 scale; whichever exists if only one does."""
+    if race is None and quali is None:
+        return None
+    if race is None:
+        return quali
+    if quali is None:
+        return race
+    return w * race + (1 - w) * quali
 
 PAIR_SQL = """
 SELECT a.driver_id, b.driver_id AS mate, db.name AS mate_name, a.race_id,
@@ -77,40 +90,76 @@ def shrink(wins, n, k):
     return (wins + k / 2) / (n + k) if (n + k) > 0 else None
 
 
-def driver_ratings(conn, cid, y0, y1, k=RATING_PRIOR_RACES, floor=MIN_H2H_RACES):
+def _collect(rows):
+    """Group pair rows into per-driver, per-component, per-race lists of (teammate, won)."""
     per = defaultdict(lambda: {"race": defaultdict(list), "quali": defaultdict(list), "mates": defaultdict(int)})
-    for r in conn.execute(PAIR_SQL, (cid, y0, y1)):
+    for r in rows:
         a = per[r["driver_id"]]
         if r["pa"] is not None and r["pb"] is not None and r["pa"] != r["pb"]:
-            a["race"][r["race_id"]].append(r["pa"] < r["pb"])
-            a["mates"][r["mate_name"]] += 1
+            a["race"][r["race_id"]].append((r["mate"], r["pa"] < r["pb"]))
+            a["mates"][r["mate_name"] if "mate_name" in r.keys() else r["mate"]] += 1
         if r["qa"] is not None and r["qb"] is not None and r["qa"] != r["qb"]:
-            a["quali"][r["race_id"]].append(r["qa"] < r["qb"])
+            a["quali"][r["race_id"]].append((r["mate"], r["qa"] < r["qb"]))
+    return per
+
+
+def global_strengths(conn, k=RATING_PRIOR_RACES):
+    """Bradley-Terry strength per driver, per component, over every works teammate comparison
+    in the window. Each race contributes one unit per driver (pairs weighted 1/(pairs in race))."""
+    per = _collect(conn.execute(ALL_PAIR_SQL))
     out = {}
-    for did, a in per.items():
-        d = {"teammates": ", ".join(f"{m} {n}" for m, n in sorted(a["mates"].items(), key=lambda x: -x[1]))}
-        for comp in ("race", "quali"):
-            pairs = [x for v in a[comp].values() for x in v]
-            pw, pl = sum(pairs), len(pairs) - sum(pairs)
-            n = len(a[comp])
-            wins = sum(sum(v) / len(v) for v in a[comp].values())
-            d[f"{comp}_pairs"] = f"{pw}-{pl}" if pairs else ""
-            d[f"{comp}_pair_pct"] = pw / len(pairs) if pairs else None
-            d[f"{comp}_n"] = n
-            d[f"{comp}_wins"] = wins
-            d[f"{comp}_pct"] = wins / n if n else None
-            d[f"{comp}_shrunk"] = shrink(wins, n, k) if n else None
-        old = [p for p in (d["race_pair_pct"], d["quali_pair_pct"]) if p is not None]
-        d["old_rating"] = 100 * sum(old) / len(old) if old else None
-        new = [p for p in (d["race_shrunk"], d["quali_shrunk"]) if p is not None]
-        d["rating"] = 100 * sum(new) / len(new) if new and d["race_n"] >= floor else None
-        d["rating_note"] = "" if d["rating"] is not None else (f"n<{floor}" if new else "no teammate")
-        out[did] = d
+    for comp in ("race", "quali"):
+        wins = defaultdict(float)
+        for did, a in per.items():
+            for race, comps in a[comp].items():
+                w = 1.0 / len(comps)
+                for mate, won in comps:
+                    if won:
+                        wins[(did, mate)] += w
+        out[comp] = bt.fit(wins, k)
     return out
 
 
+def _tenure(a, k, floor, w, strengths=None):
+    """Rating fields for one driver tenure from its collected comparisons."""
+    d = {"teammates": ", ".join(f"{m} {n}" for m, n in sorted(a["mates"].items(), key=lambda x: -x[1]))}
+    for comp in ("race", "quali"):
+        pairs = [won for v in a[comp].values() for _, won in v]
+        pw, pl = sum(pairs), len(pairs) - sum(pairs)
+        n = len(a[comp])
+        wins = sum(sum(won for _, won in v) / len(v) for v in a[comp].values())
+        d[f"{comp}_pairs"] = f"{pw}-{pl}" if pairs else ""
+        d[f"{comp}_pair_pct"] = pw / len(pairs) if pairs else None
+        d[f"{comp}_n"] = n
+        d[f"{comp}_wins"] = wins
+        d[f"{comp}_pct"] = wins / n if n else None
+        d[f"{comp}_shrunk"] = shrink(wins, n, k) if n else None
+        d[f"{comp}_bt"] = None
+        if strengths is not None and n:
+            by_opp = defaultdict(lambda: [0.0, 0.0])
+            for v in a[comp].values():
+                wt = 1.0 / len(v)
+                for mate, won in v:
+                    by_opp[mate][0] += wt * won
+                    by_opp[mate][1] += wt
+            s = bt.fit_one({m: tuple(x) for m, x in by_opp.items()}, strengths[comp], k)
+            d[f"{comp}_bt"] = bt.to_rating(s)
+            d[f"{comp}_opp"] = sum(bt.to_rating(strengths[comp].get(m, 1.0)) * x[1] for m, x in by_opp.items()) / n
+    d["old_rating"] = combine(*(100 * x if x is not None else None for x in (d["race_pair_pct"], d["quali_pair_pct"])), w)
+    ok = d["race_n"] >= floor
+    d["rating"] = combine(*(100 * x if x is not None else None for x in (d["race_shrunk"], d["quali_shrunk"])), w) if ok else None
+    d["bt_rating"] = combine(d["race_bt"], d["quali_bt"], w) if ok else None
+    d["rating_note"] = "" if ok else (f"n<{floor}" if d["race_n"] or d["quali_n"] else "no teammate")
+    return d
+
+
+def driver_ratings(conn, cid, y0, y1, k=RATING_PRIOR_RACES, floor=MIN_H2H_RACES, w=RACE_WEIGHT, strengths=None):
+    per = _collect(conn.execute(PAIR_SQL, (cid, y0, y1)))
+    return {did: _tenure(a, k, floor, w, strengths) for did, a in per.items()}
+
+
 ALL_PAIR_SQL = """
-SELECT a.driver_id, a.constructor_id, (a.year/10)*10 AS dec, a.race_id,
+SELECT a.driver_id, b.driver_id AS mate, a.constructor_id, (a.year/10)*10 AS dec, a.race_id,
        a.position_number AS pa, b.position_number AS pb, a.quali_pos AS qa, b.quali_pos AS qb
 FROM res a
 JOIN res b ON b.race_id = a.race_id AND b.constructor_id = a.constructor_id
@@ -119,15 +168,17 @@ WHERE a.works = 1 AND a.shared = 0
 """
 
 
-def all_driver_ratings(conn, k=RATING_PRIOR_RACES, floor=MIN_H2H_RACES):
-    """Rating inputs for every pool tenure (driver x constructor x decade with >= MIN_STARTS)."""
-    per = defaultdict(lambda: {"race": defaultdict(list), "quali": defaultdict(list)})
+def all_driver_ratings(conn, k=RATING_PRIOR_RACES, floor=MIN_H2H_RACES, w=RACE_WEIGHT, strengths=None):
+    """Rating fields for every pool tenure (driver x constructor x decade with >= MIN_STARTS)."""
+    per = defaultdict(lambda: {"race": defaultdict(list), "quali": defaultdict(list), "mates": defaultdict(int)})
     for r in conn.execute(ALL_PAIR_SQL):
-        a = per[(r["driver_id"], r["constructor_id"], r["dec"])]
+        key = (r["driver_id"], r["constructor_id"], r["dec"])
+        a = per[key]
         if r["pa"] is not None and r["pb"] is not None and r["pa"] != r["pb"]:
-            a["race"][r["race_id"]].append(r["pa"] < r["pb"])
+            a["race"][r["race_id"]].append((r["mate"], r["pa"] < r["pb"]))
+            a["mates"][r["mate"]] += 1
         if r["qa"] is not None and r["qb"] is not None and r["qa"] != r["qb"]:
-            a["quali"][r["race_id"]].append(r["qa"] < r["qb"])
+            a["quali"][r["race_id"]].append((r["mate"], r["qa"] < r["qb"]))
     out = []
     for p in conn.execute("""
         SELECT r.driver_id, dr.name AS driver, r.constructor_id, (r.year/10)*10 AS dec,
@@ -135,24 +186,16 @@ def all_driver_ratings(conn, k=RATING_PRIOR_RACES, floor=MIN_H2H_RACES):
                COUNT(DISTINCT CASE WHEN classified THEN race_id END) AS classified
         FROM res r JOIN driver dr ON dr.id = r.driver_id WHERE works = 1
         GROUP BY 1, 2, 3, 4 HAVING starts >= ?""", (f1pool.MIN_STARTS_PER_DRIVER,)):
-        a = per.get((p["driver_id"], p["constructor_id"], p["dec"]))
+        key = (p["driver_id"], p["constructor_id"], p["dec"])
+        a = per.get(key) or {"race": {}, "quali": {}, "mates": {}}
         d = dict(p)
-        for comp in ("race", "quali"):
-            races = a[comp] if a else {}
-            n = len(races)
-            wins = sum(sum(v) / len(v) for v in races.values())
-            pairs = [x for v in races.values() for x in v]
-            d[f"{comp}_n"] = n
-            d[f"{comp}_pairs"] = f"{sum(pairs)}-{len(pairs) - sum(pairs)}" if pairs else ""
-            d[f"{comp}_shrunk"] = shrink(wins, n, k) if n else None
-        new = [x for x in (d["race_shrunk"], d["quali_shrunk"]) if x is not None]
-        d["rating"] = 100 * sum(new) / len(new) if new and d["race_n"] >= floor else None
+        d.update(_tenure(a, k, floor, w, strengths))
         out.append(d)
     return out
 
 
-def coverage_report(conn, k, floors=(1, 2, 3, 5)):
-    base = all_driver_ratings(conn, k, 0)
+def coverage_report(conn, k, floors=(1, 2, 3, 5), w=RACE_WEIGHT):
+    base = all_driver_ratings(conn, k, 0, w)
     decs = sorted(set(d["dec"] for d in base))
     print(f"Pool tenures: {len(base)}  (works, >= {f1pool.MIN_STARTS_PER_DRIVER} starts)   prior k={k}")
     print("\nShare of pool tenures with a rating, by floor (min classified h2h races):")
@@ -171,9 +214,7 @@ def coverage_report(conn, k, floors=(1, 2, 3, 5)):
                   f"starts {d['starts']:>2}  race {d['race_pairs']:>5} (n={d['race_n']})  quali {d['quali_pairs']:>6} (n={d['quali_n']})")
 
 
-EMPTY = {"teammates": "", "race_pairs": "", "race_pair_pct": None, "race_n": 0, "race_wins": 0, "race_pct": None,
-         "race_shrunk": None, "quali_pairs": "", "quali_pair_pct": None, "quali_n": 0, "quali_wins": 0,
-         "quali_pct": None, "quali_shrunk": None, "old_rating": None, "rating": None, "rating_note": "no teammate"}
+EMPTY = _tenure({"race": {}, "quali": {}, "mates": {}}, RATING_PRIOR_RACES, MIN_H2H_RACES, RACE_WEIGHT)
 
 CAR_SQL = """
 WITH season_total AS (
@@ -248,8 +289,25 @@ def _with_max(conn, rows):
     return rows
 
 
+def _era_relative(all_rows):
+    """Within each decade, percentile and rank of som_uni among full-time works cards."""
+    by_dec = defaultdict(list)
+    for r in all_rows:
+        if r["in_field"] and r["som_uni"] is not None and r["year"] <= f1pool.LAST_COMPLETE_SEASON:
+            by_dec[(r["year"] // 10) * 10].append(r["som_uni"])
+    for r in all_rows:
+        vals = by_dec.get((r["year"] // 10) * 10, [])
+        if r["in_field"] and r["som_uni"] is not None and len(vals) > 1:
+            r["era_pct"] = 100 * sum(1 for x in vals if x < r["som_uni"]) / (len(vals) - 1)
+            r["era_rank"] = 1 + sum(1 for x in vals if x > r["som_uni"])
+            r["era_n"] = len(vals)
+        else:
+            r["era_pct"] = r["era_rank"] = r["era_n"] = None
+    return all_rows
+
+
 def car_ratings(conn, cid, y0, y1):
-    all_rows = _with_max(conn, [dict(r) for r in conn.execute(CAR_SQL)])
+    all_rows = _era_relative(_with_max(conn, [dict(r) for r in conn.execute(CAR_SQL)]))
     by_year = defaultdict(list)
     for r in all_rows:
         by_year[r["year"]].append(r)
@@ -281,13 +339,14 @@ def car_ratings(conn, cid, y0, y1):
         else:   # part-time entry: not in the field
             for k in ("x_avg", "z", "z_scaled", "z_cdf", "pct_field", "zs_uni"):
                 d[k] = None
+        d["era_rank_txt"] = f"{d['era_rank']}/{d['era_n']}" if d.get("era_rank") else ""
         out.append(d)
     return out
 
 
 def dominant_report(conn):
     """Most dominant car of each decade by z_scaled, to check the scale does not trend with era."""
-    rows = _with_max(conn, [dict(r) for r in conn.execute(CAR_SQL)])
+    rows = _era_relative(_with_max(conn, [dict(r) for r in conn.execute(CAR_SQL)]))
     by_year = defaultdict(list)
     for r in rows:
         by_year[r["year"]].append(r)
@@ -304,7 +363,8 @@ def dominant_report(conn):
                "wins": r["wins"], "races": r["races"], "cars_per_race": r["starts"] / r["races_entered"],
                "points_share": 100 * (r["points_share"] or 0),
                "z": fs["z"], "z_scaled": fs["z_scaled"], "z_cdf": fs["z_cdf"], "zs_uni": us["z_scaled"],
-               "share_of_max": r["share_of_max"], "som_uni": r["som_uni"]}
+               "share_of_max": r["share_of_max"], "som_uni": r["som_uni"],
+               "era_pct": r["era_pct"], "era_rank_txt": f"{r['era_rank']}/{r['era_n']}" if r.get("era_rank") else ""}
         if fs["z_scaled"] is not None and (d not in best or fs["z_scaled"] > best[d]["z_scaled"]):
             best[d] = row
         if r["som_uni"] is not None and (d not in best_som or r["som_uni"] > best_som[d]["som_uni"]):
@@ -313,21 +373,113 @@ def dominant_report(conn):
             ("n_field", "Field", "s", "r"), ("cars_per_race", "Cars/race", "avg", "r"), ("wins", "Wins", "s", "r"),
             ("races", "Races", "s", "r"), ("points_share", "Share%", "avg", "r"), ("z", "z", "avg", "r"),
             ("z_scaled", "z_scaled", "avg", "r"), ("z_cdf", "z_cdf", "avg", "r"), ("zs_uni", "zs_uni", "avg", "r"),
-            ("share_of_max", "shareMax", "avg", "r"), ("som_uni", "somUni", "avg", "r")]
+            ("share_of_max", "shareMax", "avg", "r"), ("som_uni", "somUni", "avg", "r"),
+            ("era_pct", "eraPct", "avg", "r"), ("era_rank_txt", "eraRank", "s", "r")]
     print("Most dominant car of each decade by z_scaled (field = full-time works teams)")
     print_table([best[d] for d in sorted(best)], cols)
     print("\nMost dominant car of each decade by som_uni")
     print_table([best_som[d] for d in sorted(best_som)], cols)
 
 
-def load(conn, team, decade, k=RATING_PRIOR_RACES, floor=MIN_H2H_RACES):
+def load(conn, team, decade, k=RATING_PRIOR_RACES, floor=MIN_H2H_RACES, w=RACE_WEIGHT, strengths=None):
     cid, name = f1pool.resolve_constructor(conn, team)
     y0, y1 = f1pool.decade_range(decade)
     drivers = f1pool.drivers_for(conn, cid, y0, y1)
-    dr = driver_ratings(conn, cid, y0, y1, k, floor)
+    dr = driver_ratings(conn, cid, y0, y1, k, floor, w, strengths)
     for d in drivers:
         d.update(dr.get(d["driver_id"], EMPTY))
     return cid, name, y0, y1, drivers, car_ratings(conn, cid, y0, y1)
+
+
+CHAMPION_SQL = """
+SELECT s.year, s.constructor_id, s.points AS standing_points,
+       (SELECT SUM(COALESCE(d.race_points, 0)) FROM race_data d JOIN race r ON r.id = d.race_id
+         WHERE d.type = 'RACE_RESULT' AND r.year = s.year AND d.constructor_id = s.constructor_id) AS race_points_sum
+FROM season_constructor_standing s WHERE s.position_number = 1 AND s.year BETWEEN ? AND ?
+"""
+
+
+def champions_report(conn):
+    """Top car by som_uni vs the actual constructors' champion, every season 1958-window end.
+    1950-1957 had no constructors' championship; the drivers' champion's team is shown as a proxy."""
+    rows = _with_max(conn, [dict(r) for r in conn.execute(CAR_SQL)])
+    by_year = defaultdict(list)
+    for r in rows:
+        by_year[r["year"]].append(r)
+    champ = {r["year"]: dict(r) for r in conn.execute(CHAMPION_SQL, (f1pool.FIRST_SEASON, f1pool.LAST_COMPLETE_SEASON))}
+    proxy = {}
+    for r in conn.execute("""
+        SELECT s.year, s.driver_id FROM season_driver_standing s
+        WHERE s.position_number = 1 AND s.year BETWEEN ? AND 1957""", (f1pool.FIRST_SEASON,)):
+        c = conn.execute("""SELECT constructor_id FROM res WHERE year = ? AND driver_id = ? AND works = 1
+                            GROUP BY constructor_id ORDER BY SUM(started) DESC LIMIT 1""", (r["year"], r["driver_id"])).fetchone()
+        proxy[r["year"]] = c[0] if c else None
+    agree = disagree = 0
+    out = []
+    for y in sorted(by_year):
+        if y > f1pool.LAST_COMPLETE_SEASON:
+            continue
+        top = max(by_year[y], key=lambda r: r["som_uni"] or 0)
+        c = champ.get(y)
+        if c:
+            cid = c["constructor_id"]
+            rule = "" if abs((c["standing_points"] or 0) - (c["race_points_sum"] or 0)) < 0.01 else "scoring rule"
+        else:
+            cid = proxy.get(y)
+            rule = "no constructors' title (drivers' champion's team)"
+        if cid == top["constructor_id"]:
+            agree += 1
+            continue
+        disagree += 1
+        ch = next((r for r in by_year[y] if r["constructor_id"] == cid), None)
+        out.append({"year": y, "top": top["constructor_id"], "top_som": top["som_uni"], "top_wins": top["wins"],
+                    "top_pts": top["points"], "top_fin": top["classified"] / top["starts"] if top["starts"] else None,
+                    "champ": cid, "ch_som": ch["som_uni"] if ch else None, "ch_wins": ch["wins"] if ch else None,
+                    "ch_pts": ch["points"] if ch else None, "ch_fin": (ch["classified"] / ch["starts"]) if ch and ch["starts"] else None,
+                    "rule": rule})
+    print(f"Top car by som_uni vs constructors' champion: agree {agree}, disagree {disagree}")
+    print("'scoring rule' = the champion's standing points differ from its summed race points (dropped scores, "
+          "best-car-only 1958-78, 1995 Brazil exclusion, sprint points 2021+)")
+    print_table(out, [("year", "Season", "s", "r"), ("top", "Top by som_uni", "s", "l"), ("top_som", "som", "avg", "r"),
+                      ("top_wins", "W", "s", "r"), ("top_pts", "Pts", "s", "r"), ("top_fin", "Fin", "pct", "r"),
+                      ("champ", "Champion", "s", "l"), ("ch_som", "som", "avg", "r"), ("ch_wins", "W", "s", "r"),
+                      ("ch_pts", "Pts", "s", "r"), ("ch_fin", "Fin", "pct", "r"), ("rule", "Note", "s", "l")])
+
+
+def movers_report(conn, k, w, n=15):
+    strengths = global_strengths(conn, k)
+    names = dict(conn.execute("SELECT id, name FROM driver"))
+    print("Global Bradley-Terry strengths, top 20 by race component (career, works comparisons in window):")
+    top = sorted(strengths["race"].items(), key=lambda x: -x[1])[:20]
+    print_table([{"driver": names.get(d, d), "race": bt.to_rating(s), "quali": bt.to_rating(strengths["quali"].get(d, 1.0))}
+                 for d, s in top], [("driver", "Driver", "s", "l"), ("race", "Race", "avg", "r"), ("quali", "Quali", "avg", "r")])
+    rows = [d for d in all_driver_ratings(conn, k, MIN_H2H_RACES, w, strengths) if d["rating"] is not None and d["bt_rating"] is not None]
+    for d in rows:
+        d["move"] = d["bt_rating"] - d["rating"]
+        d["dec_txt"] = f"{d['dec']}s"
+    cols = [("driver", "Driver", "s", "l"), ("constructor_id", "Team", "s", "l"), ("dec_txt", "Decade", "s", "l"),
+            ("race_pairs", "Race W-L", "s", "r"), ("race_n", "n", "s", "r"), ("quali_pairs", "Quali W-L", "s", "r"),
+            ("race_opp", "Opp(race)", "avg", "r"), ("rating", "Unadj", "avg", "r"), ("bt_rating", "BT", "avg", "r"), ("move", "Move", "avg", "r")]
+    print(f"\nBiggest movers UP (Bradley-Terry adjusted minus unadjusted), {len(rows)} rated tenures:")
+    print_table(sorted(rows, key=lambda d: -d["move"])[:n], cols)
+    print("\nBiggest movers DOWN:")
+    print_table(sorted(rows, key=lambda d: d["move"])[:n], cols)
+
+
+def weights_report(conn, team, decade, k, strengths):
+    ws = (1.0, 0.75, 0.5, 0.25)
+    cid, name, y0, y1, drivers, _ = load(conn, team, decade, k, MIN_H2H_RACES, 0.5, strengths)
+    table = {d["driver_id"]: {"driver": d["driver"], "race_pairs": d["race_pairs"], "race_n": d["race_n"], "quali_pairs": d["quali_pairs"]}
+             for d in drivers}
+    for w in ws:
+        _, _, _, _, ds, _ = load(conn, team, decade, k, MIN_H2H_RACES, w, strengths)
+        for d in ds:
+            table[d["driver_id"]][f"u{w}"] = d["rating"]
+            table[d["driver_id"]][f"b{w}"] = d["bt_rating"]
+    print(f"=== {name} {y0}-{y1}: rating by race weight (unadjusted | Bradley-Terry adjusted) ===")
+    print_table(list(table.values()), [("driver", "Driver", "s", "l"), ("race_pairs", "Race W-L", "s", "r"), ("race_n", "n", "s", "r"),
+                                       ("quali_pairs", "Quali W-L", "s", "r")]
+                + [(f"u{w}", f"U {w:g}", "avg", "r") for w in ws] + [(f"b{w}", f"BT {w:g}", "avg", "r") for w in ws])
 
 
 def main():
@@ -340,6 +492,11 @@ def main():
     ap.add_argument("--prior-sweep", action="store_true", help="show ratings under several prior strengths")
     ap.add_argument("--coverage", action="store_true", help="rating coverage by decade for several floors (ignores team/decade)")
     ap.add_argument("--dominant", action="store_true", help="most dominant car per decade on each car scale (ignores team/decade)")
+    ap.add_argument("--champions", action="store_true", help="top car by som_uni vs the constructors' champion, every season")
+    ap.add_argument("--movers", action="store_true", help="Bradley-Terry adjustment: global top 20 and biggest movers")
+    ap.add_argument("--weights", action="store_true", help="ratings of this combo under several race/quali weights")
+    ap.add_argument("--race-weight", type=float, default=RACE_WEIGHT, help="weight of the race component (0..1)")
+    ap.add_argument("--no-bt", action="store_true", help="skip the Bradley-Terry adjustment")
     ap.add_argument("--db", default=f1pool.DB_PATH)
     args = ap.parse_args()
     conn = f1pool.connect(args.db)
@@ -349,6 +506,16 @@ def main():
         return
     if args.dominant:
         dominant_report(conn)
+        return
+    if args.champions:
+        champions_report(conn)
+        return
+    if args.movers:
+        movers_report(conn, args.prior, args.race_weight)
+        return
+    strengths = None if args.no_bt else global_strengths(conn, args.prior)
+    if args.weights:
+        weights_report(conn, args.team, args.decade, args.prior, strengths)
         return
 
     if args.prior_sweep:
@@ -367,7 +534,7 @@ def main():
                     + [(f"k{k}", f"k={k}", "avg", "r") for k in ks])
         return
 
-    cid, name, y0, y1, drivers, cars = load(conn, args.team, args.decade, args.prior, args.floor)
+    cid, name, y0, y1, drivers, cars = load(conn, args.team, args.decade, args.prior, args.floor, args.race_weight, strengths)
     if args.json:
         json.dump({"constructor_id": cid, "constructor": name, "years": [y0, y1],
                    "prior_races": args.prior, "min_h2h_races": args.floor,
@@ -375,17 +542,18 @@ def main():
         print()
         return
 
-    print(f"=== {name} {y0}-{y1} ===   prior k={args.prior} races, floor {args.floor} classified h2h races")
+    print(f"=== {name} {y0}-{y1} ===   prior k={args.prior} races, floor {args.floor} classified h2h races, race weight {args.race_weight:g}")
     print("\nDRIVERS  raw (works entries, whole tenure)")
     print_table(drivers, DRIVER_COLS)
-    print("\nDRIVERS  teammate head-to-head: per-pair W-L, per-race sample n and win fraction, old vs new rating")
+    print("\nDRIVERS  teammate head-to-head: per-pair W-L, per-race n; Unadj = shrunk, BT = Bradley-Terry teammate-adjusted; Opp = mean BT rating of race teammates")
     print_table(drivers, [
         ("driver", "Driver", "s", "l"),
-        ("race_pairs", "Race W-L", "s", "r"), ("race_n", "n", "s", "r"), ("race_pct", "Race%", "pct", "r"),
-        ("quali_pairs", "Quali W-L", "s", "r"), ("quali_n", "n", "s", "r"), ("quali_pct", "Quali%", "pct", "r"),
-        ("old_rating", "Old", "avg", "r"), ("race_shrunk", "Race~", "pct", "r"), ("quali_shrunk", "Quali~", "pct", "r"),
-        ("rating", "NEW", "avg", "r"), ("rating_note", "", "s", "l"), ("teammates", "Race comparisons vs", "s", "l")])
-    print("\nCARS  raw team results, old vs-best, then field-relative (field = full-time works teams); som_uni is the recommended card rating")
+        ("race_pairs", "Race W-L", "s", "r"), ("race_n", "n", "s", "r"),
+        ("quali_pairs", "Quali W-L", "s", "r"), ("quali_n", "n", "s", "r"),
+        ("race_shrunk", "Race~", "pct", "r"), ("quali_shrunk", "Quali~", "pct", "r"), ("rating", "Unadj", "avg", "r"),
+        ("race_opp", "Opp", "avg", "r"), ("race_bt", "RaceBT", "avg", "r"), ("quali_bt", "QualiBT", "avg", "r"), ("bt_rating", "BT", "avg", "r"),
+        ("rating_note", "", "s", "l"), ("teammates", "Race comparisons vs", "s", "l")])
+    print("\nCARS  raw team results, old vs-best, then field-relative (field = full-time works teams); som_uni = ABSOLUTE (simulation), eraPct/eraRank = ERA-RELATIVE (card display)")
     print_table(cars, [
         ("year", "Season", "s", "r"), ("card", "Card", "s", "l"),
         ("starts", "Starts", "s", "r"), ("wins", "Wins", "s", "r"), ("podiums", "Pod", "s", "r"), ("poles", "Poles", "s", "r"),
@@ -394,7 +562,8 @@ def main():
         ("vs_best", "vsBest", "avg", "r"), ("n_all", "All", "s", "r"),
         ("n_field", "Field", "s", "r"), ("x_avg", "xAvg", "avg", "r"), ("z", "z", "avg", "r"),
         ("z_scaled", "z_scaled", "avg", "r"), ("z_cdf", "z_cdf", "avg", "r"), ("zs_uni", "zs_uni", "avg", "r"),
-        ("pct_field", "PctField", "avg", "r"), ("share_of_max", "shareMax", "avg", "r"), ("som_uni", "somUni", "avg", "r")])
+        ("pct_field", "PctField", "avg", "r"), ("share_of_max", "shareMax", "avg", "r"), ("som_uni", "somUni", "avg", "r"),
+        ("era_pct", "eraPct", "avg", "r"), ("era_rank_txt", "eraRank", "s", "r")])
 
 
 if __name__ == "__main__":

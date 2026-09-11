@@ -237,10 +237,92 @@ against teammates who are themselves below the pool minimum still count.
 * Old measures, still printed: share vs the season's best team (100 for every leader) and
   percentile over all works teams.
 
+**Two car values, two purposes (decision).** share_of_max is an absolute scale: every car
+is measured against the same theoretical ceiling, so eras compete directly and a 1973
+card carries the fragility of 1973 with it. That is what the simulation needs, because it
+runs cards from different decades against each other in one currency. It is not what the
+player should see, because it breaks "every era is viable" for the Car slot. So:
+
+| value | scale | used by |
+|---|---|---|
+| `som_uni` | absolute, 0-1, same ceiling in every era | simulation input |
+| `era_pct` / `era_rank` | percentile and rank of som_uni among the decade's full-time works cards (44-125 cards per decade) | card display |
+
+Consequence to keep in view: the simulation will reproduce era reliability, so a 1970s
+car will retire more often than a 2020s car of the same era percentile. That is the
+trade the split makes explicit; it is not hidden in the display value.
+
+**Sanity check against the constructors' championship** (`--champions`). The top car by
+som_uni matches the constructors' champion in 63 of 76 seasons. The 13 disagreements:
+
+* 1958, 1959, 1963, 1964, 1965, 1968, 1970, 1973, 1974: the champion's standing points
+  differ from its summed race points (the data flags this for every champion 1958-1978:
+  best-placed-car-only scoring and dropped scores), so the title and the metric were
+  never counting the same thing. 1972 is in the same rule era but the rule happened not
+  to change Lotus's total.
+* 2007: McLaren scored more (218 vs 204) but is `EX` in the standings (excluded from the
+  championship), so Ferrari is champion. Legitimate divergence.
+* 1951 and 1957: no constructors' championship existed; the drivers' champion's team is
+  the proxy.
+
+The pattern inside the disagreements is worth knowing: the metric rewards consistent
+scoring by every car the team runs over wins by one car. 1957 Ferrari (0 wins, 3-4 cars
+finishing 2nd-5th) edges Maserati (4 wins), and 1963-65 BRM (2-3 wins) beats Lotus (6-7
+wins, Clark) each year. Both are properties of share_of_max, not errors; a win-heavier
+scheme would move them. Sprint points (2021 on) are in the standings but not in the
+metric by rule; no disagreement arises from that.
+
 Scale note: the rating is hidden from players, and its spacing will be set once the
 simulation's mapping from rating to outcome exists. Nothing is rescaled yet.
 
-**Teammate quality (open, costed, not built).** Hamilton (McLaren 2000s) rates 59.8 below
+**Race vs qualifying weight.** The two components were combined as an unweighted mean
+(`RACE_WEIGHT` = 0.5), a default set without analysis. The qualifying component has more
+comparisons (no classification needed) and less noise, so it spreads wider and, at 0.5,
+tends to dominate: every small-sample worst case in the floor table is an unbeaten
+qualifying run. Ratings by race weight, unadjusted | Bradley-Terry adjusted:
+
+| driver | race W-L | quali W-L | U 1.0 | U 0.75 | U 0.5 | BT 1.0 | BT 0.75 | BT 0.5 |
+|---|---|---|---|---|---|---|---|---|
+| Schumacher, Ferrari 00s | 68-18 | 92-29 | 76.0 | 75.5 | 75.0 | 78.4 | 80.6 | 82.8 |
+| Barrichello, Ferrari 00s | 14-57 | 25-79 | 23.5 | 24.2 | 24.9 | 46.4 | 52.1 | 57.7 |
+| Hamilton, McLaren 00s | 22-17 | 35-17 | 55.1 | 57.5 | 59.8 | 71.0 | 74.1 | 77.2 |
+| Räikkönen, McLaren 00s | 27-12 | 60-28 | 65.3 | 65.6 | 65.8 | 65.8 | 66.3 | 66.7 |
+| Montoya, McLaren 00s | 7-6 | 8-19 | 52.2 | 47.9 | 43.7 | 57.3 | 54.1 | 50.9 |
+
+The weight is a game-design choice, left at 0.5 until set; 0.75 is the recommendation
+because the game simulates races, not qualifying, and it tempers the qualifying spread.
+
+**Teammate quality: Bradley-Terry adjustment (built).** `scripts/bt.py` fits a global
+strength per driver, separately for race and qualifying outcomes, over every works
+teammate comparison in the window (per-race weighting, pairs in a race weighted
+1/(pairs)). P(i beats j) = s_i / (s_i + s_j). Regularization is the same pseudo-count
+idea as before: every driver plays k = 10 pseudo-games against a reference driver of
+strength 1 and wins half, which anchors 1 = average and shrinks sparse records. Fitted by
+the Hunter (2004) minorization-maximization update; the teammate graph is connected
+(515 of 525 drivers), and the prior anchors the rest.
+
+A tenure's adjusted rating is a one-parameter fit of the same model over that tenure's
+comparisons with the teammates held at their global strength, displayed as
+100 * s / (s + 1) = probability of beating an average driver. Against an exactly average
+teammate this reduces to the unadjusted shrunk rating, so the two scales coincide at 50.
+The floor applies unchanged. Known circularity: a teammate's global strength includes
+the comparisons from this tenure.
+
+Results (race weight 0.5): Hamilton/McLaren 59.8 to 77.2 and Räikkönen/McLaren 65.8 to
+66.7, so the flagship order flips. Barrichello/Ferrari 24.9 to 57.7 (52.1 at race
+weight 0.75): losing four in five to Schumacher is rated above average. Biggest movers up
+are drivers paired with the strongest global strengths (Berger vs Senna +35, Sainz vs
+Leclerc +34, Pérez vs Verstappen +32, Rosberg vs Hamilton +28); biggest movers down are
+drivers who beat weak teammates in weak teams (Monteiro/Jordan -13, Piquet/Lotus 1980s
+vs Nakajima -12, Russell/Williams vs Latifi -9). Moves up reach +35 while moves down stop
+near -13, because the weakest global strengths sit around 28-38 while the strongest reach
+87. Global top strengths (race): Verstappen 87, Senna 81, Leclerc 81, Alonso 80, Fangio
+77, Schumacher 77, Russell 75, Ascari 73, Hamilton 73, Norris 73. Current drivers sit high
+partly because 20-plus-race seasons leave less shrinkage; Mika Salo and Alexander Albon in
+the top 20 are the entries that look like network artefacts. Qualifying strengths are
+more extreme than race strengths (Senna 93), which is another reason to weight races.
+
+**Teammate quality (earlier costing, kept for the record).** Hamilton (McLaren 2000s) rates 59.8 below
 Räikkönen at 65.8 because Hamilton's comparisons are against Alonso and Kovalainen while
 Räikkönen's are against Coulthard and Montoya. The teammate graph over the window is
 connected (515 of 525 works drivers in one component), so a network model across eras is
