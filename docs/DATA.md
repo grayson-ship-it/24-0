@@ -173,19 +173,27 @@ attrition and era dominance move underneath them.
   under-rated one is only a bargain.
 * rating = mean of the two shrunk components, 0-100.
 * **Floor:** the rating is suppressed (blank, with the W-L counts still shown) unless the
-  driver has at least `MIN_H2H_RACES` = 5 classified race comparisons. A qualifying-only
-  record is not a driver rating. Five is where a record can first establish a direction
-  (a 4-0 split happens one time in sixteen between equal drivers) and where the k = 10
-  prior already caps a perfect record at 66.7%. Cost of the floor, given the 3-start
-  backstop: about half of all pool tenures carry a rating; 75-99% from the 2000s on, but
-  only about a third before 1990, where finishing rates were low. Those drivers stay in the
-  pool with raw stats and no number. The simulation will need an explicit rule for unrated
-  drivers; that is a separate decision, not a statistic to fill in.
-* Outcome check on the two truncated seasons, both handled by the general rule: Senna
-  (Williams 1994, 3 starts, 0 classified) is suppressed. Rindt (Lotus 1970, 5 classified
-  comparisons, 4-1 races, unbeaten in 10 qualifying sessions) rates 67.5, level with
-  Andretti's 67.6 rather than the 90 he showed unshrunk; raising the floor to 6 would
-  suppress him too, at the cost of a further tenth of 1970s coverage.
+  driver has at least `MIN_H2H_RACES` classified race comparisons. The floor is defined as
+  `MIN_STARTS_PER_DRIVER - 1` = 2, so the two thresholds relate deliberately: a driver at
+  the 3-start pool minimum is rated if compared in two of those three races, and no single
+  race can ever set a rating. A qualifying-only record is still not a driver rating (Senna,
+  Williams 1994, stays unrated). The floor is not what limits small samples; shrinkage is.
+  Coverage of pool tenures and the highest rating found at exactly the minimum sample:
+
+  | floor | all | 1950s | 1960s | 1970s | 1980s | 1990s | 2000s | 2010s | 2020s | worst case at n = floor |
+  |---|---|---|---|---|---|---|---|---|---|---|
+  | 1 | 86% | 83% | 81% | 78% | 74% | 89% | 100% | 100% | 100% | 67.7 (1-0 race, 16-0 quali) |
+  | **2** | **76%** | 63% | 65% | 67% | 61% | 75% | 93% | 100% | 100% | 69.6 (Alesi, Tyrrell 1990s: 2-0, 16-0 quali) |
+  | 3 | 66% | 50% | 52% | 54% | 51% | 62% | 87% | 99% | 100% | 65.6 |
+  | 5 | 51% | 31% | 36% | 32% | 35% | 47% | 75% | 95% | 95% | 70.8 (Martini, Minardi 1980s: 5-0) |
+
+  The worst case does not fall as the floor rises, which shows the k = 10 prior is doing
+  the work: a perfect small record lands in the mid-60s at every floor, driven by an
+  unbeaten qualifying run rather than the race count.
+* Outcome check on the two truncated seasons, both handled by the general rule: Senna is
+  suppressed (no classified race). Rindt (Lotus 1970, 4-1 in races, unbeaten in 10
+  qualifying sessions) rates 67.5, level with Andretti's 67.6 rather than the 90 he showed
+  unshrunk.
 * Old definition (per-pair, unshrunk, no floor) is still printed beside the new one.
 
 Limitations, documented not solved: (1) teammate quality is not weighted (an Elo-style
@@ -195,25 +203,59 @@ against teammates who are themselves below the pool minimum still count.
 **Car rating: per season, driver-neutral, field-relative.**
 
 * points_share: works race points / all race points awarded that season (Indy excluded).
-  Per-race points, so dropped-score championship rules do not distort it.
-* The **field** for the measures below is the season's works teams with at least one
-  full-time car (works car-starts >= races in the season). Part-time entries do not pad
-  it: 1975 has 18 works constructors but a field of 10, and Lotus's 2.8% share moves from
-  the 65th percentile of all teams to the 33rd of the field.
-* x_avg: points_share / mean share of the field. 1.0 is an average team. Ferrari 2002 is
-  5.50, Brawn 2009 is 2.67, Lotus 1975 is 0.29.
-* z: (points_share - field mean) / field standard deviation. Ferrari 2002 is 2.84, Brawn
-  2009 is 2.01, Williams 1992 is 2.75, McLaren 2007 is 2.07. **Recommended card rating.**
-* pct_field: share of the field the team out-scored, 0-100. Saturates at 100 for every
-  season leader, so it is context, not the rating.
-* Old measures, still printed: share vs the season's best team (100 for every leader,
-  which is why it was replaced) and percentile over all works teams.
+* The **field** for the z-based measures is the season's works teams with at least one
+  full-time car (works car-starts >= races in the season), so part-time entries do not
+  pad it: 1975 has 18 works constructors but a field of 10.
+* x_avg, z, pct_field: multiple of the average team, z-score, percentile within the field.
+* z_scaled = z / sqrt(n_field - 1) and z_cdf = normal CDF of z were built to remove the
+  field-size ceiling of z (the largest z a field of n allows is sqrt(n-1)). **Verified and
+  rejected as the card rating.** Checking the most dominant car of each decade showed
+  1952 Ferrari at 0.99 and 1961 Ferrari (45% share, 4 wins from 8) at 0.98, above 1988
+  McLaren (15 wins from 16) at 0.93. The cause is that a z-score measures shape, not
+  margin: a leader over a perfectly even rest scores exactly sqrt(n-1) whatever its
+  margin, so z_scaled hits 1.0 for any such season, and a field of four or five teams
+  makes "the rest are even" trivial. z_cdf compresses every title car into 95.7-100.
+  Both stay visible as context.
+* **share_of_max**: team points / the most points its own started cars could have scored,
+  computed per race as the points actually paid to positions 1..k where k is the number of
+  works cars the team started. 1.0 means every car it started finished at the top of the
+  order, in every era. It is a magnitude measure, neutral to field size and to the number
+  of cars the team ran.
+* **som_uni**: share_of_max with every classified finish re-scored on the fixed
+  25-18-15-12-10-8-6-4-2-1 scheme, so the season's own points table (top-5, top-6, top-8 or
+  top-10 scoring) plays no part either. **Recommended card rating.** Most dominant car per
+  decade on this scale: 1952 Ferrari 0.81, 1960 Cooper 0.69, 1973 Tyrrell 0.61, 1988
+  McLaren 0.84, 1996 Williams 0.70, 2002 Ferrari 0.87, 2015 Mercedes 0.86, 2023 Red Bull
+  0.82. The 1960s-70s values are lower for reasons that are properties of those seasons,
+  not of the scale: wins were spread across teams (Tyrrell 1973 won 5 of 15) and
+  retirements, which score zero, were far more common. Reliability is a car property, so
+  that is intended. Field size is not the driver of the pattern: the largest fields
+  (1980s) produce the second-highest value.
+* Sample cards on som_uni: Ferrari F2002 0.87, Ferrari F2004 0.82, McLaren MP4-22 0.73,
+  Williams FW14B 0.66, Brawn BGP 001 0.61, Lotus 78 / 79 0.51, McLaren MP4-19 / 19B 0.24,
+  Lotus 72E (1975) 0.11.
+* Old measures, still printed: share vs the season's best team (100 for every leader) and
+  percentile over all works teams.
 
-Caveats: every measure's ceiling still depends slightly on era. A 1-2 sweep is a larger
-share of a 9-6-4-3-2-1 scheme than of 25-18-15-..., and the largest possible z in a field
-of n is sqrt(n-1) (3.0 for 10 teams, 3.6 for 14). Within-season normalization is
-intentional: it is what makes every spin viable. 1950s-60s works teams often ran three
-or four cars, which raises their share against two-car rivals in the same season.
+Scale note: the rating is hidden from players, and its spacing will be set once the
+simulation's mapping from rating to outcome exists. Nothing is rescaled yet.
+
+**Teammate quality (open, costed, not built).** Hamilton (McLaren 2000s) rates 59.8 below
+Räikkönen at 65.8 because Hamilton's comparisons are against Alonso and Kovalainen while
+Räikkönen's are against Coulthard and Montoya. The teammate graph over the window is
+connected (515 of 525 works drivers in one component), so a network model across eras is
+feasible. Options, with the exploratory numbers from a one-pass career-rating adjustment
+(not committed; shift each comparison by the teammate's career rating): Hamilton 59.8 to
+about 67-70, Räikkönen 65.8 to about 60, Alonso 52 to 61, Barrichello 25 to 48.
+
+| Option | What | Cost | Caveat |
+|---|---|---|---|
+| A. One-pass adjustment by teammates' career shrunk h2h, iterated 2-3 times | ~80 lines | 2-3 hours | Uncalibrated linear shift; iteration does not converge cleanly (Hamilton 67.5, 66.5, 70.0); large swings for drivers paired with a great (Barrichello +23). |
+| B. Bradley-Terry global driver strengths (MM fit on per-race outcomes, pseudo-count regularization, race and quali separately), tenure rating = shrunk performance against expectation | ~200 lines + validation | about 1 day | One strength per driver across their career; era connectivity verified. Standard model, calibrated scale. |
+| C. Hierarchical: global strength plus a shrunk per-tenure deviation | ~300 lines | about 2 days | The rigorous version of the deferred "full Elo network". |
+
+Recommendation: B, before the simulation, because the simulation will be tuned to the
+rating scale and re-rating afterwards means re-tuning.
 
 **Display rule.** Average finish and finish rate always appear together on a card, and a
 teammate rating always appears with its W-L counts and sample size, or as "unrated" with

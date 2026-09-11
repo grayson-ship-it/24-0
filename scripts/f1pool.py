@@ -27,7 +27,10 @@ POOL_MIN_DRIVERS = 2             # playable floor
 POOL_MIN_CARS = 1
 WHEEL_WEIGHT_DRIVERS = 4         # combos at/above this get the higher wheel weight (not a gate)
 RATING_PRIOR_RACES = 10          # driver rating shrinkage: pseudo-races at 50% (data implies ~7; see docs)
-MIN_H2H_RACES = 5                # classified race comparisons needed before a driver rating is shown
+# A driver rating needs at least this many classified races with a teammate. Tied to the
+# pool minimum: a driver at the 3-start minimum is rated if compared in 2 of those 3, and
+# no single race can ever set a rating. Shrinkage, not the floor, limits small samples.
+MIN_H2H_RACES = MIN_STARTS_PER_DRIVER - 1
 NOT_STARTED = ("DNS", "DNQ", "DNPQ", "DNP", "EX")
 
 # Works-entrant overrides for constructor-seasons where the name rule cannot decide.
