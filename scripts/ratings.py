@@ -502,7 +502,7 @@ def main():
     conn = f1pool.connect(args.db)
 
     if args.coverage:
-        coverage_report(conn, args.prior)
+        coverage_report(conn, args.prior, w=args.race_weight)
         return
     if args.dominant:
         dominant_report(conn)
