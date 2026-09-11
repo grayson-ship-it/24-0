@@ -237,7 +237,7 @@ against teammates who are themselves below the pool minimum still count.
 * Old measures, still printed: share vs the season's best team (100 for every leader) and
   percentile over all works teams.
 
-**The 24-0 objective (decision pending).** share_of_max is calibrated to a constructors'
+**The 24-0 objective (decision: adopted).** share_of_max is calibrated to a constructors'
 championship: it rewards every car scoring consistently. The game's objective is to win
 every race, where second and last are worth the same nothing, so the simulation needs win
 and finish probabilities rather than points share. Each card therefore also carries, all
@@ -246,10 +246,12 @@ computed at team level per race the works team started:
 | value | definition |
 |---|---|
 | `win_rate` | races the team won / races it started |
-| `podium_rate` | races where its best car finished in the top three / races started |
+| `podium_race_rate` | races where at least one car finished in the top three / races started (team, per race) |
+| `podiums_per_start` | podium finishes / car-starts (per car; the game counts podiums per car, up to two a race, so this is the simulation's number) |
 | `win_given_finish` | races won / races with at least one classified car |
 | `finish_rate` | classified car-starts / car-starts (reliability) |
-| `era_pct_win`, `era_rank_win` | percentile and rank within the decade's full-time works cards on the 24-0 ordering: win rate, then podium rate, then som_uni |
+| `era_pct_win`, `era_rank_win` | percentile and rank within the decade's full-time works cards on the 24-0 ordering: win rate, then podiums per start, then som_uni (display) |
+| `win_rel`, `podium_rel`, `finish_rel`, `som_rel` | each measure as a ratio to the decade's best full-time card (simulation input; see below) |
 
 Win rate alone cannot order most of a decade: 41-73% of full-time cards have zero wins
 (5-54% have zero podiums), so the ordering breaks ties by podium rate and finally by
@@ -275,7 +277,7 @@ player should see, because it breaks "every era is viable" for the Car slot. So:
 | `som_uni` | absolute, 0-1, same ceiling in every era | simulation input |
 | `era_pct` / `era_rank` | percentile and rank of som_uni among the decade's full-time works cards (44-125 cards per decade) | card display |
 
-**Revised (decision pending): the simulation consumes the era-relative value.** With the
+**Revised (decision: adopted): the simulation consumes the era-relative value.** With the
 absolute value, a player who rolls Tyrrell 1970s and correctly takes the best car of the
 decade sees "rank 1 of 102" and then systematically loses to a player who rolled Red Bull
 2020s, punished for a wheel result they did not choose while the card says they chose
@@ -283,12 +285,31 @@ well. The only choice a player makes is within a spin, so the value the simulati
 consumes must be the one the card shows. Both absolute and era-relative values stay
 computed. What the era-relative choice implies, so it is decided rather than absorbed:
 
-* A percentile is uniform by construction, so the simulation's mapping from percentile to
-  win probability is a design choice (for example, the win-rate curve of a reference
-  decade), not something the data supplies. The shape of a given decade's field is lost;
-  that is the point.
-* If reliability is modelled separately, it must also be era-relative (percentile of
-  finish_rate within the decade), or the 1970s penalty returns through the back door.
+* A percentile is uniform by construction and discards margin: the gap between a decade's
+  best and second-best card equals the gap between its 50th and 51st, and decade fields
+  of 60 to 125 cards make the same rank a different percentile. **Decision: the
+  simulation-facing value is the ratio to the decade's best**, per measure: `win_rel` =
+  win rate / best win rate in the decade, `podium_rel` = podiums per start / best,
+  `finish_rel` = finish rate / best. The best card of every era is 1.0 and every other
+  card keeps its real margin below it. Percentile and rank remain display and context.
+  What the percentile was hiding (2000s): F2002 win_rel 1.00, F2004 0.94, McLaren MP4-20
+  0.63, MP4-22 0.53, Brawn 0.53, where the percentile read 100, 99, 97, 92, 91. The 1.0
+  anchors per decade are 1952 Ferrari (7 of 7), 1960 Cooper (0.75), 1971 Tyrrell (0.64),
+  1988 McLaren (0.94), 1996 Williams (0.75), 2002 Ferrari (0.88), 2016 Mercedes (0.90),
+  2023 Red Bull (0.95). The 1970s anchor being 0.64 means every 1970s card is measured
+  against a less dominant best; that is the decade's own field, which is the intent.
+* **Reliability** is handled the same way: `finish_rel` = finish rate / the decade's best
+  finish rate, so the most reliable car of every era is 1.0 (1952 Ferrari 0.83, 1964 BRM
+  0.90, 1972 McLaren 0.88, 1988 McLaren 0.88, 1999 Ferrari 0.90, 2004 Ferrari 0.94, 2013
+  McLaren and 2024 McLaren 1.00). The simulation maps the ratio to a retirement
+  probability through one reference (a design choice). Consequence to hold in view: the
+  ratio keeps each decade's spread below its best, and that spread is wider in fragile
+  eras. The median full-time card's finish rate is 0.50-0.57 in the 1950s-1990s against
+  0.69, 0.83 and 0.89 in the 2000s, 2010s and 2020s, so a mid-field 1970s card sits near
+  0.64 of its era's best while a mid-field 2020s card sits near 0.89. That is the same
+  property as win_rel (a mid-field card in any era has win_rel near 0) and is accepted
+  for the same reason: the margin is real. The alternative, standardizing reliability
+  within decade, is available if that spread proves punishing in play.
 * Decade fields differ in size (60 cards in the 2020s, 125 in the 1980s), so the same rank
   is a slightly different percentile across decades. Within-season ranking would fix that
   but has only 10-19 cards per season and is too coarse.
@@ -365,11 +386,40 @@ partly because 20-plus-race seasons leave less shrinkage; Mika Salo and Alexande
 the top 20 are the entries that look like network artefacts. Qualifying strengths are
 more extreme than race strengths (Senna 93), which is another reason to weight races.
 
-**Era-relative driver rating (decision pending).** Every driver card carries `era_pct`,
-the percentile of the tenure's Bradley-Terry rating among the decade's rated pool tenures
-(118-134 per decade). Schumacher/Ferrari 2000s is the 100th percentile of the 2000s,
-Hamilton/McLaren 97.5, Andretti/Lotus 1970s 98.3, Mansell/Williams 1990s 93.2, Rindt
-90.6. This is the value the simulation should consume, for the same reason as the cars.
+**Re-centring (decision: applied).** Ratings are now the probability of beating the
+typical teammate actually faced (the exposure-weighted geometric mean opponent strength:
+58.8 on the prior scale for races, 63.4 for qualifying) rather than the prior's average
+driver. A uniform shift in log-odds; nothing else changes. The unadjusted and adjusted
+scales therefore no longer coincide at 50.
+
+**Do drivers need an era transform? Yes, once the adjustment is used.** Rated pool
+tenures by decade:
+
+| decade | n | unadjusted mean | BT mean | BT sd | BT max |
+|---|---|---|---|---|---|
+| 1950s | 64 | 49.9 | 52.5 | 9.1 | 69.6 |
+| 1960s | 50 | 49.5 | 52.6 | 10.3 | 72.0 |
+| 1970s | 118 | 49.6 | 52.0 | 9.4 | 71.9 |
+| 1980s | 111 | 48.9 | 51.6 | 10.2 | 74.3 |
+| 1990s | 134 | 49.0 | 51.7 | 10.3 | 77.3 |
+| 2000s | 121 | 48.5 | 52.5 | 10.6 | 73.8 |
+| 2010s | 109 | 49.3 | 55.4 | 12.1 | 80.5 |
+| 2020s | 60 | 47.0 | 55.5 | 13.8 | 89.5 |
+
+(BT columns before re-centring; the shift does not change the pattern.) The unadjusted
+head-to-head is era-flat, which confirms the earlier finding that the prior is
+era-stable: teammate comparison is comparable across eras on its own. The Bradley-Terry
+rating is not: the 2010s and 2020s sit three points higher with a spread a third wider
+and maxima ten points higher. The cause is evidence quantity at the global-strength
+level: modern careers carry 200-plus comparisons against 30-90 for earlier eras, so
+modern opponents' strengths are more extreme and tenure ratings inherit that spread. That
+extra spread is an artefact, so a ratio to the decade's best (which fixes only the top)
+is not enough for drivers. **Decision: `era_bt`** = the tenure's log-odds rating
+standardized within its decade (location and spread) and mapped back onto the pooled
+1950s-2000s scale. Every relative gap inside a decade survives; the decade's inflated
+spread does not. It is the simulation input for drivers; `era_pct` stays display only.
+The car case differs because win rates are direct observations, not shrunk network
+estimates, so their margins are real and the ratio keeps them.
 
 **Modern bias in the global strengths: diagnosed, and the prior stays in race units.**
 The global top 20 ranks Russell 7th and Norris 10th, ahead of Clark, Stewart and Prost.
