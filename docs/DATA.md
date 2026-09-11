@@ -8,12 +8,14 @@
 | **Jolpica-F1** (api.jolpi.ca) | Live, community-run | Ergast-compatible REST API at `api.jolpi.ca/ergast/f1/`. Requires a custom User-Agent, is rate limited, and volunteer-hosted. Offers CSV database dumps at `api.jolpi.ca/data/dumps/download/`: the free tier is delayed 14 days and non-commercial only. No GitHub releases. Its schema has no chassis (car model) data, only constructors. |
 | **F1DB** (github.com/f1db/f1db) | Live, releases after every race | CC BY 4.0. Versioned GitHub releases (CalVer `YYYY.RR.MICRO`) in CSV, JSON, SQLite and SQL formats with published SHA-256 checksums. Covers 1950 to present and includes **chassis per season entry**, which the Car pick needs. |
 
-This project uses **F1DB**, pinned to a specific release in `scripts/fetch_data.sh`.
+**Decision: F1DB is the source of record.** Jolpica has no chassis data and the Car pick
+depends on it. F1DB is pinned to a specific release in `scripts/fetch_data.sh`.
 The api.jolpi.ca domain was not reachable from the environment this was set up in, so
 Jolpica's dump was not downloaded or inspected. F1DB was chosen on its own merits (chassis
 data, pinned versioned releases, permissive licence) but that constraint is worth knowing.
 
-Attribution required by the licence: "Data from F1DB (https://github.com/f1db/f1db), CC BY 4.0."
+Attribution required by the licence is in [ATTRIBUTION.md](../ATTRIBUTION.md). It must also
+appear in the app UI once one exists.
 
 ## Layout
 
@@ -34,7 +36,9 @@ scripts/team_decade.py      Team x Decade query
 * `race`: `year`, `round`, `grand_prix_id`.
 * `driver`, `constructor`, `chassis`.
 * `season_entrant_chassis`: which chassis each constructor entered each season.
-* `constructor_chronology`: team lineage (e.g. renames). Not yet used.
+* `constructor_chronology`: team lineage (e.g. renames). **Deliberately unused.** Team
+  lineages are not merged: Brawn stays Brawn, Jordan stays Jordan, Toleman stays Toleman.
+  A one-season team like Brawn x 2000s is its own spin.
 
 ## Stat definitions (per driver, per constructor, over the whole window)
 
@@ -56,6 +60,14 @@ pole_positions` columns for all 860 drivers with race results.
 
 Things to be aware of:
 
+* **Average finish flatters drivers who retire.** It is computed over classified results
+  only, so a retirement simply drops out of the average instead of hurting it. McLaren
+  2000s: Räikkönen has the best average finish on the board (3.67) with a 66.7% finish
+  rate; Hamilton's 4.89 came with a 90.4% finish rate. **Rule: average finish and finish
+  rate always appear together on a card, and any rating built later must combine them.
+  Average finish is never used as a quality measure on its own.**
+* **Finish rate uses the official classification (decision).** "Saw the flag" was
+  considered and rejected; classified / starts is the definition.
 * **Classified retirements.** A driver who retires late but is still classified (e.g.
   Häkkinen, Spain 2001, clutch on the last lap, classified 9th) has a numeric position and
   a `race_reason_retired`. They count as classified and their position feeds avg_finish.
@@ -67,3 +79,24 @@ Things to be aware of:
 * Sprint races (2021 onward) are a separate `type` and are excluded from every stat.
 * No number is estimated or filled in. If a stat cannot be computed it is left blank
   (e.g. avg_finish for a driver with zero classified results).
+
+## Pool audit
+
+`scripts/pool_audit.py` writes `data/audit/pool_audit.csv`: one row per constructor x
+decade with distinct drivers who started, distinct chassis entered, and context columns.
+Things the audit surfaces that are properties of the data, not choices made here:
+
+* **F1DB's `constructor_id` on a race result is the chassis constructor, including
+  privateer entries.** Maserati x 1950s therefore lists 79 starters, most of them private
+  entrants, and Lotus x 1960s lists 71. The `entrant` tables distinguish works from
+  private teams if that ever matters; the audit does not use them.
+* **The Indianapolis 500 counted for the championship from 1950 to 1960.** It is a race
+  in F1DB like any other, so US constructors such as Kurtis Kraft appear as 1950s combos
+  built entirely from Indy 500 starts. The `indy500_races` column makes them filterable.
+* **The 2020s are in progress** (data through 2026 round 13), so those combos will grow.
+* Three chassis appear in `season_entrant_chassis` for a constructor-season with no race
+  results at all (First F189 1989, March CG911C 1993, Larrousse LH95 1995). They are
+  counted as entered chassis because that is what the table records.
+* Chassis are per season entry, not per race. F1DB has no chassis on individual race
+  results, so "which car did this driver drive in this race" is not answerable for teams
+  that ran two chassis in one season (e.g. McLaren MP4-19 and MP4-19B in 2004).

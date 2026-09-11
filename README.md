@@ -13,12 +13,14 @@ Intended to ship as static files.
 
 Historical results come from [F1DB](https://github.com/f1db/f1db) (CC BY 4.0), pinned to
 a release. See [docs/DATA.md](docs/DATA.md) for why, what is live today, and exact stat
-definitions. Nothing is ever estimated; missing numbers stay blank.
+definitions. Nothing is ever estimated; missing numbers stay blank. Licence attribution is in
+[ATTRIBUTION.md](ATTRIBUTION.md) and must also appear in the app UI.
 
 ```
 scripts/fetch_data.sh                 # download + verify the pinned F1DB release
 python3 scripts/team_decade.py mclaren 2000s
 python3 scripts/team_decade.py "Red Bull" 2010-2019 --json
+python3 scripts/pool_audit.py --min-drivers 2   # every Team x Decade combo -> data/audit/pool_audit.csv
 ```
 
 Requires Python 3 (stdlib only), curl and unzip.
