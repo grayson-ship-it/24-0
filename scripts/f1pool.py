@@ -31,7 +31,7 @@ RATING_PRIOR_RACES = 10          # driver rating shrinkage: pseudo-races at 50% 
 # pool minimum: a driver at the 3-start minimum is rated if compared in 2 of those 3, and
 # no single race can ever set a rating. Shrinkage, not the floor, limits small samples.
 MIN_H2H_RACES = MIN_STARTS_PER_DRIVER - 1
-RACE_WEIGHT = 0.5                # weight of the race component vs qualifying in a driver rating (0..1)
+RACE_WEIGHT = 0.75               # weight of the race component vs qualifying in a driver rating (decision)
 NOT_STARTED = ("DNS", "DNQ", "DNPQ", "DNP", "EX")
 
 # Works-entrant overrides for constructor-seasons where the name rule cannot decide.

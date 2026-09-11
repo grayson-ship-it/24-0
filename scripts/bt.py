@@ -13,7 +13,8 @@ from collections import defaultdict
 
 
 def fit(wins, k, iters=2000, tol=1e-9):
-    """wins: dict (i, j) -> weighted number of wins of i over j. Returns dict driver -> strength."""
+    """wins: dict (i, j) -> weighted number of wins of i over j. k: pseudo-games, a number or a
+    dict driver -> pseudo-games (era-scaled priors). Returns dict driver -> strength."""
     W = defaultdict(float)
     games = defaultdict(lambda: defaultdict(float))
     for (i, j), w in wins.items():
@@ -21,11 +22,13 @@ def fit(wins, k, iters=2000, tol=1e-9):
         games[i][j] += w
         games[j][i] += w
     s = {d: 1.0 for d in games}
+    kk = (lambda d: k.get(d, 10.0)) if isinstance(k, dict) else (lambda d: k)
     for _ in range(iters):
         delta = 0.0
         for i in s:
-            den = sum(n / (s[i] + s[j]) for j, n in games[i].items()) + k / (s[i] + 1.0)
-            new = (W[i] + k / 2.0) / den
+            ki = kk(i)
+            den = sum(n / (s[i] + s[j]) for j, n in games[i].items()) + ki / (s[i] + 1.0)
+            new = (W[i] + ki / 2.0) / den
             delta = max(delta, abs(new - s[i]))
             s[i] = new
         if delta < tol:

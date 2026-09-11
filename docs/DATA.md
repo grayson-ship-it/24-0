@@ -237,6 +237,33 @@ against teammates who are themselves below the pool minimum still count.
 * Old measures, still printed: share vs the season's best team (100 for every leader) and
   percentile over all works teams.
 
+**The 24-0 objective (decision pending).** share_of_max is calibrated to a constructors'
+championship: it rewards every car scoring consistently. The game's objective is to win
+every race, where second and last are worth the same nothing, so the simulation needs win
+and finish probabilities rather than points share. Each card therefore also carries, all
+computed at team level per race the works team started:
+
+| value | definition |
+|---|---|
+| `win_rate` | races the team won / races it started |
+| `podium_rate` | races where its best car finished in the top three / races started |
+| `win_given_finish` | races won / races with at least one classified car |
+| `finish_rate` | classified car-starts / car-starts (reliability) |
+| `era_pct_win`, `era_rank_win` | percentile and rank within the decade's full-time works cards on the 24-0 ordering: win rate, then podium rate, then som_uni |
+
+Win rate alone cannot order most of a decade: 41-73% of full-time cards have zero wins
+(5-54% have zero podiums), so the ordering breaks ties by podium rate and finally by
+som_uni. Spearman correlation with som_uni over the 725 full-time cards is 0.79 for win
+rate and 0.92 for podium rate, so the two objectives agree on most cards and disagree
+exactly where the championship check said they would: 1957 Maserati (4 wins) now sits
+above Ferrari (0), 1965 Lotus (6 wins) above BRM (3), 1973 Lotus (7) above Tyrrell (5),
+and Tyrrell 1973 falls from 1st to 10th of the 1970s while Lotus 1970 rises to 2nd. Most
+dominant car per decade on the 24-0 ordering: 1952 Ferrari (7 of 7), 1960 Cooper, 1971
+Tyrrell (7 of 11), 1988 McLaren, 1996 Williams, 2002 Ferrari, 2016 Mercedes (19 of 21),
+2023 Red Bull (21 of 22). Win rate is a step function in short seasons (7 races in the
+1950s means steps of 14%) and, like every team-level measure, includes the drivers'
+contribution.
+
 **Two car values, two purposes (decision).** share_of_max is an absolute scale: every car
 is measured against the same theoretical ceiling, so eras compete directly and a 1973
 card carries the fragility of 1973 with it. That is what the simulation needs, because it
@@ -248,9 +275,25 @@ player should see, because it breaks "every era is viable" for the Car slot. So:
 | `som_uni` | absolute, 0-1, same ceiling in every era | simulation input |
 | `era_pct` / `era_rank` | percentile and rank of som_uni among the decade's full-time works cards (44-125 cards per decade) | card display |
 
-Consequence to keep in view: the simulation will reproduce era reliability, so a 1970s
-car will retire more often than a 2020s car of the same era percentile. That is the
-trade the split makes explicit; it is not hidden in the display value.
+**Revised (decision pending): the simulation consumes the era-relative value.** With the
+absolute value, a player who rolls Tyrrell 1970s and correctly takes the best car of the
+decade sees "rank 1 of 102" and then systematically loses to a player who rolled Red Bull
+2020s, punished for a wheel result they did not choose while the card says they chose
+well. The only choice a player makes is within a spin, so the value the simulation
+consumes must be the one the card shows. Both absolute and era-relative values stay
+computed. What the era-relative choice implies, so it is decided rather than absorbed:
+
+* A percentile is uniform by construction, so the simulation's mapping from percentile to
+  win probability is a design choice (for example, the win-rate curve of a reference
+  decade), not something the data supplies. The shape of a given decade's field is lost;
+  that is the point.
+* If reliability is modelled separately, it must also be era-relative (percentile of
+  finish_rate within the decade), or the 1970s penalty returns through the back door.
+* Decade fields differ in size (60 cards in the 2020s, 125 in the 1980s), so the same rank
+  is a slightly different percentile across decades. Within-season ranking would fix that
+  but has only 10-19 cards per season and is too coarse.
+* Driver ratings must be era-relative on the same basis (below), or cars and drivers
+  would be on different footings inside one simulation.
 
 **Sanity check against the constructors' championship** (`--champions`). The top car by
 som_uni matches the constructors' champion in 63 of 76 seasons. The 13 disagreements:
@@ -289,8 +332,8 @@ qualifying run. Ratings by race weight, unadjusted | Bradley-Terry adjusted:
 | Räikkönen, McLaren 00s | 27-12 | 60-28 | 65.3 | 65.6 | 65.8 | 65.8 | 66.3 | 66.7 |
 | Montoya, McLaren 00s | 7-6 | 8-19 | 52.2 | 47.9 | 43.7 | 57.3 | 54.1 | 50.9 |
 
-The weight is a game-design choice, left at 0.5 until set; 0.75 is the recommendation
-because the game simulates races, not qualifying, and it tempers the qualifying spread.
+**Decision: `RACE_WEIGHT` = 0.75.** The game simulates races, not qualifying, and the
+heavier race weight tempers the qualifying spread.
 
 **Teammate quality: Bradley-Terry adjustment (built).** `scripts/bt.py` fits a global
 strength per driver, separately for race and qualifying outcomes, over every works
@@ -321,6 +364,54 @@ near -13, because the weakest global strengths sit around 28-38 while the strong
 partly because 20-plus-race seasons leave less shrinkage; Mika Salo and Alexander Albon in
 the top 20 are the entries that look like network artefacts. Qualifying strengths are
 more extreme than race strengths (Senna 93), which is another reason to weight races.
+
+**Era-relative driver rating (decision pending).** Every driver card carries `era_pct`,
+the percentile of the tenure's Bradley-Terry rating among the decade's rated pool tenures
+(118-134 per decade). Schumacher/Ferrari 2000s is the 100th percentile of the 2000s,
+Hamilton/McLaren 97.5, Andretti/Lotus 1970s 98.3, Mansell/Williams 1990s 93.2, Rindt
+90.6. This is the value the simulation should consume, for the same reason as the cars.
+
+**Modern bias in the global strengths: diagnosed, and the prior stays in race units.**
+The global top 20 ranks Russell 7th and Norris 10th, ahead of Clark, Stewart and Prost.
+Two candidate causes were tested:
+
+* *Shrinkage per season.* A prior worth 0.5 seasons (k = 3.7 in the 1950s, 11 in the
+  2020s) moves Fangio to 2nd, Ascari 3rd, Clark 10th, Russell 11th, Norris 16th, Salo
+  24th and Albon 29th, but also lifts José Froilán González to 7th, Peter Collins 9th,
+  Hermano da Silva Ramos 14th and Robert Manzon 19th: 1950s drivers with a handful of
+  races, which is the small-sample exploit already removed once. A prior worth 1.0
+  seasons (k = 22 for modern drivers, three times the data-implied value) gives Fangio
+  2nd, Stewart 9th, Russell 10th, Clark 11th, Norris 19th, Salo 18th, Albon 23rd.
+* *Is the true spread of skill era-dependent?* Method of moments per decade (tenures with
+  at least 8 or 12 classified comparisons) gives an implied k of 4.4, 5.7, 7.1-7.9,
+  7.8-8.5, 5.3-6.9, 7.9-8.1, 6.8-7.6 and 5.1-5.3 from the 1950s to the 2020s: no trend.
+  A prior in race units is what the data supports.
+
+So the residual modern tilt in the global list is evidence quantity and network density
+(a 20-race season and dense links among strong modern teammates), not a mis-specified
+prior, and the global list is a career leaderboard the game never uses. The fix the game
+needs is the within-decade percentile above, which is era-neutral by construction. Salo
+(18th) and Albon (19th) therefore stay where they are in the global list; their tenures
+are placed within their own decades like everyone else's.
+
+**Asymmetry of the adjustment: diagnosed, not a fit artefact.** Over the 767 rated
+tenures, the move from unadjusted to adjusted is move = 3.8 + 0.51 x (mean teammate
+rating - 50) with a residual standard deviation of 3.0, so the one-parameter tenure fit
+adds nothing beyond the teammates' strengths. Two things in the data produce the shape:
+
+* *The reference is below the typical opponent.* The prior anchors 50 at the average of
+  all drivers, but the exposure-weighted mean rating of the teammates actually faced is
+  58.2 (536 tenures faced above-average teammates, 231 below), because strong drivers
+  survive longer and so appear as teammates in more comparisons. Hence a mean move of
+  +3.8. This can be corrected without distorting anything by re-centring the scale on the
+  average opponent faced (a uniform shift); deferred with the other rescaling.
+* *The top tail is longer than the bottom.* Log-odds strengths run from -1.25 to +1.90
+  while the 10th-90th percentile band is -0.50 to +0.58: the body is symmetric, the top
+  tail is not. Weak drivers are removed from F1 quickly, so their records stay short and
+  shrink toward average; great drivers accumulate evidence and reach extremes. Losing to
+  Verstappen (87) is therefore far more informative than beating Latifi (36), and the
+  moves reflect that. Capping the top would distort the top, and under the era percentile
+  the raw asymmetry does not reach the game at all, since percentiles are rank-based.
 
 **Teammate quality (earlier costing, kept for the record).** Hamilton (McLaren 2000s) rates 59.8 below
 Räikkönen at 65.8 because Hamilton's comparisons are against Alonso and Kovalainen while
