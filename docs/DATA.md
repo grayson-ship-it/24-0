@@ -152,39 +152,69 @@ attrition and era dominance move underneath them.
 
 **Driver rating: teammate comparison.** Same works car, same race, same season.
 
-* race h2h: races where the driver and a teammate were both classified; ahead / (ahead +
-  behind). Ties and shared drives are dropped.
-* quali h2h: races where both have a qualifying classification (F1DB has one for every
-  race 1950-2025); ahead / (ahead + behind).
-* rating = mean of the two percentages (or the one that exists), 0-100. Blank when the
-  driver never had a works teammate in the window.
+* Counting is **per race**, not per teammate pair. A race with at least one comparison
+  contributes one unit of sample, and the driver's score for that race is the fraction of
+  compared teammates they beat (1.0 for ahead of both in a three-car team, 0.5 for ahead
+  of one). Per-pair W-L is still displayed. Reason: sample size should measure independent
+  evidence, and a three-car 1970 Lotus should not accumulate it faster than a two-car 2009
+  Brawn. It also keeps the prior below in race units for every era. (245 of 1015 pool
+  tenures include at least one three-or-more-car race.)
+* race component: races where the driver and a teammate were both classified. Ties and
+  shared drives are dropped.
+* quali component: races where both have a qualifying classification (F1DB has one for
+  every race 1950-2025).
+* **Shrinkage** (empirical Bayes): each component is pulled toward 50% by a prior worth
+  `RATING_PRIOR_RACES` races: (wins + k/2) / (n + k). With k = 10, Schumacher's 68-18
+  moves from 79.1% to 76.0%; Rindt's 4-1 moves from 80% to 60%. A method-of-moments fit
+  across all pool tenures (observed variance of win fractions minus binomial noise) implies
+  k of about 6-8 for races and 3-5 for qualifying, so k = 10 shrinks slightly more than the
+  data strictly requires. That is deliberate: the observed spread partly reflects teammate
+  quality (unweighted in v1), and an over-rated small sample is a drafting exploit while an
+  under-rated one is only a bargain.
+* rating = mean of the two shrunk components, 0-100.
+* **Floor:** the rating is suppressed (blank, with the W-L counts still shown) unless the
+  driver has at least `MIN_H2H_RACES` = 5 classified race comparisons. A qualifying-only
+  record is not a driver rating. Five is where a record can first establish a direction
+  (a 4-0 split happens one time in sixteen between equal drivers) and where the k = 10
+  prior already caps a perfect record at 66.7%. Cost of the floor, given the 3-start
+  backstop: about half of all pool tenures carry a rating; 75-99% from the 2000s on, but
+  only about a third before 1990, where finishing rates were low. Those drivers stay in the
+  pool with raw stats and no number. The simulation will need an explicit rule for unrated
+  drivers; that is a separate decision, not a statistic to fill in.
+* Outcome check on the two truncated seasons, both handled by the general rule: Senna
+  (Williams 1994, 3 starts, 0 classified) is suppressed. Rindt (Lotus 1970, 5 classified
+  comparisons, 4-1 races, unbeaten in 10 qualifying sessions) rates 67.5, level with
+  Andretti's 67.6 rather than the 90 he showed unshrunk; raising the floor to 6 would
+  suppress him too, at the cost of a further tenth of 1970s coverage.
+* Old definition (per-pair, unshrunk, no floor) is still printed beside the new one.
 
-This controls for the car by construction, which is what stops a driver pick and a car
-pick double-counting the same season. Limitations, documented not solved: (1) it does not
-weight the teammate's quality (beating Barrichello means more than beating a rookie; an
-Elo-style network over all teammate pairs is the rigorous fix, out of scope for v1);
-(2) small samples are shown as-is (Senna's 1994 Williams rating rests on three
-qualifying sessions and no classified race), so the W-L counts must be shown with the
-rating; (3) comparisons against non-pool teammates (fewer than 3 starts) still count.
+Limitations, documented not solved: (1) teammate quality is not weighted (an Elo-style
+network across all pairs is the rigorous fix, out of scope for v1); (2) comparisons
+against teammates who are themselves below the pool minimum still count.
 
 **Car rating: per season, driver-neutral, field-relative.**
 
 * points_share: works race points / all race points awarded that season (Indy excluded).
-  Uses per-race points, so dropped-score championship rules do not distort it.
-* share_vs_best: points_share / the best constructor's share that season, 0-100. The
-  best car of every season is 100. Recommended card rating.
-* pct_rank: share of that season's constructors (with a works start) the team out-scored,
-  0-100. Rank only, loses the size of the gap.
-* Raw context shown alongside: starts, wins, podiums, poles, average classified finish,
-  finish rate.
+  Per-race points, so dropped-score championship rules do not distort it.
+* The **field** for the measures below is the season's works teams with at least one
+  full-time car (works car-starts >= races in the season). Part-time entries do not pad
+  it: 1975 has 18 works constructors but a field of 10, and Lotus's 2.8% share moves from
+  the 65th percentile of all teams to the 33rd of the field.
+* x_avg: points_share / mean share of the field. 1.0 is an average team. Ferrari 2002 is
+  5.50, Brawn 2009 is 2.67, Lotus 1975 is 0.29.
+* z: (points_share - field mean) / field standard deviation. Ferrari 2002 is 2.84, Brawn
+  2009 is 2.01, Williams 1992 is 2.75, McLaren 2007 is 2.07. **Recommended card rating.**
+* pct_field: share of the field the team out-scored, 0-100. Saturates at 100 for every
+  season leader, so it is context, not the rating.
+* Old measures, still printed: share vs the season's best team (100 for every leader,
+  which is why it was replaced) and percentile over all works teams.
 
-Points share is still not fully era-neutral on its own (a 1-2 sweep is a larger share of
-a 9-6-4-3-2-1 scheme than of 25-18-15...), which is why the card rating is expressed
-against the season's best team. Full within-season normalization means a 95th-percentile
-1970s car and a 95th-percentile 2010s car come out equal; that is intentional and is
-what makes every spin viable. 1950s-60s works teams often ran three or four cars, which
-raises their share; the normalization against the best team (which did the same) absorbs
-most of that.
+Caveats: every measure's ceiling still depends slightly on era. A 1-2 sweep is a larger
+share of a 9-6-4-3-2-1 scheme than of 25-18-15-..., and the largest possible z in a field
+of n is sqrt(n-1) (3.0 for 10 teams, 3.6 for 14). Within-season normalization is
+intentional: it is what makes every spin viable. 1950s-60s works teams often ran three
+or four cars, which raises their share against two-car rivals in the same season.
 
 **Display rule.** Average finish and finish rate always appear together on a card, and a
-teammate rating always appears with its W-L counts.
+teammate rating always appears with its W-L counts and sample size, or as "unrated" with
+the counts when it is below the floor.

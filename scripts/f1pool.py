@@ -26,6 +26,8 @@ MIN_STARTS_PER_DRIVER = 3        # backstop after the works filter
 POOL_MIN_DRIVERS = 2             # playable floor
 POOL_MIN_CARS = 1
 WHEEL_WEIGHT_DRIVERS = 4         # combos at/above this get the higher wheel weight (not a gate)
+RATING_PRIOR_RACES = 10          # driver rating shrinkage: pseudo-races at 50% (data implies ~7; see docs)
+MIN_H2H_RACES = 5                # classified race comparisons needed before a driver rating is shown
 NOT_STARTED = ("DNS", "DNQ", "DNPQ", "DNP", "EX")
 
 # Works-entrant overrides for constructor-seasons where the name rule cannot decide.
