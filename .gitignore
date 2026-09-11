@@ -1,0 +1,7 @@
+# Raw F1DB data is fetched by scripts/fetch_data.sh (pinned release + checksum); not committed.
+data/f1db/*.db
+data/f1db/*.zip
+data/f1db/csv/
+__pycache__/
+*.pyc
+.DS_Store
