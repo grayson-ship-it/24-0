@@ -1,0 +1,1520 @@
+year,constructor_id,constructor,entrant_id,entrant_name,n_entrants,starts,is_works,rule
+1950,alfa-romeo,Alfa Romeo,alfa-romeo-spa,Alfa Romeo SpA,1,22,1,sole entrant
+1950,alta,Alta,geoffrey-crossley,Geoffrey Crossley,2,2,0,no match
+1950,alta,Alta,joe-kelly,Joe Kelly,2,1,0,no match
+1950,cooper,Cooper,horschell-racing-corporation,Horschell Racing Corporation,1,1,1,sole entrant
+1950,era,ERA,bob-gerard,Bob Gerard,4,2,1,name match
+1950,era,ERA,cuth-harrison,Cuth Harrison,4,3,0,no match
+1950,era,ERA,peter-walker,Peter Walker,4,2,0,no match
+1950,era,ERA,taso-mathieson,T.A.S.O. Mathieson,4,1,0,no match
+1950,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,3,11,1,name match
+1950,ferrari,Ferrari,peter-whitehead,Peter Whitehead,3,2,0,no match
+1950,ferrari,Ferrari,clemente-biondetti,Clemente Biondetti,3,1,0,no match
+1950,maserati,Maserati,officine-alfieri-maserati,Officine Alfieri Maserati,8,8,1,name match
+1950,maserati,Maserati,enrico-plate,Enrico Platé,8,8,0,no match
+1950,maserati,Maserati,scuderia-ambrosiana,Scuderia Ambrosiana,8,5,0,no match
+1950,maserati,Maserati,scuderia-achille-varzi,Scuderia Achille Varzi,8,4,0,no match
+1950,maserati,Maserati,scuderia-milano,Scuderia Milano,8,3,0,no match
+1950,maserati,Maserati,joe-fry,Joe Fry,8,2,0,no match
+1950,maserati,Maserati,antonio-branca,Antonio Branca,8,1,0,no match
+1950,maserati,Maserati,paul-pietsch,Paul Pietsch,8,1,0,no match
+1950,simca-gordini,Simca-Gordini,equipe-gordini,Equipe Gordini,1,5,1,override
+1950,talbot-lago,Talbot-Lago,automobiles-talbot-darracq,Automobiles Talbot-Darracq,10,14,1,override
+1950,talbot-lago,Talbot-Lago,ecurie-belge,Ecurie Belge,10,6,0,no match
+1950,talbot-lago,Talbot-Lago,philippe-etancelin,Philippe Étancelin,10,4,0,no match
+1950,talbot-lago,Talbot-Lago,ecurie-rosier,Ecurie Rosier,10,3,0,no match
+1950,talbot-lago,Talbot-Lago,pierre-levegh,Pierre Levegh,10,3,0,no match
+1950,talbot-lago,Talbot-Lago,ecurie-lutetia,Ecurie Lutetia,10,2,0,no match
+1950,talbot-lago,Talbot-Lago,raymond-sommer,Raymond Sommer,10,2,0,no match
+1950,talbot-lago,Talbot-Lago,charles-pozzi,Charles Pozzi,10,1,0,no match
+1950,talbot-lago,Talbot-Lago,ecurie-bleue,Ecurie Bleue,10,1,0,no match
+1950,talbot-lago,Talbot-Lago,guy-mairesse,Guy Mairesse,10,1,0,no match
+1951,alfa-romeo,Alfa Romeo,alfa-romeo-spa,Alfa Romeo SpA,1,30,1,sole entrant
+1951,alta,Alta,joe-kelly,Joe Kelly,1,1,1,sole entrant
+1951,brm,BRM,brm-ltd,BRM Ltd,1,2,1,sole entrant
+1951,era,ERA,bob-gerard,Bob Gerard,2,1,1,name match
+1951,era,ERA,brian-shawe-taylor,Brian Shawe-Taylor,2,1,0,no match
+1951,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,6,25,1,name match
+1951,ferrari,Ferrari,ecurie-espadon,Ecurie Espadon,6,2,0,no match
+1951,ferrari,Ferrari,ga-vandervell,G.A. Vandervell,6,2,0,no match
+1951,ferrari,Ferrari,peter-whitehead,Peter Whitehead,6,2,0,no match
+1951,ferrari,Ferrari,francisco-landi,Francisco Landi,6,1,0,no match
+1951,ferrari,Ferrari,graham-whitehead,Graham Whitehead,6,1,0,no match
+1951,hwm,HWM,hw-motors,HW Motors,1,2,1,override
+1951,maserati,Maserati,enrico-plate,Enrico Platé,7,5,0,no match
+1951,maserati,Maserati,scuderia-milano,Scuderia Milano,7,2,0,no match
+1951,maserati,Maserati,antonio-branca,Antonio Branca,7,1,0,no match
+1951,maserati,Maserati,john-james,John James,7,1,0,no match
+1951,maserati,Maserati,philip-fotheringham-parker,Philip Fotheringham-Parker,7,1,0,no match
+1951,maserati,Maserati,prince-bira,Prince Bira,7,1,0,no match
+1951,maserati,Maserati,scuderia-ambrosiana,Scuderia Ambrosiana,7,1,0,no match
+1951,osca,O.S.C.A.,osca-automobili,OSCA Automobili,1,1,1,sole entrant
+1951,simca-gordini,Simca-Gordini,equipe-gordini,Equipe Gordini,1,13,1,override
+1951,talbot-lago,Talbot-Lago,ecurie-rosier,Ecurie Rosier,10,14,0,no match
+1951,talbot-lago,Talbot-Lago,yves-giraud-cabantous,Yves Giraud-Cabantous,10,8,0,no match
+1951,talbot-lago,Talbot-Lago,ecurie-belge,Ecurie Belge,10,7,0,no match
+1951,talbot-lago,Talbot-Lago,philippe-etancelin,Philippe Étancelin,10,5,0,no match
+1951,talbot-lago,Talbot-Lago,ecurie-belgique,Ecurie Belgique,10,3,0,no match
+1951,talbot-lago,Talbot-Lago,pierre-levegh,Pierre Levegh,10,3,0,no match
+1951,talbot-lago,Talbot-Lago,duncan-hamilton,Duncan Hamilton,10,2,0,no match
+1951,talbot-lago,Talbot-Lago,eugene-chaboud,Eugène Chaboud,10,1,0,no match
+1951,talbot-lago,Talbot-Lago,georges-grignard,Georges Grignard,10,1,0,no match
+1951,talbot-lago,Talbot-Lago,jose-froilan-gonzalez,José Froilán González,10,1,0,no match
+1951,veritas,Veritas,peter-hirt,Peter Hirt,1,1,1,sole entrant
+1952,afm,AFM,afm,AFM,5,1,1,name match
+1952,afm,AFM,helmut-niedermayr,Helmut Niedermayr,5,1,0,no match
+1952,afm,AFM,willi-heeks,Willi Heeks,5,1,0,no match
+1952,afm,AFM,ludwig-fischer,Ludwig Fischer,5,0,0,no match
+1952,afm,AFM,willi-krakau,Willi Krakau,5,0,0,no match
+1952,alta,Alta,peter-whitehead,Peter Whitehead,1,2,1,sole entrant
+1952,aston-butterworth,Aston Butterworth,robin-montgomerie-charrington,Robin Montgomerie-Charrington,2,1,0,no match
+1952,aston-butterworth,Aston Butterworth,ws-aston,W.S. Aston,2,1,0,no match
+1952,balsa,Balsa,marcel-balsa,Marcel Balsa,1,1,1,sole entrant
+1952,cisitalia,Cisitalia,piero-dusio,Piero Dusio,1,0,1,sole entrant
+1952,connaught,Connaught,connaught-engineering,Connaught Engineering,2,7,1,name match
+1952,connaught,Connaught,ken-downing,Ken Downing,2,1,0,no match
+1952,cooper,Cooper,ecurie-richmond,Ecurie Richmond,5,8,0,no match
+1952,cooper,Cooper,leslie-d-hawthorn,Leslie D. Hawthorn,5,4,0,no match
+1952,cooper,Cooper,ahm-bryde,AHM Bryde,5,2,0,no match
+1952,cooper,Cooper,ecurie-ecosse,Ecurie Ecosse,5,1,0,no match
+1952,cooper,Cooper,scuderia-franera,Scuderia Franera,5,1,0,no match
+1952,era,ERA,english-racing-automobiles-ltd,English Racing Automobiles Ltd,1,3,1,sole entrant
+1952,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,7,24,1,name match
+1952,ferrari,Ferrari,ecurie-espadon,Ecurie Espadon,7,9,0,no match
+1952,ferrari,Ferrari,ecurie-rosier,Ecurie Rosier,7,4,0,no match
+1952,ferrari,Ferrari,ecurie-francorchamps,Ecurie Francorchamps,7,3,0,no match
+1952,ferrari,Ferrari,scuderia-marzotto,Scuderia Marzotto,7,3,0,no match
+1952,ferrari,Ferrari,g-caprara,G. Caprara,7,1,0,no match
+1952,ferrari,Ferrari,peter-whitehead,Peter Whitehead,7,1,0,no match
+1952,frazer-nash,Frazer-Nash,scuderia-franera,Scuderia Franera,2,3,0,no match
+1952,frazer-nash,Frazer-Nash,tony-crook,Tony Crook,2,1,0,no match
+1952,gordini,Gordini,equipe-gordini,Equipe Gordini,1,23,1,override
+1952,heck,Heck,ernst-klodwig,Ernst Klodwig,1,1,1,sole entrant
+1952,hwm,HWM,hw-motors,HW Motors,2,19,1,override
+1952,hwm,HWM,tony-gaze,Tony Gaze,2,3,0,no match
+1952,krakau,Krakau,willi-krakau,Willi Krakau,1,0,1,sole entrant
+1952,maserati,Maserati,officine-alfieri-maserati,Officine Alfieri Maserati,3,4,1,name match
+1952,maserati,Maserati,escuderia-bandeirantes,Escuderia Bandeirantes,3,12,0,no match
+1952,maserati,Maserati,enrico-plate,Enrico Platé,3,7,0,no match
+1952,nacke,Nacke,bernhard-nacke,Bernhard Nacke,1,1,1,sole entrant
+1952,osca,O.S.C.A.,elie-bayol,Élie Bayol,1,1,1,sole entrant
+1952,reif,Reif,rudolf-krause,Rudolf Krause,1,1,1,sole entrant
+1952,simca-gordini,Simca-Gordini,ecurie-belge,Ecurie Belge,4,3,0,no match
+1952,simca-gordini,Simca-Gordini,alfred-dattner,Alfred Dattner,4,1,0,no match
+1952,simca-gordini,Simca-Gordini,robert-obrien,Robert O'Brien,4,1,0,no match
+1952,simca-gordini,Simca-Gordini,vicomtesse-de-walckiers,Vicomtesse de Walckiers,4,0,0,no match
+1952,veritas,Veritas,toni-ulmen,Toni Ulmen,8,2,0,no match
+1952,veritas,Veritas,adolf-brudes,Adolf Brudes,8,1,0,no match
+1952,veritas,Veritas,arthur-legat,Arthur Legat,8,1,0,no match
+1952,veritas,Veritas,fritz-riess,Fritz Riess,8,1,0,no match
+1952,veritas,Veritas,hans-klenk,Hans Klenk,8,1,0,no match
+1952,veritas,Veritas,josef-peters,Josef Peters,8,1,0,no match
+1952,veritas,Veritas,motor-presse-verlag,Motor Presse Verlag,8,1,0,no match
+1952,veritas,Veritas,theo-helfrich,Theo Helfrich,8,1,0,no match
+1953,afm,AFM,hans-stuck,Hans Stuck,3,2,0,no match
+1953,afm,AFM,gunther-bechem,Günther Bechem,3,1,0,no match
+1953,afm,AFM,helmut-niedermayr,Helmut Niedermayr,3,1,0,no match
+1953,connaught,Connaught,connaught-engineering,Connaught Engineering,4,14,1,name match
+1953,connaught,Connaught,ecurie-belge,Ecurie Belge,4,5,0,no match
+1953,connaught,Connaught,ecurie-ecosse,Ecurie Ecosse,4,1,0,no match
+1953,connaught,Connaught,rrc-walker-racing-team,R.R.C. Walker Racing Team,4,1,0,no match
+1953,cooper,Cooper,cooper-car-company,Cooper Car Company,9,6,1,name match
+1953,cooper,Cooper,ken-wharton,Ken Wharton,9,5,0,no match
+1953,cooper,Cooper,bob-gerard,Bob Gerard,9,2,0,no match
+1953,cooper,Cooper,equipe-anglaise,Equipe Anglaise,9,2,0,no match
+1953,cooper,Cooper,atlantic-stable,Atlantic Stable,9,1,0,no match
+1953,cooper,Cooper,ecurie-ecosse,Ecurie Ecosse,9,1,0,no match
+1953,cooper,Cooper,rj-chase,R.J. Chase,9,1,0,no match
+1953,cooper,Cooper,rodney-nuckey,Rodney Nuckey,9,1,0,no match
+1953,cooper,Cooper,tony-crook,Tony Crook,9,1,0,no match
+1953,emw,EMW,rennkollektiv-emw,Rennkollektiv EMW,1,1,1,sole entrant
+1953,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,4,36,1,name match
+1953,ferrari,Ferrari,ecurie-rosier,Ecurie Rosier,4,7,0,no match
+1953,ferrari,Ferrari,ecurie-espadon,Ecurie Espadon,4,3,0,no match
+1953,ferrari,Ferrari,ecurie-francorchamps,Ecurie Francorchamps,4,2,0,no match
+1953,gordini,Gordini,equipe-gordini,Equipe Gordini,1,27,1,override
+1953,greifzu,Greifzu,dora-greifzu,Dora Greifzu,1,1,1,sole entrant
+1953,heck,Heck,ernst-klodwig,Ernst Klodwig,1,1,1,sole entrant
+1953,hwm,HWM,hw-motors,HW Motors,1,18,1,override
+1953,maserati,Maserati,officine-alfieri-maserati,Officine Alfieri Maserati,5,35,1,name match
+1953,maserati,Maserati,emmanuel-de-graffenried,Emmanuel de Graffenried,5,6,0,no match
+1953,maserati,Maserati,scuderia-milano,Scuderia Milano,5,2,0,no match
+1953,maserati,Maserati,enrico-plate,Enrico Platé,5,1,0,no match
+1953,maserati,Maserati,escuderia-bandeirantes,Escuderia Bandeirantes,5,1,0,no match
+1953,osca,O.S.C.A.,osca-automobili,OSCA Automobili,3,1,1,name match
+1953,osca,O.S.C.A.,louis-chiron,Louis Chiron,3,2,0,no match
+1953,osca,O.S.C.A.,elie-bayol,Élie Bayol,3,1,0,no match
+1953,simca-gordini,Simca-Gordini,equipe-gordini,Equipe Gordini,2,1,1,override
+1953,simca-gordini,Simca-Gordini,georges-berger,Georges Berger,2,1,0,no match
+1953,veritas,Veritas,arthur-legat,Arthur Legat,8,1,0,no match
+1953,veritas,Veritas,ernst-loof,Ernst Loof,8,1,0,no match
+1953,veritas,Veritas,erwin-bauer,Erwin Bauer,8,1,0,no match
+1953,veritas,Veritas,hans-herrmann,Hans Herrmann,8,1,0,no match
+1953,veritas,Veritas,oswald-karch,Oswald Karch,8,1,0,no match
+1953,veritas,Veritas,theo-helfrich,Theo Helfrich,8,1,0,no match
+1953,veritas,Veritas,willi-heeks,Willi Heeks,8,1,0,no match
+1953,veritas,Veritas,wolfgang-seidel,Wolfgang Seidel,8,1,0,no match
+1954,connaught,Connaught,bill-whitehouse,Bill Whitehouse,5,1,0,no match
+1954,connaught,Connaught,ecurie-ecosse,Ecurie Ecosse,5,1,0,no match
+1954,connaught,Connaught,leslie-marr,Leslie Marr,5,1,0,no match
+1954,connaught,Connaught,rrc-walker-racing-team,R.R.C. Walker Racing Team,5,1,0,no match
+1954,connaught,Connaught,sir-jeremy-boles,Sir Jeremy Boles,5,1,0,no match
+1954,cooper,Cooper,bob-gerard,Bob Gerard,5,1,0,no match
+1954,cooper,Cooper,ecurie-richmond,Ecurie Richmond,5,1,0,no match
+1954,cooper,Cooper,goulds-garage-bristol,Gould's Garage Bristol,5,1,0,no match
+1954,cooper,Cooper,peter-whitehead,Peter Whitehead,5,1,0,no match
+1954,cooper,Cooper,rj-chase,R.J. Chase,5,0,0,no match
+1954,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,4,32,1,name match
+1954,ferrari,Ferrari,ecurie-rosier,Ecurie Rosier,4,10,0,no match
+1954,ferrari,Ferrari,ecurie-francorchamps,Ecurie Francorchamps,4,3,0,no match
+1954,ferrari,Ferrari,scuderia-ambrosiana,Scuderia Ambrosiana,4,1,0,no match
+1954,gordini,Gordini,equipe-gordini,Equipe Gordini,2,24,1,override
+1954,gordini,Gordini,georges-berger,Georges Berger,2,1,0,no match
+1954,hwm,HWM,hw-motors,HW Motors,1,1,1,override
+1954,klenk,Klenk,hans-klenk,Hans Klenk,1,1,1,sole entrant
+1954,lancia,Lancia,scuderia-lancia,Scuderia Lancia,1,2,1,sole entrant
+1954,maserati,Maserati,officine-alfieri-maserati,Officine Alfieri Maserati,12,29,1,name match
+1954,maserati,Maserati,prince-bira,Prince Bira,12,6,0,no match
+1954,maserati,Maserati,harry-schell,Harry Schell,12,5,0,no match
+1954,maserati,Maserati,roberto-mieres,Roberto Mieres,12,5,0,no match
+1954,maserati,Maserati,owen-racing-organisation,Owen Racing Organisation,12,4,0,no match
+1954,maserati,Maserati,emmanuel-de-graffenried,Emmanuel de Graffenried,12,3,0,no match
+1954,maserati,Maserati,equipe-moss,Equipe Moss,12,3,0,no match
+1954,maserati,Maserati,gilby-engineering,Gilby Engineering,12,2,0,no match
+1954,maserati,Maserati,jorge-daponte,Jorge Daponte,12,2,0,no match
+1954,maserati,Maserati,ecurie-rosier,Ecurie Rosier,12,1,0,no match
+1954,maserati,Maserati,giovanni-de-riu,Giovanni de Riu,12,0,0,no match
+1954,maserati,Maserati,onofre-marimon,Onofre Marimón,12,0,0,no match
+1954,mercedes,Mercedes,daimler-benz-ag,Daimler Benz AG,1,18,1,override
+1954,vanwall,Vanwall,vandervell-products,Vandervell Products,1,2,1,override
+1955,arzani-volpini,Arzani-Volpini,scuderia-volpini,Scuderia Volpini,1,0,1,sole entrant
+1955,connaught,Connaught,connaught-engineering,Connaught Engineering,3,1,1,name match
+1955,connaught,Connaught,rrc-walker-racing-team,R.R.C. Walker Racing Team,3,2,0,no match
+1955,connaught,Connaught,leslie-marr,Leslie Marr,3,1,0,no match
+1955,cooper,Cooper,cooper-car-company,Cooper Car Company,1,1,1,sole entrant
+1955,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,2,26,1,name match
+1955,ferrari,Ferrari,equipe-nationale-belge,Equipe Nationale Belge,2,1,0,no match
+1955,gordini,Gordini,equipe-gordini,Equipe Gordini,1,15,1,override
+1955,hwm,HWM,en-whiteaway,E.N. Whiteaway,1,0,1,sole entrant
+1955,lancia,Lancia,scuderia-lancia,Scuderia Lancia,2,9,1,name match
+1955,lancia,Lancia,scuderia-ferrari,Scuderia Ferrari,2,0,0,no match
+1955,maserati,Maserati,officine-alfieri-maserati,Officine Alfieri Maserati,7,38,1,name match
+1955,maserati,Maserati,ecurie-rosier,Ecurie Rosier,7,3,0,no match
+1955,maserati,Maserati,stirling-moss-ltd,Stirling Moss Ltd,7,3,0,no match
+1955,maserati,Maserati,goulds-garage-bristol,Gould's Garage Bristol,7,2,0,no match
+1955,maserati,Maserati,alberto-uria,Alberto Uria,7,1,0,no match
+1955,maserati,Maserati,gilby-engineering,Gilby Engineering,7,1,0,no match
+1955,maserati,Maserati,owen-racing-organisation,Owen Racing Organisation,7,1,0,no match
+1955,mercedes,Mercedes,daimler-benz-ag,Daimler Benz AG,1,23,1,override
+1955,vanwall,Vanwall,vandervell-products,Vandervell Products,1,7,1,override
+1956,brm,BRM,owen-racing-organisation,Owen Racing Organisation,1,3,1,override
+1956,bugatti,Bugatti,automobiles-bugatti,Automobiles Bugatti,1,1,1,sole entrant
+1956,connaught,Connaught,connaught-engineering,Connaught Engineering,2,6,1,name match
+1956,connaught,Connaught,piero-scotti,Piero Scotti,2,1,0,no match
+1956,cooper,Cooper,bob-gerard,Bob Gerard,1,1,1,sole entrant
+1956,emeryson,Emeryson,emeryson-cars,Emeryson Cars,1,1,1,sole entrant
+1956,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,3,42,1,name match
+1956,ferrari,Ferrari,scuderia-centro-sud,Scuderia Centro Sud,3,1,0,no match
+1956,ferrari,Ferrari,giorgio-scarlatti,Giorgio Scarlatti,3,0,0,no match
+1956,gordini,Gordini,equipe-gordini,Equipe Gordini,1,14,1,override
+1956,maserati,Maserati,officine-alfieri-maserati,Officine Alfieri Maserati,13,36,1,name match
+1956,maserati,Maserati,ecurie-rosier,Ecurie Rosier,13,5,0,no match
+1956,maserati,Maserati,goulds-garage-bristol,Gould's Garage Bristol,13,4,0,no match
+1956,maserati,Maserati,luigi-piotti,Luigi Piotti,13,4,0,no match
+1956,maserati,Maserati,bruce-halford,Bruce Halford,13,3,0,no match
+1956,maserati,Maserati,gilby-engineering,Gilby Engineering,13,3,0,no match
+1956,maserati,Maserati,scuderia-centro-sud,Scuderia Centro Sud,13,3,0,no match
+1956,maserati,Maserati,alberto-uria,Alberto Uria,13,2,0,no match
+1956,maserati,Maserati,scuderia-guastalla,Scuderia Guastalla,13,2,0,no match
+1956,maserati,Maserati,andre-simon,André Simon,13,1,0,no match
+1956,maserati,Maserati,jack-brabham,Jack Brabham,13,1,0,no match
+1956,maserati,Maserati,ottorino-volonterio,Ottorino Volonterio,13,1,0,no match
+1956,maserati,Maserati,owen-racing-organisation,Owen Racing Organisation,13,1,0,no match
+1956,vanwall,Vanwall,vandervell-products,Vandervell Products,1,13,1,override
+1957,brm,BRM,owen-racing-organisation,Owen Racing Organisation,1,5,1,override
+1957,connaught,Connaught,connaught-engineering,Connaught Engineering,1,2,1,sole entrant
+1957,cooper,Cooper,cooper-car-company,Cooper Car Company,6,8,1,name match
+1957,cooper,Cooper,ridgeway-management,Ridgeway Management,6,2,0,no match
+1957,cooper,Cooper,rrc-walker-racing-team,R.R.C. Walker Racing Team,6,2,0,no match
+1957,cooper,Cooper,bob-gerard,Bob Gerard,6,1,0,no match
+1957,cooper,Cooper,dick-gibson,Dick Gibson,6,1,0,no match
+1957,cooper,Cooper,jb-naylor,J.B. Naylor,6,1,0,no match
+1957,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,2,31,1,name match
+1957,ferrari,Ferrari,scuderia-centro-sud,Scuderia Centro Sud,2,1,0,no match
+1957,maserati,Maserati,officine-alfieri-maserati,Officine Alfieri Maserati,9,30,1,name match
+1957,maserati,Maserati,scuderia-centro-sud,Scuderia Centro Sud,9,9,0,no match
+1957,maserati,Maserati,hh-gould,H.H. Gould,9,5,0,no match
+1957,maserati,Maserati,bruce-halford,Bruce Halford,9,3,0,no match
+1957,maserati,Maserati,francesco-godia-sales,Francesco Godia Sales,9,3,0,no match
+1957,maserati,Maserati,luigi-piotti,Luigi Piotti,9,3,0,no match
+1957,maserati,Maserati,ottorino-volonterio,Ottorino Volonterio,9,2,0,no match
+1957,maserati,Maserati,gilby-engineering,Gilby Engineering,9,1,0,no match
+1957,maserati,Maserati,jo-bonnier,Jo Bonnier,9,1,0,no match
+1957,porsche,Porsche,dr-ing-f-porsche-kg,Dr. Ing. F. Porsche KG,2,2,1,name match
+1957,porsche,Porsche,ecurie-maarsbergen,Ecurie Maarsbergen,2,1,0,no match
+1957,vanwall,Vanwall,vandervell-products,Vandervell Products,1,18,1,override
+1958,brm,BRM,owen-racing-organisation,Owen Racing Organisation,1,22,1,override
+1958,connaught,Connaught,bernie-c-ecclestone,Bernie C. Ecclestone,1,2,1,sole entrant
+1958,cooper,Cooper,cooper-car-company,Cooper Car Company,11,22,1,name match
+1958,cooper,Cooper,rrc-walker-racing-team,R.R.C. Walker Racing Team,11,9,0,no match
+1958,cooper,Cooper,andre-guelfi,André Guelfi,11,1,0,no match
+1958,cooper,Cooper,british-racing-partnership,British Racing Partnership,11,1,0,no match
+1958,cooper,Cooper,dick-gibson,Dick Gibson,11,1,0,no match
+1958,cooper,Cooper,ecurie-eperon-dor,Ecurie Eperon d'Or,11,1,0,no match
+1958,cooper,Cooper,high-efficiency-motors,High Efficiency Motors,11,1,0,no match
+1958,cooper,Cooper,jb-naylor,J.B. Naylor,11,1,0,no match
+1958,cooper,Cooper,robert-la-caze,Robert La Caze,11,1,0,no match
+1958,cooper,Cooper,scuderia-centro-sud,Scuderia Centro Sud,11,1,0,no match
+1958,cooper,Cooper,tony-marsh,Tony Marsh,11,1,0,no match
+1958,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,34,1,sole entrant
+1958,lotus,Lotus,team-lotus,Team Lotus,2,18,1,name match
+1958,lotus,Lotus,ecurie-demi-litre,Ecurie Demi Litre,2,1,0,no match
+1958,maserati,Maserati,scuderia-centro-sud,Scuderia Centro Sud,11,17,0,no match
+1958,maserati,Maserati,jo-bonnier,Jo Bonnier,11,10,0,no match
+1958,maserati,Maserati,francesco-godia-sales,Francesco Godia Sales,11,3,0,no match
+1958,maserati,Maserati,giorgio-scarlatti,Giorgio Scarlatti,11,3,0,no match
+1958,maserati,Maserati,temple-buell,Temple Buell,11,3,0,no match
+1958,maserati,Maserati,hh-gould,H.H. Gould,11,2,0,no match
+1958,maserati,Maserati,maria-teresa-de-filippis,Maria Teresa de Filippis,11,2,0,no match
+1958,maserati,Maserati,scuderia-sud-americana,Scuderia Sud Americana,11,2,0,no match
+1958,maserati,Maserati,juan-manuel-fangio,Juan Manuel Fangio,11,1,0,no match
+1958,maserati,Maserati,ken-kavanagh,Ken Kavanagh,11,1,0,no match
+1958,maserati,Maserati,andre-testut,André Testut,11,0,0,no match
+1958,osca,O.S.C.A.,osca-automobili,OSCA Automobili,1,0,1,sole entrant
+1958,porsche,Porsche,dr-ing-f-porsche-kg,Dr. Ing. F. Porsche KG,2,1,1,name match
+1958,porsche,Porsche,ecurie-maarsbergen,Ecurie Maarsbergen,2,2,0,no match
+1958,vanwall,Vanwall,vandervell-products,Vandervell Products,1,27,1,override
+1959,aston-martin,Aston Martin,david-brown-corporation,David Brown Corporation,1,8,1,sole entrant
+1959,behra-porsche,Behra-Porsche,dr-ing-f-porsche-kg,Dr. Ing. F. Porsche KG,2,0,0,no match
+1959,behra-porsche,Behra-Porsche,jean-behra,Jean Behra,2,0,0,no match
+1959,brm,BRM,owen-racing-organisation,Owen Racing Organisation,2,19,1,override
+1959,brm,BRM,british-racing-partnership,British Racing Partnership,2,3,0,no match
+1959,connaught,Connaught,connaught-cars-paul-emery,Connaught Cars-Paul Emery,1,1,1,sole entrant
+1959,cooper,Cooper,cooper-car-company,Cooper Car Company,15,22,1,name match
+1959,cooper,Cooper,rrc-walker-racing-team,R.R.C. Walker Racing Team,15,14,0,no match
+1959,cooper,Cooper,scuderia-centro-sud,Scuderia Centro Sud,15,8,0,no match
+1959,cooper,Cooper,high-efficiency-motors,High Efficiency Motors,15,5,0,no match
+1959,cooper,Cooper,alan-brown-equipe,Alan Brown Equipe,15,2,0,no match
+1959,cooper,Cooper,british-racing-partnership,British Racing Partnership,15,2,0,no match
+1959,cooper,Cooper,ecurie-bleue,Ecurie Bleue,15,1,0,no match
+1959,cooper,Cooper,osca-automobili,OSCA Automobili,15,1,0,no match
+1959,cooper,Cooper,rhh-parnell,R.H.H. Parnell,15,1,0,no match
+1959,cooper,Cooper,taylor-crawley-racing-team,Taylor-Crawley Racing Team,15,1,0,no match
+1959,cooper,Cooper,ace-garage-rotherham,Ace Garage Rotherham,15,0,0,no match
+1959,cooper,Cooper,equipe-nationale-belge,Equipe Nationale Belge,15,0,0,no match
+1959,cooper,Cooper,gilby-engineering,Gilby Engineering,15,0,0,no match
+1959,cooper,Cooper,jean-lucienbonnet,Jean Lucienbonnet,15,0,0,no match
+1959,cooper,Cooper,united-racing-stable,United Racing Stable,15,0,0,no match
+1959,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,29,1,sole entrant
+1959,fry,Fry,david-fry,David Fry,1,0,1,sole entrant
+1959,jbw,JBW,jb-naylor,J.B. Naylor,1,1,1,sole entrant
+1959,kurtis-kraft,Kurtis Kraft,leader-cards-inc,Leader Cards Inc.,1,1,1,sole entrant
+1959,lotus,Lotus,team-lotus,Team Lotus,4,15,1,name match
+1959,lotus,Lotus,dorchester-service-station,Dorchester Service Station,4,1,0,no match
+1959,lotus,Lotus,john-fisher,John Fisher,4,1,0,no match
+1959,lotus,Lotus,dennis-taylor,Dennis Taylor,4,0,0,no match
+1959,maserati,Maserati,scuderia-centro-sud,Scuderia Centro Sud,5,2,0,no match
+1959,maserati,Maserati,scuderia-ugolini,Scuderia Ugolini,5,2,0,no match
+1959,maserati,Maserati,ottorino-volonterio,Ottorino Volonterio,5,1,0,no match
+1959,maserati,Maserati,monte-carlo-auto-sport,Monte Carlo Auto Sport,5,0,0,no match
+1959,maserati,Maserati,phil-cade,Phil Cade,5,0,0,no match
+1959,porsche,Porsche,dr-ing-f-porsche-kg,Dr. Ing. F. Porsche KG,3,1,1,name match
+1959,porsche,Porsche,blanchard-automobile-co,Blanchard Automobile Co.,3,1,0,no match
+1959,porsche,Porsche,ecurie-maarsbergen,Ecurie Maarsbergen,3,1,0,no match
+1959,tec-mec,Tec-Mec,camoradi-usa,Camoradi USA,1,1,1,sole entrant
+1959,vanwall,Vanwall,vandervell-products,Vandervell Products,1,1,1,override
+1960,aston-martin,Aston Martin,david-brown-corporation,David Brown Corporation,1,2,1,sole entrant
+1960,behra-porsche,Behra-Porsche,camoradi-international,Camoradi International,1,2,1,sole entrant
+1960,brm,BRM,owen-racing-organisation,Owen Racing Organisation,1,23,1,override
+1960,cooper,Cooper,cooper-car-company,Cooper Car Company,17,18,1,name match
+1960,cooper,Cooper,yeoman-credit-racing-team,Yeoman Credit Racing Team,17,20,0,no match
+1960,cooper,Cooper,scuderia-centro-sud,Scuderia Centro Sud,17,15,0,no match
+1960,cooper,Cooper,scuderia-eugenio-castellotti,Scuderia Eugenio Castellotti,17,5,0,no match
+1960,cooper,Cooper,rrc-walker-racing-team,R.R.C. Walker Racing Team,17,3,0,no match
+1960,cooper,Cooper,fred-tuck-cars,Fred Tuck Cars,17,2,0,no match
+1960,cooper,Cooper,high-efficiency-motors,High Efficiency Motors,17,2,0,no match
+1960,cooper,Cooper,arthur-owen,Arthur Owen,17,1,0,no match
+1960,cooper,Cooper,ct-atkins,C.T. Atkins,17,1,0,no match
+1960,cooper,Cooper,ecurie-bleue,Ecurie Bleue,17,1,0,no match
+1960,cooper,Cooper,ecurie-maarsbergen,Ecurie Maarsbergen,17,1,0,no match
+1960,cooper,Cooper,equipe-nationale-belge,Equipe Nationale Belge,17,1,0,no match
+1960,cooper,Cooper,equipe-prideaux-dick-gibson,Equipe Prideaux/Dick Gibson,17,1,0,no match
+1960,cooper,Cooper,fred-armbruster,Fred Armbruster,17,1,0,no match
+1960,cooper,Cooper,gilby-engineering,Gilby Engineering,17,1,0,no match
+1960,cooper,Cooper,scuderia-colonia,Scuderia Colonia,17,1,0,no match
+1960,cooper,Cooper,wolfgang-seidel,Wolfgang Seidel,17,1,0,no match
+1960,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,24,1,sole entrant
+1960,jbw,JBW,jb-naylor,J.B. Naylor,1,3,1,sole entrant
+1960,lotus,Lotus,team-lotus,Team Lotus,5,24,1,name match
+1960,lotus,Lotus,rrc-walker-racing-team,R.R.C. Walker Racing Team,5,4,0,no match
+1960,lotus,Lotus,jim-hall,Jim Hall,5,1,0,no match
+1960,lotus,Lotus,robert-bodle-ltd,Robert Bodle Ltd,5,1,0,no match
+1960,lotus,Lotus,taylor-crawley-racing-team,Taylor-Crawley Racing Team,5,0,0,no match
+1960,maserati,Maserati,antonio-creus,Antonio Creus,7,1,0,no match
+1960,maserati,Maserati,ettore-chimeri,Ettore Chimeri,7,1,0,no match
+1960,maserati,Maserati,gino-munaron,Gino Munaron,7,1,0,no match
+1960,maserati,Maserati,giorgio-scarlatti,Giorgio Scarlatti,7,1,0,no match
+1960,maserati,Maserati,joe-lubin,Joe Lubin,7,1,0,no match
+1960,maserati,Maserati,nasif-estefano,Nasif Estéfano,7,1,0,no match
+1960,maserati,Maserati,hh-gould,H.H. Gould,7,0,0,no match
+1960,porsche,Porsche,dr-ing-f-porsche-kg,Dr. Ing. F. Porsche KG,1,2,1,sole entrant
+1960,scarab,Scarab,reventlow-automobiles-inc,Reventlow Automobiles Inc.,1,3,1,sole entrant
+1960,vanwall,Vanwall,vandervell-products,Vandervell Products,1,1,1,override
+1961,brm,BRM,owen-racing-organisation,Owen Racing Organisation,1,16,1,override
+1961,cooper,Cooper,cooper-car-company,Cooper Car Company,11,16,1,name match
+1961,cooper,Cooper,yeoman-credit-racing-team,Yeoman Credit Racing Team,11,13,0,no match
+1961,cooper,Cooper,hl-motors,H&L Motors,11,5,0,no match
+1961,cooper,Cooper,scuderia-centro-sud,Scuderia Centro Sud,11,5,0,no match
+1961,cooper,Cooper,scuderia-serenissima,Scuderia Serenissima,11,5,0,no match
+1961,cooper,Cooper,camoradi-international,Camoradi International,11,4,0,no match
+1961,cooper,Cooper,bernard-collomb,Bernard Collomb,11,2,0,no match
+1961,cooper,Cooper,fred-tuck-cars,Fred Tuck Cars,11,2,0,no match
+1961,cooper,Cooper,john-m-wyatt-iii,John M. Wyatt III,11,1,0,no match
+1961,cooper,Cooper,momo-corporation,Momo Corporation,11,1,0,no match
+1961,cooper,Cooper,pescara-racing-team,Pescara Racing Team,11,1,0,no match
+1961,de-tomaso,De Tomaso,isobele-de-tomaso,Isobele de Tomaso,3,1,1,name match
+1961,de-tomaso,De Tomaso,scuderia-serenissima,Scuderia Serenissima,3,2,0,no match
+1961,de-tomaso,De Tomaso,scuderia-settecolli,Scuderia Settecolli,3,1,0,no match
+1961,emeryson,Emeryson,equipe-nationale-belge,Equipe Nationale Belge,1,0,1,sole entrant
+1961,ferguson,Ferguson,rrc-walker-racing-team,R.R.C. Walker Racing Team,1,2,1,sole entrant
+1961,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,3,24,1,name match
+1961,ferrari,Ferrari,scuderia-santambroeus,Scuderia Sant'Ambroeus,3,2,0,no match
+1961,ferrari,Ferrari,fisa,FISA,3,1,0,no match
+1961,gilby,Gilby,gilby-engineering,Gilby Engineering,1,1,1,sole entrant
+1961,jbw,JBW,jb-naylor,J.B. Naylor,1,1,1,sole entrant
+1961,lotus,Lotus,team-lotus,Team Lotus,14,16,1,name match
+1961,lotus,Lotus,udt-laystall-racing-team,UDT Laystall Racing Team,14,10,0,no match
+1961,lotus,Lotus,rrc-walker-racing-team,R.R.C. Walker Racing Team,14,8,0,no match
+1961,lotus,Lotus,scuderia-colonia,Scuderia Colonia,14,5,0,no match
+1961,lotus,Lotus,gerry-ashmore,Gerry Ashmore,14,3,0,no match
+1961,lotus,Lotus,camoradi-international,Camoradi International,14,2,0,no match
+1961,lotus,Lotus,equipe-nationale-belge,Equipe Nationale Belge,14,2,0,no match
+1961,lotus,Lotus,louise-bryden-brown,Louise Bryden-Brown,14,2,0,no match
+1961,lotus,Lotus,tim-parnell,Tim Parnell,14,2,0,no match
+1961,lotus,Lotus,tony-marsh,Tony Marsh,14,2,0,no match
+1961,lotus,Lotus,gaetano-starrabba,Gaetano Starrabba,14,1,0,no match
+1961,lotus,Lotus,j-frank-harrison,J. Frank Harrison,14,1,0,no match
+1961,lotus,Lotus,j-wheeler-autosport,J. Wheeler Autosport,14,1,0,no match
+1961,lotus,Lotus,jim-hall,Jim Hall,14,1,0,no match
+1961,porsche,Porsche,porsche-system-engineering,Porsche System Engineering,2,18,1,name match
+1961,porsche,Porsche,ecurie-maarsbergen,Ecurie Maarsbergen,2,7,0,no match
+1962,brabham,Brabham,brabham-racing-organisation,Brabham Racing Organisation,1,3,1,sole entrant
+1962,brm,BRM,owen-racing-organisation,Owen Racing Organisation,2,19,1,override
+1962,brm,BRM,ecurie-galloise,Ecurie Galloise,2,0,0,no match
+1962,cooper,Cooper,cooper-car-company,Cooper Car Company,7,19,1,name match
+1962,cooper,Cooper,ecurie-galloise,Ecurie Galloise,7,4,0,no match
+1962,cooper,Cooper,anglo-american-equipe,Anglo-American Equipe,7,2,0,no match
+1962,cooper,Cooper,bernard-collomb,Bernard Collomb,7,1,0,no match
+1962,cooper,Cooper,hap-sharp,Hap Sharp,7,1,0,no match
+1962,cooper,Cooper,john-love,John Love,7,1,0,no match
+1962,cooper,Cooper,mike-harris,Mike Harris,7,1,0,no match
+1962,de-tomaso,De Tomaso,scuderia-de-tomaso,Scuderia de Tomaso,2,0,1,name match
+1962,de-tomaso,De Tomaso,scuderia-settecolli,Scuderia Settecolli,2,0,0,no match
+1962,emeryson,Emeryson,emeryson-cars,Emeryson Cars,2,2,1,name match
+1962,emeryson,Emeryson,ecurie-maarsbergen,Ecurie Maarsbergen,2,1,0,no match
+1962,enb,ENB,equipe-nationale-belge,Equipe Nationale Belge,1,1,1,sole entrant
+1962,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,20,1,sole entrant
+1962,gilby,Gilby,gilby-engineering,Gilby Engineering,1,1,1,sole entrant
+1962,lds,LDS,otelle-nucci,Otelle Nucci,1,1,1,sole entrant
+1962,lola,Lola,bowmaker-yeoman-racing-team,Bowmaker-Yeoman Racing Team,1,16,1,sole entrant
+1962,lotus,Lotus,team-lotus,Team Lotus,19,18,1,name match
+1962,lotus,Lotus,udt-laystall-racing-team,UDT Laystall Racing Team,19,14,0,no match
+1962,lotus,Lotus,rrc-walker-racing-team,R.R.C. Walker Racing Team,19,6,0,no match
+1962,lotus,Lotus,brabham-racing-organisation,Brabham Racing Organisation,19,5,0,no match
+1962,lotus,Lotus,ecurie-filipinetti,Ecurie Filipinetti,19,4,0,no match
+1962,lotus,Lotus,autosport-team-wolfgang-seidel,Autosport Team Wolfgang Seidel,19,1,0,no match
+1962,lotus,Lotus,dupont-team-zerex,Dupont Team Zerex,19,1,0,no match
+1962,lotus,Lotus,ecurie-excelsior,Ecurie Excelsior,19,1,0,no match
+1962,lotus,Lotus,emeryson-cars,Emeryson Cars,19,1,0,no match
+1962,lotus,Lotus,equipe-nationale-belge,Equipe Nationale Belge,19,1,0,no match
+1962,lotus,Lotus,ernie-pieterse,Ernie Pieterse,19,1,0,no match
+1962,lotus,Lotus,john-dalton,John Dalton,19,1,0,no match
+1962,lotus,Lotus,john-mecom,John Mecom,19,1,0,no match
+1962,lotus,Lotus,neville-lederle,Neville Lederle,19,1,0,no match
+1962,lotus,Lotus,scuderia-sss-republica-di-venezia,Scuderia SSS Republica di Venezia,19,1,0,no match
+1962,lotus,Lotus,ecurie-nationale-suisse,Ecurie Nationale Suisse,19,0,0,no match
+1962,lotus,Lotus,gerry-ashmore,Gerry Ashmore,19,0,0,no match
+1962,lotus,Lotus,jim-hall,Jim Hall,19,0,0,no match
+1962,lotus,Lotus,scuderia-jolly-club,Scuderia Jolly Club,19,0,0,no match
+1962,porsche,Porsche,porsche-system-engineering,Porsche System Engineering,4,14,1,name match
+1962,porsche,Porsche,ecurie-maarsbergen,Ecurie Maarsbergen,4,9,0,no match
+1962,porsche,Porsche,ecurie-filipinetti,Ecurie Filipinetti,4,1,0,no match
+1962,porsche,Porsche,scuderia-sss-republica-di-venezia,Scuderia SSS Republica di Venezia,4,1,0,no match
+1963,alfa-special,Alfa Special,otelle-nucci,Otelle Nucci,1,1,1,sole entrant
+1963,ats,ATS,automobili-turismo-e-sport,Automobili Turismo e Sport,1,10,1,sole entrant
+1963,brabham,Brabham,brabham-racing-organisation,Brabham Racing Organisation,2,19,1,name match
+1963,brabham,Brabham,david-prophet,David Prophet,2,1,0,no match
+1963,brm,BRM,owen-racing-organisation,Owen Racing Organisation,2,20,1,override
+1963,brm,BRM,scuderia-centro-sud,Scuderia Centro Sud,2,5,0,no match
+1963,brp,BRP,british-racing-partnership,British Racing Partnership,1,5,1,sole entrant
+1963,cooper,Cooper,cooper-car-company,Cooper Car Company,6,20,1,name match
+1963,cooper,Cooper,rrc-walker-racing-team,R.R.C. Walker Racing Team,6,10,0,no match
+1963,cooper,Cooper,john-love,John Love,6,1,0,no match
+1963,cooper,Cooper,scuderia-centro-sud,Scuderia Centro Sud,6,1,0,no match
+1963,cooper,Cooper,scuderia-lupini,Scuderia Lupini,6,1,0,no match
+1963,cooper,Cooper,frank-dochnal,Frank Dochnal,6,0,0,no match
+1963,de-tomaso,De Tomaso,scuderia-settecolli,Scuderia Settecolli,1,0,1,sole entrant
+1963,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,18,1,sole entrant
+1963,gilby,Gilby,ian-raby-racing,Ian Raby Racing,1,1,1,sole entrant
+1963,lds,LDS,otelle-nucci,Otelle Nucci,2,1,0,no match
+1963,lds,LDS,sam-tingle,Sam Tingle,2,1,0,no match
+1963,lola,Lola,reg-parnell-racing,Reg Parnell Racing,3,10,0,no match
+1963,lola,Lola,dw-racing-enterprises,DW Racing Enterprises,3,2,0,no match
+1963,lola,Lola,tim-parnell,Tim Parnell,3,1,0,no match
+1963,lotus,Lotus,team-lotus,Team Lotus,13,22,1,name match
+1963,lotus,Lotus,british-racing-partnership,British Racing Partnership,13,11,0,no match
+1963,lotus,Lotus,siffert-racing-team,Siffert Racing Team,13,9,0,no match
+1963,lotus,Lotus,reg-parnell-racing,Reg Parnell Racing,13,7,0,no match
+1963,lotus,Lotus,tim-parnell,Tim Parnell,13,2,0,no match
+1963,lotus,Lotus,bernard-collomb,Bernard Collomb,13,1,0,no match
+1963,lotus,Lotus,brabham-racing-organisation,Brabham Racing Organisation,13,1,0,no match
+1963,lotus,Lotus,ecurie-filipinetti,Ecurie Filipinetti,13,1,0,no match
+1963,lotus,Lotus,lawson-organisation,Lawson Organisation,13,1,0,no match
+1963,lotus,Lotus,ted-lanfear,Ted Lanfear,13,1,0,no match
+1963,lotus,Lotus,andre-pilette,André Pilette,13,0,0,no match
+1963,lotus,Lotus,kurt-kuhnke,Kurt Kuhnke,13,0,0,no match
+1963,lotus,Lotus,selby-auto-spares,Selby Auto Spares,13,0,0,no match
+1963,porsche,Porsche,ecurie-maarsbergen,Ecurie Maarsbergen,1,9,1,sole entrant
+1963,scirocco,Scirocco,scirocco-powell-racing-cars,Scirocco Powell Racing Cars,1,6,1,sole entrant
+1963,stebro,Stebro,canadian-stebro-racing,Canadian Stebro Racing,1,1,1,sole entrant
+1964,brabham,Brabham,brabham-racing-organisation,Brabham Racing Organisation,6,20,1,name match
+1964,brabham,Brabham,rrc-walker-racing-team,R.R.C. Walker Racing Team,6,13,0,no match
+1964,brabham,Brabham,dw-racing-enterprises,DW Racing Enterprises,6,7,0,no match
+1964,brabham,Brabham,siffert-racing-team,Siffert Racing Team,6,7,0,no match
+1964,brabham,Brabham,ian-raby-racing,Ian Raby Racing,6,1,0,no match
+1964,brabham,Brabham,john-willment-automobiles,John Willment Automobiles,6,1,0,no match
+1964,brm,BRM,owen-racing-organisation,Owen Racing Organisation,3,20,1,override
+1964,brm,BRM,scuderia-centro-sud,Scuderia Centro Sud,3,9,0,no match
+1964,brm,BRM,maurice-trintignant,Maurice Trintignant,3,4,0,no match
+1964,brp,BRP,british-racing-partnership,British Racing Partnership,1,13,1,sole entrant
+1964,cooper,Cooper,cooper-car-company,Cooper Car Company,4,19,1,name match
+1964,cooper,Cooper,rrc-walker-racing-team,R.R.C. Walker Racing Team,4,2,0,no match
+1964,cooper,Cooper,bob-gerard-racing,Bob Gerard Racing,4,1,0,no match
+1964,cooper,Cooper,fabre-urbain,Fabre Urbain,4,0,0,no match
+1964,derrington-francis,Derrington-Francis,derrington-francis-racing-team,Derrington-Francis Racing Team,1,1,1,sole entrant
+1964,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,2,17,1,name match
+1964,ferrari,Ferrari,north-american-racing-team,North American Racing Team,2,5,1,override
+1964,honda,Honda,honda-rd-company,Honda R&D Company,1,3,1,sole entrant
+1964,lotus,Lotus,team-lotus,Team Lotus,6,25,1,name match
+1964,lotus,Lotus,reg-parnell-racing,Reg Parnell Racing,6,19,0,no match
+1964,lotus,Lotus,revson-racing,Revson Racing,6,2,0,no match
+1964,lotus,Lotus,british-racing-partnership,British Racing Partnership,6,1,0,no match
+1964,lotus,Lotus,siffert-racing-team,Siffert Racing Team,6,1,0,no match
+1964,lotus,Lotus,bernard-collomb,Bernard Collomb,6,0,0,no match
+1964,porsche,Porsche,ecurie-maarsbergen,Ecurie Maarsbergen,1,1,1,sole entrant
+1964,scirocco,Scirocco,equipe-scirocco-belge,Equipe Scirocco Belge,1,1,1,sole entrant
+1965,alfa-special,Alfa Special,otelle-nucci,Otelle Nucci,1,1,1,sole entrant
+1965,brabham,Brabham,brabham-racing-organisation,Brabham Racing Organisation,6,22,1,name match
+1965,brabham,Brabham,rrc-walker-racing-team,R.R.C. Walker Racing Team,6,20,0,no match
+1965,brabham,Brabham,john-willment-automobiles,John Willment Automobiles,6,8,0,no match
+1965,brabham,Brabham,dw-racing-enterprises,DW Racing Enterprises,6,5,0,no match
+1965,brabham,Brabham,david-prophet,David Prophet,6,1,0,no match
+1965,brabham,Brabham,ian-raby-racing,Ian Raby Racing,6,1,0,no match
+1965,brm,BRM,owen-racing-organisation,Owen Racing Organisation,2,20,1,override
+1965,brm,BRM,scuderia-centro-sud,Scuderia Centro Sud,2,7,0,no match
+1965,cooper,Cooper,cooper-car-company,Cooper Car Company,4,19,1,name match
+1965,cooper,Cooper,bob-gerard-racing,Bob Gerard Racing,4,1,0,no match
+1965,cooper,Cooper,john-love,John Love,4,1,0,no match
+1965,cooper,Cooper,trevor-blokdyk,Trevor Blokdyk,4,0,0,no match
+1965,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,2,19,1,name match
+1965,ferrari,Ferrari,north-american-racing-team,North American Racing Team,2,3,1,override
+1965,honda,Honda,honda-rd-company,Honda R&D Company,1,14,1,sole entrant
+1965,lds,LDS,sam-tingle,Sam Tingle,3,1,0,no match
+1965,lds,LDS,jackie-pretorius,Jackie Pretorius,3,0,0,no match
+1965,lds,LDS,otelle-nucci,Otelle Nucci,3,0,0,no match
+1965,lotus,Lotus,team-lotus,Team Lotus,9,22,1,name match
+1965,lotus,Lotus,reg-parnell-racing,Reg Parnell Racing,9,19,0,no match
+1965,lotus,Lotus,dw-racing-enterprises,DW Racing Enterprises,9,2,0,no match
+1965,lotus,Lotus,brian-gubby,Brian Gubby,9,0,0,no match
+1965,lotus,Lotus,clive-puzey-motors,Clive Puzey Motors,9,0,0,no match
+1965,lotus,Lotus,ecurie-tomahawk,Ecurie Tomahawk,9,0,0,no match
+1965,lotus,Lotus,lawson-organisation,Lawson Organisation,9,0,0,no match
+1965,lotus,Lotus,scuderia-scribante,Scuderia Scribante,9,0,0,no match
+1965,lotus,Lotus,ted-lanfear,Ted Lanfear,9,0,0,no match
+1966,brabham,Brabham,brabham-racing-organisation,Brabham Racing Organisation,9,19,1,name match
+1966,brabham,Brabham,dw-racing-enterprises,DW Racing Enterprises,9,6,0,no match
+1966,brabham,Brabham,david-bridges,David Bridges,9,4,0,no match
+1966,brabham,Brabham,anglo-suisse-racing-team,Anglo-Suisse Racing Team,9,2,0,no match
+1966,brabham,Brabham,roy-winkelmann-racing,Roy Winkelmann Racing,9,2,0,no match
+1966,brabham,Brabham,caltex-racing-team,Caltex Racing Team,9,1,0,no match
+1966,brabham,Brabham,rrc-walker-racing-team,R.R.C. Walker Racing Team,9,1,0,no match
+1966,brabham,Brabham,chris-amon-racing,Chris Amon Racing,9,0,0,no match
+1966,brabham,Brabham,silvio-moser,Silvio Moser,9,0,0,no match
+1966,brm,BRM,owen-racing-organisation,Owen Racing Organisation,3,17,1,override
+1966,brm,BRM,team-chamaco-collect,Team Chamaco Collect,3,5,0,no match
+1966,brm,BRM,bernard-white-racing,Bernard White Racing,3,2,0,no match
+1966,cooper,Cooper,cooper-car-company,Cooper Car Company,5,20,1,name match
+1966,cooper,Cooper,anglo-suisse-racing-team,Anglo-Suisse Racing Team,5,7,0,no match
+1966,cooper,Cooper,rrc-walker-racing-team,R.R.C. Walker Racing Team,5,7,0,no match
+1966,cooper,Cooper,guy-ligier,Guy Ligier,5,5,0,no match
+1966,cooper,Cooper,ja-pearce-engineering-ltd,J.A. Pearce Engineering Ltd,5,2,0,no match
+1966,eagle,Eagle,anglo-american-racers,Anglo American Racers,1,10,1,override
+1966,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,2,15,1,name match
+1966,ferrari,Ferrari,reg-parnell-racing,Reg Parnell Racing,2,1,0,no match
+1966,honda,Honda,honda-rd-company,Honda R&D Company,1,5,1,sole entrant
+1966,lotus,Lotus,team-lotus,Team Lotus,3,21,1,name match
+1966,lotus,Lotus,reg-parnell-racing,Reg Parnell Racing,3,8,0,no match
+1966,lotus,Lotus,phil-hill,Phil Hill,3,0,0,no match
+1966,matra,Matra,matra-sports,Matra Sports,2,2,1,name match
+1966,matra,Matra,tyrrell-racing-organisation,Tyrrell Racing Organisation,2,2,0,no match
+1966,mclaren,McLaren,bruce-mclaren-motor-racing,Bruce McLaren Motor Racing,2,4,1,name match
+1966,mclaren,McLaren,phil-hill,Phil Hill,2,0,0,no match
+1966,shannon,Shannon,shannon-racing-cars,Shannon Racing Cars,1,1,1,sole entrant
+1967,brabham,Brabham,brabham-racing-organisation,Brabham Racing Organisation,7,22,1,name match
+1967,brabham,Brabham,dw-racing-enterprises,DW Racing Enterprises,7,5,0,no match
+1967,brabham,Brabham,guy-ligier,Guy Ligier,7,5,0,no match
+1967,brabham,Brabham,gerhard-mitter,Gerhard Mitter,7,1,0,no match
+1967,brabham,Brabham,luki-botha,Luki Botha,7,1,0,no match
+1967,brabham,Brabham,roy-winkelmann-racing,Roy Winkelmann Racing,7,1,0,no match
+1967,brabham,Brabham,scuderia-scribante,Scuderia Scribante,7,1,0,no match
+1967,brm,BRM,owen-racing-organisation,Owen Racing Organisation,3,22,1,override
+1967,brm,BRM,reg-parnell-racing,Reg Parnell Racing,3,9,0,no match
+1967,brm,BRM,bernard-white-racing,Bernard White Racing,3,2,0,no match
+1967,cooper,Cooper,cooper-car-company,Cooper Car Company,7,22,1,name match
+1967,cooper,Cooper,rob-walker-jack-durlacher-racing-team,Rob Walker/Jack Durlacher Racing Team,7,10,0,no match
+1967,cooper,Cooper,joakim-bonnier-racing-team,Joakim Bonnier Racing Team,7,8,0,no match
+1967,cooper,Cooper,guy-ligier,Guy Ligier,7,2,0,no match
+1967,cooper,Cooper,charles-vogele-racing,Charles Vögele Racing,7,1,0,no match
+1967,cooper,Cooper,john-love,John Love,7,1,0,no match
+1967,cooper,Cooper,tom-jones,Tom Jones,7,0,0,no match
+1967,eagle,Eagle,anglo-american-racers,Anglo American Racers,2,15,1,override
+1967,eagle,Eagle,castrol-oils-ltd,Castrol Oils Ltd,2,1,0,no match
+1967,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,16,1,sole entrant
+1967,honda,Honda,honda-racing,Honda Racing,1,9,1,sole entrant
+1967,lds,LDS,sam-tingle,Sam Tingle,1,1,1,sole entrant
+1967,lola,Lola,lola-cars,Lola Cars,3,1,1,name match
+1967,lola,Lola,bayerische-motoren-werke-ag,Bayerische Motoren Werke AG,3,1,0,no match
+1967,lola,Lola,david-bridges,David Bridges,3,0,0,no match
+1967,lotus,Lotus,team-lotus,Team Lotus,3,27,1,name match
+1967,lotus,Lotus,mike-fisher,Mike Fisher,3,2,0,no match
+1967,lotus,Lotus,reg-parnell-racing,Reg Parnell Racing,3,2,0,no match
+1967,matra,Matra,matra-sports,Matra Sports,3,3,1,name match
+1967,matra,Matra,ecurie-ford-france,Ecurie Ford-France,3,1,0,no match
+1967,matra,Matra,tyrrell-racing-organisation,Tyrrell Racing Organisation,3,1,0,no match
+1967,mclaren,McLaren,bruce-mclaren-motor-racing,Bruce McLaren Motor Racing,1,6,1,sole entrant
+1967,protos,Protos,ron-harris-racing-team,Ron Harris Racing Team,1,2,1,sole entrant
+1968,brabham,Brabham,brabham-racing-organisation,Brabham Racing Organisation,6,24,1,name match
+1968,brabham,Brabham,charles-vogele-racing,Charles Vögele Racing,6,2,0,no match
+1968,brabham,Brabham,caltex-racing-team,Caltex Racing Team,6,1,0,no match
+1968,brabham,Brabham,scuderia-scribante,Scuderia Scribante,6,1,0,no match
+1968,brabham,Brabham,team-gunston,Team Gunston,6,1,0,no match
+1968,brabham,Brabham,team-pretoria,Team Pretoria,6,1,0,no match
+1968,brm,BRM,owen-racing-organisation,Owen Racing Organisation,3,20,1,override
+1968,brm,BRM,reg-parnell-racing,Reg Parnell Racing,3,11,0,no match
+1968,brm,BRM,bernard-white-racing,Bernard White Racing,3,0,0,no match
+1968,cooper,Cooper,cooper-car-company,Cooper Car Company,4,22,1,name match
+1968,cooper,Cooper,joakim-bonnier-racing-team,Joakim Bonnier Racing Team,4,1,0,no match
+1968,cooper,Cooper,john-love,John Love,4,1,0,no match
+1968,cooper,Cooper,rob-walker-jack-durlacher-racing-team,Rob Walker/Jack Durlacher Racing Team,4,1,0,no match
+1968,eagle,Eagle,anglo-american-racers,Anglo American Racers,2,5,1,override
+1968,eagle,Eagle,castrol-oils-ltd,Castrol Oils Ltd,2,0,0,no match
+1968,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,23,1,sole entrant
+1968,honda,Honda,honda-racing,Honda Racing,2,14,1,name match
+1968,honda,Honda,joakim-bonnier-racing-team,Joakim Bonnier Racing Team,2,1,0,no match
+1968,lds,LDS,team-gunston,Team Gunston,1,1,1,sole entrant
+1968,lola,Lola,bayerische-motoren-werke-ag,Bayerische Motoren Werke AG,1,1,1,sole entrant
+1968,lotus,Lotus,team-lotus,Team Lotus,2,24,1,name match
+1968,lotus,Lotus,rob-walker-jack-durlacher-racing-team,Rob Walker/Jack Durlacher Racing Team,2,11,0,no match
+1968,matra,Matra,matra-international,Matra International,2,14,1,name match
+1968,matra,Matra,matra-sports,Matra Sports,2,14,1,name match
+1968,mclaren,McLaren,bruce-mclaren-motor-racing,Bruce McLaren Motor Racing,3,23,1,name match
+1968,mclaren,McLaren,joakim-bonnier-racing-team,Joakim Bonnier Racing Team,3,6,0,no match
+1968,mclaren,McLaren,anglo-american-racers,Anglo American Racers,3,3,0,no match
+1969,bmw,BMW,bayerische-motoren-werke-ag,Bayerische Motoren Werke AG,1,0,1,sole entrant
+1969,brabham,Brabham,motor-racing-developments,Motor Racing Developments,9,19,1,override
+1969,brabham,Brabham,frank-williams-racing-cars,Frank Williams Racing Cars,9,11,0,no match
+1969,brabham,Brabham,silvio-moser,Silvio Moser,9,7,0,no match
+1969,brabham,Brabham,ahrens-racing-team,Ahrens Racing Team,9,1,0,no match
+1969,brabham,Brabham,felday-engineering-ltd,Felday Engineering Ltd,9,1,0,no match
+1969,brabham,Brabham,jack-holme,Jack Holme,9,1,0,no match
+1969,brabham,Brabham,paul-seitz,Paul Seitz,9,1,0,no match
+1969,brabham,Brabham,squadra-tartaruga,Squadra Tartaruga,9,1,0,no match
+1969,brabham,Brabham,team-gunston,Team Gunston,9,1,0,no match
+1969,brm,BRM,owen-racing-organisation,Owen Racing Organisation,2,22,1,override
+1969,brm,BRM,reg-parnell-racing,Reg Parnell Racing,2,3,0,no match
+1969,cooper,Cooper,antique-automobiles,Antique Automobiles,1,1,1,sole entrant
+1969,eagle,Eagle,john-maryon,John Maryon,1,1,1,sole entrant
+1969,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,2,8,1,name match
+1969,ferrari,Ferrari,north-american-racing-team,North American Racing Team,2,3,1,override
+1969,lotus,Lotus,gold-leaf-team-lotus,Gold Leaf Team Lotus,6,29,1,name match
+1969,lotus,Lotus,rob-walker-jack-durlacher-racing-team,Rob Walker/Jack Durlacher Racing Team,6,11,0,no match
+1969,lotus,Lotus,pete-lovely-volkswagen-inc,Pete Lovely Volkswagen Inc.,6,3,0,no match
+1969,lotus,Lotus,ecurie-bonnier,Ecurie Bonnier,6,2,0,no match
+1969,lotus,Lotus,roy-winkelmann-racing,Roy Winkelmann Racing,6,1,0,no match
+1969,lotus,Lotus,team-gunston,Team Gunston,6,1,0,no match
+1969,matra,Matra,matra-international,Matra International,2,26,1,name match
+1969,matra,Matra,matra-sports,Matra Sports,2,1,1,name match
+1969,mclaren,McLaren,bruce-mclaren-motor-racing,Bruce McLaren Motor Racing,3,21,1,name match
+1969,mclaren,McLaren,antique-automobiles,Antique Automobiles,3,4,0,no match
+1969,mclaren,McLaren,team-lawson,Team Lawson,3,1,0,no match
+1969,tecno,Tecno,tecno-racing-team,Tecno Racing Team,1,1,1,sole entrant
+1970,bellasi,Bellasi,silvio-moser,Silvio Moser,1,1,1,sole entrant
+1970,brabham,Brabham,motor-racing-developments,Motor Racing Developments,5,13,1,override
+1970,brabham,Brabham,auto-motor-und-sport,Auto Motor und Sport,5,10,0,no match
+1970,brabham,Brabham,gus-hutchison,Gus Hutchison,5,1,0,no match
+1970,brabham,Brabham,team-gunston,Team Gunston,5,1,0,no match
+1970,brabham,Brabham,tom-wheatcroft-racing,Tom Wheatcroft Racing,5,1,0,no match
+1970,brm,BRM,yardley-team-brm,Yardley Team BRM,1,34,1,sole entrant
+1970,de-tomaso,De Tomaso,frank-williams-racing-cars,Frank Williams Racing Cars,1,8,1,sole entrant
+1970,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,25,1,sole entrant
+1970,lotus,Lotus,gold-leaf-team-lotus,Gold Leaf Team Lotus,7,23,1,name match
+1970,lotus,Lotus,garvey-team-lotus,Garvey Team Lotus,7,0,1,name match
+1970,lotus,Lotus,brooke-bond-oxo-racing-with-rob-walker,Brooke Bond Oxo Racing/Rob Walker,7,11,0,no match
+1970,lotus,Lotus,pete-lovely-volkswagen-inc,Pete Lovely Volkswagen Inc.,7,1,0,no match
+1970,lotus,Lotus,scuderia-scribante,Scuderia Scribante,7,1,0,no match
+1970,lotus,Lotus,team-gunston,Team Gunston,7,1,0,no match
+1970,lotus,Lotus,world-wide-racing,World Wide Racing,7,0,0,no match
+1970,march,March,march-engineering,March Engineering,5,25,1,name match
+1970,march,March,tyrrell-racing-organisation,Tyrrell Racing Organisation,5,21,0,no match
+1970,march,March,antique-automobiles-racing-team,Antique Automobiles Racing Team,5,9,0,no match
+1970,march,March,stp-corporation,STP Corporation,5,5,0,no match
+1970,march,March,hubert-hahne,Hubert Hahne,5,0,0,no match
+1970,matra,Matra,equipe-matra-elf,Équipe Matra Elf,1,26,1,sole entrant
+1970,mclaren,McLaren,bruce-mclaren-motor-racing,Bruce McLaren Motor Racing,3,28,1,name match
+1970,mclaren,McLaren,team-surtees,Team Surtees,3,4,0,no match
+1970,mclaren,McLaren,ecurie-bonnier,Ecurie Bonnier,3,1,0,no match
+1970,surtees,Surtees,team-surtees,Team Surtees,1,8,1,sole entrant
+1970,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,3,1,sole entrant
+1971,bellasi,Bellasi,jolly-club-of-switzerland,Jolly Club of Switzerland,1,1,1,sole entrant
+1971,brabham,Brabham,motor-racing-developments,Motor Racing Developments,4,21,1,override
+1971,brabham,Brabham,ecurie-evergreen,Ecurie Evergreen,4,1,0,no match
+1971,brabham,Brabham,scuderia-scribante,Scuderia Scribante,4,1,0,no match
+1971,brabham,Brabham,team-gunston,Team Gunston,4,1,0,no match
+1971,brm,BRM,yardley-team-brm,Yardley Team BRM,1,36,1,sole entrant
+1971,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,27,1,sole entrant
+1971,lotus,Lotus,gold-leaf-team-lotus,Gold Leaf Team Lotus,3,21,1,name match
+1971,lotus,Lotus,pete-lovely-volkswagen-inc,Pete Lovely Volkswagen Inc.,3,2,0,no match
+1971,lotus,Lotus,world-wide-racing,World Wide Racing,3,1,0,no match
+1971,march,March,stp-march-racing-team,STP March Racing Team,7,30,1,name match
+1971,march,March,frank-williams-racing-cars,Frank Williams Racing Cars,7,11,0,no match
+1971,march,March,clarke-mordaunt-guthrie-racing,Clarke-Mordaunt-Guthrie Racing,7,5,0,no match
+1971,march,March,gene-mason-racing,Gene Mason Racing,7,3,0,no match
+1971,march,March,jo-siffert-automobiles,Jo Siffert Automobiles,7,1,0,no match
+1971,march,March,shell-arnold-team,Shell Arnold Team,7,1,0,no match
+1971,march,March,team-gunston,Team Gunston,7,1,0,no match
+1971,matra,Matra,equipe-matra-sports,Équipe Matra Sports,1,17,1,sole entrant
+1971,mclaren,McLaren,bruce-mclaren-motor-racing,Bruce McLaren Motor Racing,3,20,1,name match
+1971,mclaren,McLaren,ecurie-bonnier,Ecurie Bonnier,3,3,0,no match
+1971,mclaren,McLaren,penske-white-racing,Penske-White Racing,3,2,0,no match
+1971,surtees,Surtees,brooke-bond-oxo-team-surtees,Brooke Bond Oxo Team Surtees,4,11,1,name match
+1971,surtees,Surtees,auto-motor-und-sport-team-surtees,Auto Motor und Sport Team Surtees,4,9,1,name match
+1971,surtees,Surtees,team-surtees,Team Surtees,4,5,1,name match
+1971,surtees,Surtees,stichting-autoraces-nederland,Stichting Autoraces Nederland,4,1,0,no match
+1971,tyrrell,Tyrrell,elf-team-tyrrell,Elf Team Tyrrell,1,23,1,sole entrant
+1972,brabham,Brabham,motor-racing-developments,Motor Racing Developments,2,32,1,override
+1972,brabham,Brabham,team-gunston,Team Gunston,2,0,0,no match
+1972,brm,BRM,marlboro-brm,Marlboro BRM,1,47,1,sole entrant
+1972,connew,Connew,darnval-connew-racing-team,Darnval Connew Racing Team,1,1,1,sole entrant
+1972,eifelland,Eifelland,team-eifelland-caravans,Team Eifelland Caravans,1,8,1,sole entrant
+1972,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,30,1,sole entrant
+1972,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,2,24,1,name match
+1972,lotus,Lotus,lucky-strike-racing,Lucky Strike Racing,2,3,0,no match
+1972,march,March,stp-march-racing-team,STP March Racing Team,4,24,1,name match
+1972,march,March,team-williams-motul,Team Williams Motul,4,19,0,no match
+1972,march,March,clarke-mordaunt-guthrie-racing,Clarke-Mordaunt-Guthrie Racing,4,9,0,no match
+1972,march,March,gene-mason-racing,Gene Mason Racing,4,2,0,no match
+1972,matra,Matra,equipe-matra-sports,Équipe Matra Sports,1,11,1,sole entrant
+1972,mclaren,McLaren,yardley-team-mclaren,Yardley Team McLaren,1,25,1,sole entrant
+1972,politoys,Politoys,team-williams-motul,Team Williams Motul,1,1,1,sole entrant
+1972,surtees,Surtees,brooke-bond-oxo-team-surtees,Brooke Bond Oxo Team Surtees,6,13,1,name match
+1972,surtees,Surtees,ceramica-pagnossin-team-surtees,Ceramica Pagnossin Team Surtees,6,12,1,name match
+1972,surtees,Surtees,team-surtees,Team Surtees,6,6,1,name match
+1972,surtees,Surtees,flame-out-team-surtees,Flame Out Team Surtees,6,4,1,name match
+1972,surtees,Surtees,champcarr-inc,Champcarr Inc.,6,1,0,no match
+1972,surtees,Surtees,team-gunston,Team Gunston,6,1,0,no match
+1972,tecno,Tecno,martini-racing,Martini Racing,1,6,1,sole entrant
+1972,tyrrell,Tyrrell,elf-team-tyrrell,Elf Team Tyrrell,1,25,1,sole entrant
+1973,brabham,Brabham,motor-racing-developments,Motor Racing Developments,3,30,1,override
+1973,brabham,Brabham,ceramica-pagnossin-mrd,Ceramica Pagnossin MRD,3,10,0,no match
+1973,brabham,Brabham,hexagon-of-highgate,Hexagon of Highgate,3,1,0,no match
+1973,brm,BRM,marlboro-brm,Marlboro BRM,1,44,1,sole entrant
+1973,ensign,Ensign,team-ensign,Team Ensign,1,6,1,sole entrant
+1973,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,19,1,sole entrant
+1973,iso-marlboro,Iso-Marlboro,frank-williams-racing-cars,Frank Williams Racing Cars,1,28,1,sole entrant
+1973,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,2,30,1,name match
+1973,lotus,Lotus,scribante-lucky-strike-racing,Scribante Lucky Strike Racing,2,1,0,no match
+1973,march,March,march-racing-team,March Racing Team,5,13,1,name match
+1973,march,March,clarke-mordaunt-guthrie-racing,Clarke-Mordaunt-Guthrie Racing,5,14,0,no match
+1973,march,March,hesketh-racing,Hesketh Racing,5,7,0,no match
+1973,march,March,lec-refrigeration-racing,LEC Refrigeration Racing,5,4,0,no match
+1973,march,March,team-pierre-robert,Team Pierre Robert,5,1,0,no match
+1973,mclaren,McLaren,yardley-team-mclaren,Yardley Team McLaren,1,35,1,sole entrant
+1973,shadow,Shadow,uop-shadow-racing,UOP Shadow Racing,2,26,1,name match
+1973,shadow,Shadow,embassy-racing,Embassy Racing,2,12,0,no match
+1973,surtees,Surtees,brooke-bond-oxo-team-surtees,Brooke Bond Oxo Team Surtees,3,30,1,name match
+1973,surtees,Surtees,team-surtees,Team Surtees,3,4,1,name match
+1973,surtees,Surtees,ceramica-pagnossin-team-surtees,Ceramica Pagnossin Team Surtees,3,1,1,name match
+1973,tecno,Tecno,martini-racing-team,Martini Racing Team,1,4,1,sole entrant
+1973,tyrrell,Tyrrell,elf-team-tyrrell,Elf Team Tyrrell,2,29,1,name match
+1973,tyrrell,Tyrrell,blignaut-lucky-strike-racing,Blignaut Lucky Strike Racing,2,1,0,no match
+1974,amon,Amon,dalton-amon-international,Dalton-Amon International,1,1,1,sole entrant
+1974,brabham,Brabham,motor-racing-developments,Motor Racing Developments,6,29,1,override
+1974,brabham,Brabham,john-goldie-racing-with-hexagon,John Goldie Racing with Hexagon,6,15,0,no match
+1974,brabham,Brabham,scuderia-finotto,Scuderia Finotto,6,1,0,no match
+1974,brabham,Brabham,team-canada-f1-racing,Team Canada F1 Racing,6,1,0,no match
+1974,brabham,Brabham,allied-polymer-group,Allied Polymer Group,6,0,0,no match
+1974,brabham,Brabham,the-chequered-flag,The Chequered Flag,6,0,0,no match
+1974,brm,BRM,motul-team-brm,Motul Team BRM,1,38,1,sole entrant
+1974,ensign,Ensign,team-ensign,Team Ensign,1,6,1,sole entrant
+1974,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,30,1,sole entrant
+1974,hesketh,Hesketh,hesketh-racing,Hesketh Racing,1,13,1,sole entrant
+1974,iso-marlboro,Iso-Marlboro,frank-williams-racing-cars,Frank Williams Racing Cars,1,22,1,sole entrant
+1974,lola,Lola,embassy-racing-with-graham-hill,Embassy Racing with Graham Hill,1,27,1,sole entrant
+1974,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,2,31,1,name match
+1974,lotus,Lotus,team-gunston,Team Gunston,2,2,0,no match
+1974,lyncar,Lyncar,pinch-plant-ltd,Pinch Plant Ltd,1,0,1,sole entrant
+1974,maki,Maki,maki-engineering,Maki Engineering,1,0,1,sole entrant
+1974,march,March,march-engineering,March Engineering,3,26,1,name match
+1974,march,March,hesketh-racing,Hesketh Racing,3,2,0,no match
+1974,march,March,dempster-international-racing-team,Dempster International Racing Team,3,0,0,no match
+1974,mclaren,McLaren,marlboro-team-texaco,Marlboro Team Texaco,3,30,1,override
+1974,mclaren,McLaren,yardley-team-mclaren,Yardley Team McLaren,3,15,1,name match
+1974,mclaren,McLaren,scribante-lucky-strike-racing,Scribante Lucky Strike Racing,3,1,0,no match
+1974,parnelli,Parnelli,vels-parnelli-jones-racing,Vel's Parnelli Jones Racing,1,2,1,sole entrant
+1974,penske,Penske,penske-cars,Penske Cars,1,2,1,sole entrant
+1974,shadow,Shadow,uop-shadow-racing,UOP Shadow Racing,1,28,1,sole entrant
+1974,surtees,Surtees,bang-olufsen-team-surtees,Bang & Olufsen Team Surtees,4,18,1,name match
+1974,surtees,Surtees,team-surtees,Team Surtees,4,3,1,name match
+1974,surtees,Surtees,memphis-international-team-surtees,Memphis International Team Surtees,4,1,1,name match
+1974,surtees,Surtees,aaw-racing-team,AAW Racing Team,4,1,0,no match
+1974,token,Token,token-racing,Token Racing,1,3,1,sole entrant
+1974,trojan,Trojan,trojan-tauranac-racing,Trojan-Tauranac Racing,1,6,1,sole entrant
+1974,tyrrell,Tyrrell,elf-team-tyrrell,Elf Team Tyrrell,2,30,1,name match
+1974,tyrrell,Tyrrell,blignaut-embassy-racing,Blignaut Embassy Racing,2,1,0,no match
+1975,brabham,Brabham,martini-racing,Martini Racing,1,28,1,override
+1975,brm,BRM,stanley-brm,Stanley BRM,1,10,1,sole entrant
+1975,ensign,Ensign,hb-bewaking-team-ensign,HB Bewaking Team Ensign,1,8,1,sole entrant
+1975,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,28,1,sole entrant
+1975,fittipaldi,Fittipaldi,copersucar-fittipaldi,Copersucar Fittipaldi,1,11,1,sole entrant
+1975,frank-williams-racing-cars,Frank Williams Racing Cars,frank-williams-racing-cars,Frank Williams Racing Cars,1,21,1,sole entrant
+1975,hesketh,Hesketh,hesketh-racing,Hesketh Racing,4,17,1,name match
+1975,hesketh,Hesketh,custom-made-harry-stiller-racing,Custom Made Harry Stiller Racing,4,4,0,no match
+1975,hesketh,Hesketh,warsteiner-brewery,Warsteiner Brewery,4,3,0,no match
+1975,hesketh,Hesketh,polar-caravans,Polar Caravans,4,1,0,no match
+1975,hill,Hill,embassy-racing-with-graham-hill,Embassy Racing with Graham Hill,1,19,1,sole entrant
+1975,lola,Lola,embassy-racing-with-graham-hill,Embassy Racing with Graham Hill,1,5,1,sole entrant
+1975,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,2,28,1,name match
+1975,lotus,Lotus,team-gunston,Team Gunston,2,2,0,no match
+1975,lyncar,Lyncar,pinch-plant-ltd,Pinch Plant Ltd,1,1,1,sole entrant
+1975,maki,Maki,maki-engineering,Maki Engineering,1,0,1,sole entrant
+1975,march,March,lavazza-march,Lavazza March,3,15,1,name match
+1975,march,March,beta-team-march,Beta Team March,3,14,1,name match
+1975,march,March,first-national-city-bank-team-penske,First National City Bank Team Penske,3,2,0,no match
+1975,mclaren,McLaren,marlboro-team-texaco,Marlboro Team Texaco,2,27,1,override
+1975,mclaren,McLaren,lucky-strike-racing,Lucky Strike Racing,2,1,0,no match
+1975,parnelli,Parnelli,vels-parnelli-jones-racing,Vel's Parnelli Jones Racing,1,12,1,sole entrant
+1975,penske,Penske,first-national-city-bank-team-penske,First National City Bank Team Penske,1,10,1,sole entrant
+1975,shadow,Shadow,uop-shadow-racing,UOP Shadow Racing,1,27,1,sole entrant
+1975,surtees,Surtees,matchbox-team-surtees,Matchbox Team Surtees,2,11,1,name match
+1975,surtees,Surtees,national-organs-team-surtees,National Organs Team Surtees,2,1,1,name match
+1975,tyrrell,Tyrrell,elf-team-tyrrell,Elf Team Tyrrell,2,30,1,name match
+1975,tyrrell,Tyrrell,lexington-racing,Lexington Racing,2,1,0,no match
+1976,boro,Boro,boro-racing,Boro Racing,1,5,1,sole entrant
+1976,brabham,Brabham,martini-racing,Martini Racing,2,33,1,override
+1976,brabham,Brabham,ram-racing,RAM Racing,2,6,0,no match
+1976,brm,BRM,stanley-brm,Stanley BRM,1,1,1,sole entrant
+1976,ensign,Ensign,team-ensign,Team Ensign,1,14,1,sole entrant
+1976,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,30,1,sole entrant
+1976,fittipaldi,Fittipaldi,copersucar-fittipaldi,Copersucar Fittipaldi,1,16,1,sole entrant
+1976,hesketh,Hesketh,hesketh-racing,Hesketh Racing,2,11,1,name match
+1976,hesketh,Hesketh,penthouse-rizla-racing-with-hesketh,Penthouse Rizla Racing with Hesketh,2,6,1,name match
+1976,kojima,Kojima,kojima-engineering,Kojima Engineering,1,1,1,sole entrant
+1976,ligier,Ligier,ligier-gitanes,Ligier Gitanes,1,16,1,sole entrant
+1976,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,1,30,1,sole entrant
+1976,maki,Maki,maki-engineering,Maki Engineering,1,0,1,sole entrant
+1976,march,March,march-engineering,March Engineering,4,31,1,name match
+1976,march,March,beta-team-march,Beta Team March,4,16,1,name match
+1976,march,March,ovoro-team-march,Ovoro Team March,4,5,1,name match
+1976,march,March,lavazza-march,Lavazza March,4,1,1,name match
+1976,mclaren,McLaren,marlboro-team-mclaren,Marlboro Team McLaren,1,32,1,sole entrant
+1976,parnelli,Parnelli,vels-parnelli-jones-racing,Vel's Parnelli Jones Racing,1,2,1,sole entrant
+1976,penske,Penske,first-national-city-bank-team-penske,First National City Bank Team Penske,2,16,1,name match
+1976,penske,Penske,fs-properties,F&S Properties,2,1,0,no match
+1976,shadow,Shadow,lucky-strike-shadow-racing,Lucky Strike Shadow Racing,3,16,1,name match
+1976,shadow,Shadow,tabatip-shadow-racing,Tabatip Shadow Racing,3,16,1,name match
+1976,shadow,Shadow,team-pr-reilly,Team P.R. Reilly,3,0,0,no match
+1976,surtees,Surtees,durex-team-surtees,Durex Team Surtees,4,14,1,name match
+1976,surtees,Surtees,team-surtees,Team Surtees,4,12,1,name match
+1976,surtees,Surtees,team-norev,Team Norev,4,7,0,no match
+1976,surtees,Surtees,shellsport-whiting,ShellSport Whiting,4,0,0,no match
+1976,tyrrell,Tyrrell,elf-team-tyrrell,Elf Team Tyrrell,5,32,1,name match
+1976,tyrrell,Tyrrell,scuderia-gulf-rondini,Scuderia Gulf Rondini,5,3,0,no match
+1976,tyrrell,Tyrrell,heros-racing,Heros Racing,5,1,0,no match
+1976,tyrrell,Tyrrell,lexington-racing,Lexington Racing,5,1,0,no match
+1976,tyrrell,Tyrrell,oasc-racing-team,ÖASC Racing Team,5,0,0,no match
+1976,wolf-williams,Wolf-Williams,wolf-williams-racing,Wolf-Williams Racing,2,19,1,name match
+1976,wolf-williams,Wolf-Williams,mapfre-williams,Mapfre-Williams,2,0,0,no match
+1977,apollon,Apollon,jolly-club-of-switzerland,Jolly Club of Switzerland,1,0,1,sole entrant
+1977,boro,Boro,hb-bewaking-alarmsystemen,HB Bewaking Alarmsystemen,1,1,1,sole entrant
+1977,brabham,Brabham,martini-racing,Martini Racing,1,34,1,override
+1977,brm,BRM,stanley-brm,Stanley BRM,1,2,1,sole entrant
+1977,ensign,Ensign,team-tissot-ensign-with-castrol,Team Tissot Ensign with Castrol,2,16,1,name match
+1977,ensign,Ensign,theodore-racing-hong-kong,Theodore Racing Hong Kong,2,7,0,no match
+1977,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,33,1,sole entrant
+1977,fittipaldi,Fittipaldi,fittipaldi-automotive,Fittipaldi Automotive,1,16,1,sole entrant
+1977,hesketh,Hesketh,hesketh-racing,Hesketh Racing,2,5,1,name match
+1977,hesketh,Hesketh,penthouse-rizla-racing,Penthouse Rizla Racing,2,12,0,no match
+1977,kojima,Kojima,kojima-engineering,Kojima Engineering,2,1,1,name match
+1977,kojima,Kojima,heros-racing-corporation,Heros Racing Corporation,2,1,0,no match
+1977,lec,LEC,lec-refrigeration-racing,LEC Refrigeration Racing,1,3,1,sole entrant
+1977,ligier,Ligier,ligier-gitanes,Ligier Gitanes,1,18,1,sole entrant
+1977,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,1,33,1,sole entrant
+1977,march,March,hollywood-march-racing,Hollywood March Racing,7,9,1,name match
+1977,march,March,team-rothmans-international,Team Rothmans International,7,15,0,no match
+1977,march,March,williams-grand-prix-engineering,Williams Grand Prix Engineering,7,8,0,no match
+1977,march,March,team-merzario,Team Merzario,7,4,0,no match
+1977,march,March,chesterfield-racing,Chesterfield Racing,7,3,0,no match
+1977,march,March,ram-racing-fs-properties,RAM Racing/F&S Properties,7,2,0,no match
+1977,march,March,british-formula-one-racing-team,British Formula One Racing Team,7,0,0,no match
+1977,mcguire,McGuire,brian-mcguire,Brian McGuire,1,0,1,sole entrant
+1977,mclaren,McLaren,marlboro-team-mclaren,Marlboro Team McLaren,3,36,1,name match
+1977,mclaren,McLaren,chesterfield-racing,Chesterfield Racing,3,8,0,no match
+1977,mclaren,McLaren,iberia-airlines,Iberia Airlines,3,2,0,no match
+1977,penske,Penske,ats-racing-team,ATS Racing Team,2,13,0,no match
+1977,penske,Penske,interscope-racing,Interscope Racing,2,2,0,no match
+1977,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,4,1,sole entrant
+1977,shadow,Shadow,ambrosio-shadow-racing,Ambrosio Shadow Racing,1,34,1,sole entrant
+1977,surtees,Surtees,beta-team-surtees,Beta Team Surtees,4,17,1,name match
+1977,surtees,Surtees,durex-team-surtees,Durex Team Surtees,4,9,1,name match
+1977,surtees,Surtees,team-surtees,Team Surtees,4,4,1,name match
+1977,surtees,Surtees,melchester-racing,Melchester Racing,4,0,0,no match
+1977,tyrrell,Tyrrell,first-national-city-elf-team-tyrrell,First National City Elf Team Tyrrell,2,34,1,name match
+1977,tyrrell,Tyrrell,meiritsu-racing-team,Meiritsu Racing Team,2,1,0,no match
+1977,wolf,Wolf,walter-wolf-racing,Walter Wolf Racing,1,17,1,sole entrant
+1978,arrows,Arrows,arrows-racing-team,Arrows Racing Team,1,23,1,sole entrant
+1978,ats-wheels,ATS,ats-racing-team,ATS Racing Team,1,19,1,sole entrant
+1978,brabham,Brabham,parmalat-racing-team,Parmalat Racing Team,1,33,1,sole entrant
+1978,ensign,Ensign,team-tissot-ensign,Team Tissot Ensign,3,14,1,name match
+1978,ensign,Ensign,sachs-racing,Sachs Racing,3,2,0,no match
+1978,ensign,Ensign,mario-deliotti-racing,Mario Deliotti Racing,3,0,0,no match
+1978,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,32,1,sole entrant
+1978,fittipaldi,Fittipaldi,fittipaldi-automotive,Fittipaldi Automotive,1,16,1,sole entrant
+1978,hesketh,Hesketh,olympus-cameras-with-hesketh-racing,Olympus Cameras with Hesketh Racing,1,1,1,sole entrant
+1978,ligier,Ligier,ligier-gitanes,Ligier Gitanes,1,16,1,sole entrant
+1978,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,2,32,1,name match
+1978,lotus,Lotus,team-rebaque,Team Rebaque,2,9,0,no match
+1978,march,March,patrick-neve,Patrick Nève,1,0,1,sole entrant
+1978,martini,Martini,automobiles-martini,Automobiles Martini,1,4,1,sole entrant
+1978,mclaren,McLaren,marlboro-team-mclaren,Marlboro Team McLaren,4,36,1,name match
+1978,mclaren,McLaren,liggett-group-with-bs-fabrications,Liggett Group with BS Fabrications,4,12,0,no match
+1978,mclaren,McLaren,centro-asegurador-f1,Centro Asegurador F1,4,0,0,no match
+1978,mclaren,McLaren,melchester-racing,Melchester Racing,4,0,0,no match
+1978,merzario,Merzario,team-merzario,Team Merzario,1,8,1,sole entrant
+1978,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,14,1,sole entrant
+1978,shadow,Shadow,villiger-shadow,Villiger Shadow,2,25,1,name match
+1978,shadow,Shadow,interscope-racing,Interscope Racing,2,0,0,no match
+1978,surtees,Surtees,beta-team-surtees,Beta Team Surtees,3,12,1,name match
+1978,surtees,Surtees,durex-team-surtees,Durex Team Surtees,3,6,1,name match
+1978,surtees,Surtees,team-surtees,Team Surtees,3,2,1,name match
+1978,theodore,Theodore,theodore-racing-hong-kong,Theodore Racing Hong Kong,2,1,1,name match
+1978,theodore,Theodore,theodore-racing,Theodore Racing,2,0,1,name match
+1978,tyrrell,Tyrrell,first-national-city-elf-team-tyrrell,First National City Elf Team Tyrrell,1,32,1,sole entrant
+1978,williams,Williams,williams-grand-prix-engineering,Williams Grand Prix Engineering,1,16,1,sole entrant
+1978,wolf,Wolf,walter-wolf-racing,Walter Wolf Racing,2,18,1,name match
+1978,wolf,Wolf,theodore-racing-hong-kong,Theodore Racing Hong Kong,2,3,0,no match
+1979,alfa-romeo,Alfa Romeo,autodelta,Autodelta,1,6,1,sole entrant
+1979,arrows,Arrows,warsteiner-arrows-racing-team,Warsteiner Arrows Racing Team,1,27,1,sole entrant
+1979,ats-wheels,ATS,ats-wheels,ATS Wheels,1,12,1,sole entrant
+1979,brabham,Brabham,parmalat-racing-team,Parmalat Racing Team,1,30,1,sole entrant
+1979,ensign,Ensign,team-ensign,Team Ensign,1,6,1,sole entrant
+1979,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,30,1,sole entrant
+1979,fittipaldi,Fittipaldi,fittipaldi-automotive,Fittipaldi Automotive,1,15,1,sole entrant
+1979,kauhsen,Kauhsen,willi-kauhsen-racing-team,Willi Kauhsen Racing Team,1,0,1,sole entrant
+1979,ligier,Ligier,ligier-gitanes,Ligier Gitanes,1,30,1,sole entrant
+1979,lotus,Lotus,martini-racing-team-lotus,Martini Racing Team Lotus,2,30,1,name match
+1979,lotus,Lotus,team-rebaque,Team Rebaque,2,9,0,no match
+1979,mclaren,McLaren,marlboro-team-mclaren,Marlboro Team McLaren,1,28,1,sole entrant
+1979,merzario,Merzario,team-merzario,Team Merzario,1,2,1,sole entrant
+1979,rebaque,Rebaque,team-rebaque,Team Rebaque,1,1,1,sole entrant
+1979,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,28,1,sole entrant
+1979,shadow,Shadow,interscope-shadow-racing,Interscope Shadow Racing,2,14,1,name match
+1979,shadow,Shadow,samson-shadow-racing,Samson Shadow Racing,2,12,1,name match
+1979,tyrrell,Tyrrell,candy-tyrrell-team,Candy Tyrrell Team,1,32,1,sole entrant
+1979,williams,Williams,albilad-saudia-racing-team,Albilad-Saudia Racing Team,1,30,1,sole entrant
+1979,wolf,Wolf,olympus-cameras-wolf-racing,Olympus Cameras Wolf Racing,1,14,1,sole entrant
+1980,alfa-romeo,Alfa Romeo,marlboro-team-alfa-romeo,Marlboro Team Alfa Romeo,1,26,1,sole entrant
+1980,arrows,Arrows,warsteiner-arrows-racing-team,Warsteiner Arrows Racing Team,1,25,1,sole entrant
+1980,ats-wheels,ATS,team-ats,Team ATS,1,12,1,sole entrant
+1980,brabham,Brabham,parmalat-racing-team,Parmalat Racing Team,1,27,1,sole entrant
+1980,ensign,Ensign,unipart-racing-team,Unipart Racing Team,1,9,1,sole entrant
+1980,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,27,1,sole entrant
+1980,fittipaldi,Fittipaldi,skol-fittipaldi-team,Skol Fittipaldi Team,1,25,1,sole entrant
+1980,ligier,Ligier,equipe-ligier-gitanes,Équipe Ligier Gitanes,1,28,1,sole entrant
+1980,lotus,Lotus,team-essex-lotus,Team Essex Lotus,1,30,1,sole entrant
+1980,mclaren,McLaren,marlboro-team-mclaren,Marlboro Team McLaren,1,24,1,sole entrant
+1980,osella,Osella,osella-racing-team,Osella Racing Team,1,10,1,sole entrant
+1980,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,27,1,sole entrant
+1980,shadow,Shadow,theodore-shadow,Theodore Shadow,1,1,1,sole entrant
+1980,tyrrell,Tyrrell,candy-tyrrell-team,Candy Tyrrell Team,1,29,1,sole entrant
+1980,williams,Williams,albilad-williams-racing-team,Albilad-Williams Racing Team,5,28,1,name match
+1980,williams,Williams,ram-penthouse-rizla-racing,RAM/Penthouse Rizla Racing,5,3,0,no match
+1980,williams,Williams,ram-williams-grand-prix-engineering,RAM/Williams Grand Prix Engineering,5,1,0,override
+1980,williams,Williams,brands-hatch-racing,Brands Hatch Racing,5,0,0,no match
+1980,williams,Williams,ram-rainbow-jeans-racing,RAM/Rainbow Jeans Racing,5,0,0,no match
+1981,alfa-romeo,Alfa Romeo,marlboro-team-alfa-romeo,Marlboro Team Alfa Romeo,1,30,1,sole entrant
+1981,arrows,Arrows,ragno-arrows-beta-racing-team,Ragno Arrows Beta Racing Team,1,24,1,sole entrant
+1981,ats-wheels,ATS,team-ats,Team ATS,1,9,1,sole entrant
+1981,brabham,Brabham,parmalat-racing-team,Parmalat Racing Team,1,29,1,sole entrant
+1981,ensign,Ensign,ensign-racing,Ensign Racing,1,14,1,sole entrant
+1981,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,30,1,sole entrant
+1981,fittipaldi,Fittipaldi,fittipaldi-automotive,Fittipaldi Automotive,1,14,1,sole entrant
+1981,ligier,Ligier,equipe-talbot-gitanes,Équipe Talbot Gitanes,1,28,1,sole entrant
+1981,lotus,Lotus,team-essex-lotus,Team Essex Lotus,1,27,1,sole entrant
+1981,march,March,march-grand-prix-team,March Grand Prix Team,1,9,1,sole entrant
+1981,mclaren,McLaren,marlboro-mclaren-international,Marlboro McLaren International,1,29,1,sole entrant
+1981,osella,Osella,denim-osella,Denim Osella,1,12,1,sole entrant
+1981,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,29,1,sole entrant
+1981,theodore,Theodore,theodore-racing-team,Theodore Racing Team,1,13,1,sole entrant
+1981,toleman,Toleman,candy-toleman-motorsport,Candy Toleman Motorsport,1,2,1,sole entrant
+1981,tyrrell,Tyrrell,tyrrell-racing-team,Tyrrell Racing Team,1,26,1,sole entrant
+1981,williams,Williams,albilad-williams-racing-team,Albilad-Williams Racing Team,1,30,1,sole entrant
+1982,alfa-romeo,Alfa Romeo,marlboro-team-alfa-romeo,Marlboro Team Alfa Romeo,1,32,1,sole entrant
+1982,arrows,Arrows,ragno-arrows,Ragno Arrows,1,24,1,sole entrant
+1982,ats-wheels,ATS,team-ats,Team ATS,1,26,1,sole entrant
+1982,brabham,Brabham,parmalat-racing-team,Parmalat Racing Team,1,29,1,sole entrant
+1982,ensign,Ensign,ensign-racing,Ensign Racing,1,8,1,sole entrant
+1982,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,22,1,sole entrant
+1982,fittipaldi,Fittipaldi,fittipaldi-automotive,Fittipaldi Automotive,1,9,1,sole entrant
+1982,ligier,Ligier,equipe-talbot-gitanes,Équipe Talbot Gitanes,1,29,1,sole entrant
+1982,lotus,Lotus,john-player-team-lotus,John Player Team Lotus,1,29,1,sole entrant
+1982,march,March,rothmans-march-grand-prix-team,Rothmans March Grand Prix Team,2,22,1,name match
+1982,march,March,lbt-team-march,LBT Team March,2,0,1,name match
+1982,mclaren,McLaren,marlboro-mclaren-international,Marlboro McLaren International,1,29,1,sole entrant
+1982,osella,Osella,osella-squadra-corse,Osella Squadra Corse,1,15,1,sole entrant
+1982,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,32,1,sole entrant
+1982,theodore,Theodore,theodore-racing-team,Theodore Racing Team,1,7,1,sole entrant
+1982,toleman,Toleman,candy-toleman-motorsport,Candy Toleman Motorsport,1,18,1,sole entrant
+1982,tyrrell,Tyrrell,team-tyrrell,Team Tyrrell,1,32,1,sole entrant
+1982,williams,Williams,tag-williams-team,TAG Williams Team,1,30,1,sole entrant
+1983,alfa-romeo,Alfa Romeo,marlboro-team-alfa-romeo,Marlboro Team Alfa Romeo,1,29,1,sole entrant
+1983,arrows,Arrows,arrows-racing-team,Arrows Racing Team,1,30,1,sole entrant
+1983,ats-wheels,ATS,team-ats,Team ATS,1,14,1,sole entrant
+1983,brabham,Brabham,fila-sport-brabham,Fila Sport Brabham,1,30,1,sole entrant
+1983,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,30,1,sole entrant
+1983,ligier,Ligier,equipe-ligier-gitanes,Équipe Ligier Gitanes,1,28,1,sole entrant
+1983,lotus,Lotus,john-player-special-team-lotus,John Player Special Team Lotus,1,30,1,sole entrant
+1983,mclaren,McLaren,marlboro-mclaren-international,Marlboro McLaren International,1,28,1,sole entrant
+1983,osella,Osella,kelemata-osella,Kelémata Osella,1,16,1,sole entrant
+1983,ram,RAM,ram-racing-team-march,RAM Racing Team March,1,3,1,sole entrant
+1983,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,30,1,sole entrant
+1983,spirit,Spirit,spirit-racing,Spirit Racing,1,6,1,sole entrant
+1983,theodore,Theodore,theodore-racing-team,Theodore Racing Team,1,22,1,sole entrant
+1983,toleman,Toleman,candy-toleman-motorsport,Candy Toleman Motorsport,1,29,1,sole entrant
+1983,tyrrell,Tyrrell,benetton-tyrrell-team,Benetton Tyrrell Team,1,30,1,sole entrant
+1983,williams,Williams,tag-williams-team,TAG Williams Team,1,29,1,sole entrant
+1984,alfa-romeo,Alfa Romeo,benetton-team-alfa-romeo,Benetton Team Alfa Romeo,1,31,1,sole entrant
+1984,arrows,Arrows,barclay-nordica-arrows-bmw,Barclay Nordica Arrows BMW,1,30,1,sole entrant
+1984,ats-wheels,ATS,team-ats,Team ATS,1,15,1,sole entrant
+1984,brabham,Brabham,mrd-international-brabham,MRD International Brabham,1,32,1,sole entrant
+1984,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,32,1,sole entrant
+1984,ligier,Ligier,ligier-loto,Ligier Loto,1,31,1,sole entrant
+1984,lotus,Lotus,john-player-special-team-lotus,John Player Special Team Lotus,1,32,1,sole entrant
+1984,mclaren,McLaren,marlboro-mclaren-tag-turbo,Marlboro McLaren TAG Turbo,1,32,1,sole entrant
+1984,osella,Osella,osella-squadra-corse,Osella Squadra Corse,1,22,1,sole entrant
+1984,ram,RAM,skoal-bandit-formula-1-team,Skoal Bandit Formula 1 Team,1,28,1,sole entrant
+1984,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,32,1,sole entrant
+1984,spirit,Spirit,spirit-racing,Spirit Racing,1,14,1,sole entrant
+1984,toleman,Toleman,toleman-group-motorsport,Toleman Group Motorsport,1,26,1,sole entrant
+1984,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,26,1,sole entrant
+1984,williams,Williams,williams-grand-prix-engineering,Williams Grand Prix Engineering,1,32,1,sole entrant
+1985,alfa-romeo,Alfa Romeo,benetton-team-alfa-romeo,Benetton Team Alfa Romeo,1,32,1,sole entrant
+1985,arrows,Arrows,barclay-arrows-bmw,Barclay Arrows BMW,1,32,1,sole entrant
+1985,brabham,Brabham,olivetti-racing,Olivetti Racing,1,30,1,sole entrant
+1985,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,32,1,sole entrant
+1985,ligier,Ligier,equipe-ligier,Équipe Ligier,1,29,1,sole entrant
+1985,lola,Lola,team-haas-usa-ltd,Team Haas USA Ltd,1,3,1,sole entrant
+1985,lotus,Lotus,john-player-special-team-lotus,John Player Special Team Lotus,1,32,1,sole entrant
+1985,mclaren,McLaren,marlboro-mclaren-tag-turbo,Marlboro McLaren TAG Turbo,1,31,1,sole entrant
+1985,minardi,Minardi,minardi-team,Minardi Team,1,14,1,sole entrant
+1985,osella,Osella,kelemata-osella,Kelémata Osella,1,12,1,sole entrant
+1985,ram,RAM,skoal-bandit-formula-1-team,Skoal Bandit Formula 1 Team,1,23,1,sole entrant
+1985,renault,Renault,equipe-renault-elf,Équipe Renault Elf,1,31,1,sole entrant
+1985,spirit,Spirit,spirit-enterprises-ltd,Spirit Enterprises Ltd,1,3,1,sole entrant
+1985,toleman,Toleman,toleman-group-motorsport,Toleman Group Motorsport,1,18,1,sole entrant
+1985,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,28,1,sole entrant
+1985,williams,Williams,canon-williams-honda-team,Canon Williams Honda Team,1,31,1,sole entrant
+1985,zakspeed,Zakspeed,west-zakspeed-racing,West Zakspeed Racing,1,9,1,sole entrant
+1986,ags,AGS,jolly-club-spa,Jolly Club SpA,1,2,1,sole entrant
+1986,arrows,Arrows,barclay-arrows-bmw,Barclay Arrows BMW,1,31,1,sole entrant
+1986,benetton,Benetton,benetton-formula,Benetton Formula,1,32,1,sole entrant
+1986,brabham,Brabham,olivetti-brabham,Olivetti Brabham,1,30,1,sole entrant
+1986,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,32,1,sole entrant
+1986,ligier,Ligier,equipe-ligier,Équipe Ligier,1,32,1,sole entrant
+1986,lola,Lola,team-haas-usa-ltd,Team Haas USA Ltd,1,30,1,sole entrant
+1986,lotus,Lotus,john-player-special-team-lotus,John Player Special Team Lotus,1,31,1,sole entrant
+1986,mclaren,McLaren,marlboro-mclaren-tag-turbo,Marlboro McLaren TAG Turbo,1,32,1,sole entrant
+1986,minardi,Minardi,minardi-team,Minardi Team,1,29,1,sole entrant
+1986,osella,Osella,osella-squadra-corse,Osella Squadra Corse,1,30,1,sole entrant
+1986,tyrrell,Tyrrell,data-general-team-tyrrell,Data General Team Tyrrell,1,32,1,sole entrant
+1986,williams,Williams,canon-williams-honda-team,Canon Williams Honda Team,1,32,1,sole entrant
+1986,zakspeed,Zakspeed,west-zakspeed-racing,West Zakspeed Racing,1,27,1,sole entrant
+1987,ags,AGS,el-charro-ags,El Charro AGS,1,13,1,sole entrant
+1987,arrows,Arrows,usfg-arrows-megatron,USF&G Arrows Megatron,1,32,1,sole entrant
+1987,benetton,Benetton,benetton-formula,Benetton Formula,1,32,1,sole entrant
+1987,brabham,Brabham,motor-racing-developments,Motor Racing Developments,1,32,1,override
+1987,coloni,Coloni,enzo-coloni-racing-car-system,Enzo Coloni Racing Car System,1,1,1,sole entrant
+1987,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,32,1,sole entrant
+1987,ligier,Ligier,ligier-loto,Ligier Loto,1,28,1,sole entrant
+1987,lola,Lola,larrousse-calmels,Larrousse Calmels,1,18,1,sole entrant
+1987,lotus,Lotus,camel-team-lotus-honda,Camel Team Lotus Honda,1,32,1,sole entrant
+1987,march,March,leyton-house-march-racing-team,Leyton House March Racing Team,1,15,1,sole entrant
+1987,mclaren,McLaren,marlboro-mclaren-tag-turbo,Marlboro McLaren TAG Turbo,1,32,1,sole entrant
+1987,minardi,Minardi,minardi-team,Minardi Team,1,31,1,sole entrant
+1987,osella,Osella,landis-gyr-osella,Landis & Gyr Osella,1,17,1,sole entrant
+1987,tyrrell,Tyrrell,data-general-team-tyrrell,Data General Team Tyrrell,1,32,1,sole entrant
+1987,williams,Williams,canon-williams-honda-team,Canon Williams Honda Team,1,30,1,sole entrant
+1987,zakspeed,Zakspeed,west-zakspeed-racing,West Zakspeed Racing,1,31,1,sole entrant
+1988,ags,AGS,ags,AGS,1,16,1,sole entrant
+1988,arrows,Arrows,arrows-grand-prix-international,Arrows Grand Prix International,1,32,1,sole entrant
+1988,benetton,Benetton,benetton-formula,Benetton Formula,1,32,1,sole entrant
+1988,coloni,Coloni,coloni,Coloni,1,8,1,sole entrant
+1988,dallara,Dallara,bms-scuderia-italia,BMS Scuderia Italia,1,14,1,sole entrant
+1988,eurobrun,EuroBrun,eurobrun-racing,EuroBrun Racing,1,18,1,sole entrant
+1988,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,32,1,sole entrant
+1988,ligier,Ligier,ligier-loto,Ligier Loto,1,24,1,sole entrant
+1988,lola,Lola,larrousse-calmels,Larrousse Calmels,1,30,1,sole entrant
+1988,lotus,Lotus,camel-team-lotus-honda,Camel Team Lotus Honda,1,30,1,sole entrant
+1988,march,March,leyton-house-march-racing-team,Leyton House March Racing Team,1,31,1,sole entrant
+1988,mclaren,McLaren,honda-marlboro-mclaren,Honda Marlboro McLaren,1,32,1,sole entrant
+1988,minardi,Minardi,lois-minardi-team,Lois Minardi Team,1,25,1,sole entrant
+1988,osella,Osella,osella-squadra-corse,Osella Squadra Corse,1,10,1,sole entrant
+1988,rial,Rial,rial-racing,Rial Racing,1,16,1,sole entrant
+1988,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,20,1,sole entrant
+1988,williams,Williams,canon-williams-team,Canon Williams Team,1,32,1,sole entrant
+1988,zakspeed,Zakspeed,west-zakspeed-racing,West Zakspeed Racing,1,14,1,sole entrant
+1989,ags,AGS,ags,AGS,1,6,1,sole entrant
+1989,arrows,Arrows,usfg-arrows-ford,USF&G Arrows Ford,1,30,1,sole entrant
+1989,benetton,Benetton,benetton-formula,Benetton Formula,1,31,1,sole entrant
+1989,brabham,Brabham,motor-racing-developments,Motor Racing Developments,1,29,1,override
+1989,coloni,Coloni,coloni,Coloni,1,5,1,sole entrant
+1989,dallara,Dallara,bms-scuderia-italia,BMS Scuderia Italia,1,29,1,sole entrant
+1989,eurobrun,EuroBrun,eurobrun-racing,EuroBrun Racing,1,0,1,sole entrant
+1989,ferrari,Ferrari,scuderia-ferrari-spa-sefac,Scuderia Ferrari SpA SEFAC,1,30,1,sole entrant
+1989,ligier,Ligier,ligier-loto,Ligier Loto,1,21,1,sole entrant
+1989,lola,Lola,team-larrousse,Team Larrousse,1,23,1,sole entrant
+1989,lotus,Lotus,camel-team-lotus,Camel Team Lotus,1,28,1,sole entrant
+1989,march,March,leyton-house-racing,Leyton House Racing,1,31,1,sole entrant
+1989,mclaren,McLaren,honda-marlboro-mclaren,Honda Marlboro McLaren,1,32,1,sole entrant
+1989,minardi,Minardi,lois-minardi-team,Lois Minardi Team,1,28,1,sole entrant
+1989,onyx,Onyx,moneytron-onyx-formula-one,Moneytron Onyx Formula One,1,15,1,sole entrant
+1989,osella,Osella,fondmetal-osella,Fondmetal Osella,1,11,1,sole entrant
+1989,rial,Rial,rial-racing,Rial Racing,1,4,1,sole entrant
+1989,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,29,1,sole entrant
+1989,williams,Williams,canon-williams-team,Canon Williams Team,1,32,1,sole entrant
+1989,zakspeed,Zakspeed,west-zakspeed-racing,West Zakspeed Racing,1,2,1,sole entrant
+1990,ags,AGS,ags,AGS,1,9,1,sole entrant
+1990,arrows,Arrows,footwork-arrows-racing,Footwork Arrows Racing,1,25,1,sole entrant
+1990,benetton,Benetton,benetton-formula,Benetton Formula,1,32,1,sole entrant
+1990,brabham,Brabham,motor-racing-developments,Motor Racing Developments,1,26,1,override
+1990,coloni,Coloni,coloni-racing,Coloni Racing,2,0,1,name match
+1990,coloni,Coloni,subaru-coloni-racing,Subaru Coloni Racing,2,0,1,name match
+1990,dallara,Dallara,bms-scuderia-italia,BMS Scuderia Italia,1,30,1,sole entrant
+1990,eurobrun,EuroBrun,eurobrun-racing,EuroBrun Racing,1,3,1,sole entrant
+1990,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,32,1,sole entrant
+1990,leyton-house,Leyton House,leyton-house-racing,Leyton House Racing,1,25,1,sole entrant
+1990,life,Life,life-racing-engines,Life Racing Engines,1,0,1,sole entrant
+1990,ligier,Ligier,ligier-gitanes,Ligier Gitanes,1,31,1,sole entrant
+1990,lola,Lola,espo-larrousse-f1,ESPO Larrousse F1,1,32,1,sole entrant
+1990,lotus,Lotus,camel-team-lotus,Camel Team Lotus,1,31,1,sole entrant
+1990,mclaren,McLaren,honda-marlboro-mclaren,Honda Marlboro McLaren,1,32,1,sole entrant
+1990,minardi,Minardi,scm-minardi-team,SCM Minardi Team,1,25,1,sole entrant
+1990,onyx,Onyx,monteverdi-onyx-formula-one,Monteverdi Onyx Formula One,1,10,1,sole entrant
+1990,osella,Osella,fondmetal-osella,Fondmetal Osella,1,9,1,sole entrant
+1990,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,30,1,sole entrant
+1990,williams,Williams,canon-williams-team,Canon Williams Team,1,32,1,sole entrant
+1991,ags,AGS,ags,AGS,1,3,1,sole entrant
+1991,benetton,Benetton,camel-benetton-ford,Camel Benetton Ford,1,32,1,sole entrant
+1991,brabham,Brabham,motor-racing-developments,Motor Racing Developments,1,28,1,override
+1991,coloni,Coloni,coloni-racing,Coloni Racing,1,0,1,sole entrant
+1991,dallara,Dallara,bms-scuderia-italia,BMS Scuderia Italia,1,29,1,sole entrant
+1991,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,31,1,sole entrant
+1991,fondmetal,Fondmetal,fondmetal,Fondmetal,1,6,1,sole entrant
+1991,footwork,Footwork,footwork-ford,Footwork Ford,2,7,1,name match
+1991,footwork,Footwork,footwork-porsche,Footwork Porsche,2,5,1,name match
+1991,jordan,Jordan,team-7up-jordan,Team 7Up Jordan,1,31,1,sole entrant
+1991,leyton-house,Leyton House,leyton-house-racing,Leyton House Racing,1,32,1,sole entrant
+1991,ligier,Ligier,ligier-gitanes,Ligier Gitanes,1,29,1,sole entrant
+1991,lola,Lola,larrousse-f1,Larrousse F1,1,25,1,sole entrant
+1991,lotus,Lotus,team-lotus,Team Lotus,1,23,1,sole entrant
+1991,mclaren,McLaren,honda-marlboro-mclaren,Honda Marlboro McLaren,1,32,1,sole entrant
+1991,minardi,Minardi,minardi-team,Minardi Team,1,32,1,sole entrant
+1991,modena,Modena,modena-team-spa,Modena Team SpA,1,6,1,sole entrant
+1991,tyrrell,Tyrrell,braun-tyrrell-honda,Braun Tyrrell Honda,1,32,1,sole entrant
+1991,williams,Williams,canon-williams,Canon Williams,1,32,1,sole entrant
+1992,andrea-moda,Andrea Moda,andrea-moda-formula,Andrea Moda Formula,1,1,1,sole entrant
+1992,benetton,Benetton,camel-benetton-ford,Camel Benetton Ford,1,32,1,sole entrant
+1992,brabham,Brabham,motor-racing-developments,Motor Racing Developments,1,3,1,override
+1992,dallara,Dallara,bms-scuderia-italia,BMS Scuderia Italia,1,31,1,sole entrant
+1992,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,32,1,sole entrant
+1992,fondmetal,Fondmetal,fondmetal,Fondmetal,1,19,1,sole entrant
+1992,footwork,Footwork,footwork-mugen-honda,Footwork Mugen Honda,1,30,1,sole entrant
+1992,jordan,Jordan,sasol-jordan-yamaha,Sasol Jordan Yamaha,1,28,1,sole entrant
+1992,ligier,Ligier,ligier-gitanes-blondes,Ligier Gitanes Blondes,1,31,1,sole entrant
+1992,lotus,Lotus,team-lotus,Team Lotus,1,31,1,sole entrant
+1992,march,March,march-f1,March F1,1,26,1,sole entrant
+1992,mclaren,McLaren,honda-marlboro-mclaren,Honda Marlboro McLaren,1,32,1,sole entrant
+1992,minardi,Minardi,minardi-team,Minardi Team,1,26,1,sole entrant
+1992,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,32,1,sole entrant
+1992,venturi,Venturi,central-park-venturi-larrousse,Central Park Venturi Larrousse,1,30,1,sole entrant
+1992,williams,Williams,canon-williams,Canon Williams,1,32,1,sole entrant
+1993,benetton,Benetton,camel-benetton-ford,Camel Benetton Ford,1,32,1,sole entrant
+1993,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,32,1,sole entrant
+1993,footwork,Footwork,footwork-mugen-honda,Footwork Mugen Honda,1,32,1,sole entrant
+1993,jordan,Jordan,sasol-jordan,Sasol Jordan,1,31,1,sole entrant
+1993,larrousse,Larrousse,larrousse-f1,Larrousse F1,1,32,1,sole entrant
+1993,ligier,Ligier,ligier-gitanes-blondes,Ligier Gitanes Blondes,1,32,1,sole entrant
+1993,lola,Lola,lola-bms-scuderia-italia,Lola BMS Scuderia Italia,1,21,1,sole entrant
+1993,lotus,Lotus,team-castrol-lotus,Team Castrol Lotus,1,31,1,sole entrant
+1993,mclaren,McLaren,marlboro-mclaren,Marlboro McLaren,1,32,1,sole entrant
+1993,minardi,Minardi,minardi-team,Minardi Team,1,32,1,sole entrant
+1993,sauber,Sauber,sauber,Sauber,1,32,1,sole entrant
+1993,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,32,1,sole entrant
+1993,williams,Williams,canon-williams,Canon Williams,1,32,1,sole entrant
+1994,benetton,Benetton,mild-seven-benetton-ford,Mild Seven Benetton Ford,1,32,1,sole entrant
+1994,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,32,1,sole entrant
+1994,footwork,Footwork,footwork-ford,Footwork Ford,1,32,1,sole entrant
+1994,jordan,Jordan,sasol-jordan,Sasol Jordan,1,31,1,sole entrant
+1994,larrousse,Larrousse,tourtel-larrousse-f1,Tourtel Larrousse F1,1,32,1,sole entrant
+1994,ligier,Ligier,ligier-gitanes-blondes,Ligier Gitanes Blondes,1,32,1,sole entrant
+1994,lotus,Lotus,team-lotus,Team Lotus,1,32,1,sole entrant
+1994,mclaren,McLaren,marlboro-mclaren-peugeot,Marlboro McLaren Peugeot,1,32,1,sole entrant
+1994,minardi,Minardi,minardi-scuderia-italia,Minardi Scuderia Italia,1,32,1,sole entrant
+1994,pacific,Pacific,pacific-grand-prix,Pacific Grand Prix,1,7,1,sole entrant
+1994,sauber,Sauber,broker-sauber-mercedes,Broker Sauber Mercedes,1,29,1,sole entrant
+1994,simtek,Simtek,mtv-simtek-ford,MTV Simtek Ford,1,27,1,sole entrant
+1994,tyrrell,Tyrrell,tyrrell-racing-organisation,Tyrrell Racing Organisation,1,32,1,sole entrant
+1994,williams,Williams,rothmans-williams-renault,Rothmans Williams Renault,1,31,1,sole entrant
+1995,benetton,Benetton,mild-seven-benetton-renault,Mild Seven Benetton Renault,1,34,1,sole entrant
+1995,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,34,1,sole entrant
+1995,footwork,Footwork,footwork-hart,Footwork Hart,1,34,1,sole entrant
+1995,forti,Forti,parmalat-forti-ford,Parmalat Forti Ford,1,33,1,sole entrant
+1995,jordan,Jordan,total-jordan-peugeot,Total Jordan Peugeot,1,34,1,sole entrant
+1995,ligier,Ligier,ligier-gitanes-blondes,Ligier Gitanes Blondes,1,33,1,sole entrant
+1995,mclaren,McLaren,marlboro-mclaren-mercedes,Marlboro McLaren Mercedes,1,33,1,sole entrant
+1995,minardi,Minardi,minardi-scuderia-italia,Minardi Scuderia Italia,1,31,1,sole entrant
+1995,pacific,Pacific,pacific-team-lotus,Pacific Team Lotus,1,32,1,sole entrant
+1995,sauber,Sauber,red-bull-sauber-ford,Red Bull Sauber Ford,1,34,1,sole entrant
+1995,simtek,Simtek,mtv-simtek-ford,MTV Simtek Ford,1,8,1,sole entrant
+1995,tyrrell,Tyrrell,nokia-tyrrell-yamaha,Nokia Tyrrell Yamaha,1,34,1,sole entrant
+1995,williams,Williams,rothmans-williams-renault,Rothmans Williams Renault,1,34,1,sole entrant
+1996,benetton,Benetton,mild-seven-benetton-renault,Mild Seven Benetton Renault,1,32,1,sole entrant
+1996,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,31,1,sole entrant
+1996,footwork,Footwork,footwork-hart,Footwork Hart,1,32,1,sole entrant
+1996,forti,Forti,forti-grand-prix,Forti Grand Prix,1,10,1,sole entrant
+1996,jordan,Jordan,benson-hedges-total-jordan-peugeot,Benson & Hedges Total Jordan Peugeot,1,32,1,sole entrant
+1996,ligier,Ligier,ligier-gauloises-blondes,Ligier Gauloises Blondes,1,32,1,sole entrant
+1996,mclaren,McLaren,marlboro-mclaren-mercedes,Marlboro McLaren Mercedes,1,32,1,sole entrant
+1996,minardi,Minardi,minardi-team,Minardi Team,1,29,1,sole entrant
+1996,sauber,Sauber,red-bull-sauber-ford,Red Bull Sauber Ford,1,31,1,sole entrant
+1996,tyrrell,Tyrrell,tyrrell-yamaha,Tyrrell Yamaha,1,32,1,sole entrant
+1996,williams,Williams,rothmans-williams-renault,Rothmans Williams Renault,1,32,1,sole entrant
+1997,arrows,Arrows,danka-arrows-yamaha,Danka Arrows Yamaha,1,33,1,sole entrant
+1997,benetton,Benetton,mild-seven-benetton-renault,Mild Seven Benetton Renault,1,34,1,sole entrant
+1997,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,34,1,sole entrant
+1997,jordan,Jordan,benson-hedges-jordan-peugeot,Benson & Hedges Jordan Peugeot,1,34,1,sole entrant
+1997,lola,Lola,mastercard-lola-f1-team,MasterCard Lola F1 Team,1,0,1,sole entrant
+1997,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,34,1,sole entrant
+1997,minardi,Minardi,minardi-team,Minardi Team,1,32,1,sole entrant
+1997,prost,Prost,prost-gauloises-blondes,Prost Gauloises Blondes,1,34,1,sole entrant
+1997,sauber,Sauber,red-bull-sauber-petronas,Red Bull Sauber Petronas,1,33,1,sole entrant
+1997,stewart,Stewart,hsbc-malaysia-stewart-ford,HSBC Malaysia Stewart Ford,1,33,1,sole entrant
+1997,tyrrell,Tyrrell,piaa-tyrrell-ford,PIAA Tyrrell Ford,1,34,1,sole entrant
+1997,williams,Williams,rothmans-williams-renault,Rothmans Williams Renault,1,34,1,sole entrant
+1998,arrows,Arrows,danka-zepter-arrows,Danka Zepter Arrows,1,31,1,sole entrant
+1998,benetton,Benetton,mild-seven-benetton-playlife,Mild Seven Benetton Playlife,1,32,1,sole entrant
+1998,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,32,1,sole entrant
+1998,jordan,Jordan,benson-hedges-jordan,Benson & Hedges Jordan,1,32,1,sole entrant
+1998,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,32,1,sole entrant
+1998,minardi,Minardi,fondmetal-minardi-team,Fondmetal Minardi Team,1,32,1,sole entrant
+1998,prost,Prost,gauloises-prost-peugeot,Gauloises Prost Peugeot,1,31,1,sole entrant
+1998,sauber,Sauber,red-bull-sauber-petronas,Red Bull Sauber Petronas,1,32,1,sole entrant
+1998,stewart,Stewart,hsbc-stewart-ford,HSBC Stewart Ford,1,31,1,sole entrant
+1998,tyrrell,Tyrrell,piaa-tyrrell,PIAA Tyrrell,1,26,1,sole entrant
+1998,williams,Williams,winfield-williams,Winfield Williams,1,32,1,sole entrant
+1999,arrows,Arrows,repsol-arrows,Repsol Arrows,1,32,1,sole entrant
+1999,bar,BAR,british-american-racing,British American Racing,1,31,1,sole entrant
+1999,benetton,Benetton,mild-seven-benetton-playlife,Mild Seven Benetton Playlife,1,32,1,sole entrant
+1999,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,31,1,sole entrant
+1999,jordan,Jordan,benson-hedges-jordan,Benson & Hedges Jordan,1,32,1,sole entrant
+1999,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,32,1,sole entrant
+1999,minardi,Minardi,fondmetal-minardi-team,Fondmetal Minardi Team,1,32,1,sole entrant
+1999,prost,Prost,gauloises-prost-peugeot,Gauloises Prost Peugeot,1,31,1,sole entrant
+1999,sauber,Sauber,red-bull-sauber-petronas,Red Bull Sauber Petronas,1,32,1,sole entrant
+1999,stewart,Stewart,hsbc-stewart-ford,HSBC Stewart Ford,1,31,1,sole entrant
+1999,williams,Williams,winfield-williams,Winfield Williams,1,32,1,sole entrant
+2000,arrows,Arrows,arrows-f1-team,Arrows F1 Team,1,33,1,sole entrant
+2000,bar,BAR,lucky-strike-reynard-bar-honda,Lucky Strike Reynard BAR Honda,1,34,1,sole entrant
+2000,benetton,Benetton,mild-seven-benetton-playlife,Mild Seven Benetton Playlife,1,34,1,sole entrant
+2000,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,34,1,sole entrant
+2000,jaguar,Jaguar,jaguar-racing-f1-team,Jaguar Racing F1 Team,1,34,1,sole entrant
+2000,jordan,Jordan,benson-hedges-jordan,Benson & Hedges Jordan,1,34,1,sole entrant
+2000,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,34,1,sole entrant
+2000,minardi,Minardi,telefonica-minardi-fondmetal,Telefónica Minardi Fondmetal,1,34,1,sole entrant
+2000,prost,Prost,gauloises-prost-peugeot,Gauloises Prost Peugeot,1,33,1,sole entrant
+2000,sauber,Sauber,red-bull-sauber-petronas,Red Bull Sauber Petronas,1,32,1,sole entrant
+2000,williams,Williams,bmw-williamsf1-team,BMW WilliamsF1 Team,1,34,1,sole entrant
+2001,arrows,Arrows,orange-arrows-asiatech,Orange Arrows Asiatech,1,34,1,sole entrant
+2001,bar,BAR,lucky-strike-bar-honda,Lucky Strike BAR Honda,1,34,1,sole entrant
+2001,benetton,Benetton,mild-seven-benetton-renault,Mild Seven Benetton Renault,1,34,1,sole entrant
+2001,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,34,1,sole entrant
+2001,jaguar,Jaguar,jaguar-racing-f1-team,Jaguar Racing F1 Team,1,34,1,sole entrant
+2001,jordan,Jordan,benson-hedges-jordan-honda,Benson & Hedges Jordan Honda,1,34,1,sole entrant
+2001,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,33,1,sole entrant
+2001,minardi,Minardi,european-minardi-f1,European Minardi F1,1,33,1,sole entrant
+2001,prost,Prost,prost-grand-prix,Prost Grand Prix,1,34,1,sole entrant
+2001,sauber,Sauber,red-bull-sauber-petronas,Red Bull Sauber Petronas,1,34,1,sole entrant
+2001,williams,Williams,bmw-williamsf1-team,BMW WilliamsF1 Team,1,34,1,sole entrant
+2002,arrows,Arrows,orange-arrows,Orange Arrows,1,22,1,sole entrant
+2002,bar,BAR,lucky-strike-bar-honda,Lucky Strike BAR Honda,1,34,1,sole entrant
+2002,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,32,1,sole entrant
+2002,jaguar,Jaguar,jaguar-racing-f1-team,Jaguar Racing F1 Team,1,34,1,sole entrant
+2002,jordan,Jordan,dhl-jordan-honda,DHL Jordan Honda,1,33,1,sole entrant
+2002,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,34,1,sole entrant
+2002,minardi,Minardi,kl-minardi-asiatech,KL Minardi Asiatech,1,29,1,sole entrant
+2002,renault,Renault,mild-seven-renault-f1-team,Mild Seven Renault F1 Team,1,34,1,sole entrant
+2002,sauber,Sauber,sauber-petronas,Sauber Petronas,1,34,1,sole entrant
+2002,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,33,1,sole entrant
+2002,williams,Williams,bmw-williamsf1-team,BMW WilliamsF1 Team,1,34,1,sole entrant
+2003,bar,BAR,lucky-strike-bar-honda,Lucky Strike BAR Honda,1,30,1,sole entrant
+2003,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,32,1,sole entrant
+2003,jaguar,Jaguar,jaguar-racing-f1-team,Jaguar Racing F1 Team,1,32,1,sole entrant
+2003,jordan,Jordan,benson-hedges-jordan-ford,Benson & Hedges Jordan Ford,1,32,1,sole entrant
+2003,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,32,1,sole entrant
+2003,minardi,Minardi,trust-minardi-cosworth,Trust Minardi Cosworth,1,32,1,sole entrant
+2003,renault,Renault,mild-seven-renault-f1-team,Mild Seven Renault F1 Team,1,32,1,sole entrant
+2003,sauber,Sauber,sauber-petronas,Sauber Petronas,1,31,1,sole entrant
+2003,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,32,1,sole entrant
+2003,williams,Williams,bmw-williamsf1-team,BMW WilliamsF1 Team,1,32,1,sole entrant
+2004,bar,BAR,lucky-strike-bar-honda,Lucky Strike BAR Honda,1,36,1,sole entrant
+2004,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,36,1,sole entrant
+2004,jaguar,Jaguar,jaguar-racing-f1-team,Jaguar Racing F1 Team,1,36,1,sole entrant
+2004,jordan,Jordan,jordan-ford,Jordan Ford,1,36,1,sole entrant
+2004,mclaren,McLaren,west-mclaren-mercedes,West McLaren Mercedes,1,36,1,sole entrant
+2004,minardi,Minardi,minardi-cosworth,Minardi Cosworth,1,36,1,sole entrant
+2004,renault,Renault,mild-seven-renault-f1-team,Mild Seven Renault F1 Team,1,36,1,sole entrant
+2004,sauber,Sauber,sauber-petronas,Sauber Petronas,1,36,1,sole entrant
+2004,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,36,1,sole entrant
+2004,williams,Williams,bmw-williamsf1-team,BMW WilliamsF1 Team,1,36,1,sole entrant
+2005,bar,BAR,lucky-strike-bar-honda,Lucky Strike BAR Honda,1,32,1,sole entrant
+2005,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,38,1,sole entrant
+2005,jordan,Jordan,jordan-grand-prix,Jordan Grand Prix,1,38,1,sole entrant
+2005,mclaren,McLaren,team-mclaren-mercedes,Team McLaren Mercedes,1,36,1,sole entrant
+2005,minardi,Minardi,minardi-f1-team,Minardi F1 Team,1,38,1,sole entrant
+2005,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,35,1,sole entrant
+2005,renault,Renault,mild-seven-renault-f1-team,Mild Seven Renault F1 Team,1,36,1,sole entrant
+2005,sauber,Sauber,sauber-petronas,Sauber Petronas,1,36,1,sole entrant
+2005,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,36,1,sole entrant
+2005,williams,Williams,bmw-williamsf1-team,BMW WilliamsF1 Team,1,36,1,sole entrant
+2006,bmw-sauber,BMW Sauber,bmw-sauber-f1-team,BMW Sauber F1 Team,1,36,1,sole entrant
+2006,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,36,1,sole entrant
+2006,honda,Honda,lucky-strike-honda-racing-f1-team,Lucky Strike Honda Racing F1 Team,1,36,1,sole entrant
+2006,mclaren,McLaren,team-mclaren-mercedes,Team McLaren Mercedes,1,36,1,sole entrant
+2006,midland,Midland,mf1-racing,MF1 Racing,1,36,1,sole entrant
+2006,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,36,1,sole entrant
+2006,renault,Renault,mild-seven-renault-f1-team,Mild Seven Renault F1 Team,1,36,1,sole entrant
+2006,super-aguri,Super Aguri,super-aguri-f1-team,Super Aguri F1 Team,1,36,1,sole entrant
+2006,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,36,1,sole entrant
+2006,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,36,1,sole entrant
+2006,williams,Williams,williams-f1-team,Williams F1 Team,1,36,1,sole entrant
+2007,bmw-sauber,BMW Sauber,bmw-sauber-f1-team,BMW Sauber F1 Team,1,34,1,sole entrant
+2007,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,34,1,sole entrant
+2007,honda,Honda,honda-racing-f1-team,Honda Racing F1 Team,1,34,1,sole entrant
+2007,mclaren,McLaren,vodafone-mclaren-mercedes,Vodafone McLaren Mercedes,1,34,1,sole entrant
+2007,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,34,1,sole entrant
+2007,renault,Renault,ing-renault-f1-team,ING Renault F1 Team,1,34,1,sole entrant
+2007,spyker,Spyker,etihad-aldar-spyker-f1-team,Etihad Aldar Spyker F1 Team,1,34,1,sole entrant
+2007,super-aguri,Super Aguri,super-aguri-f1-team,Super Aguri F1 Team,1,34,1,sole entrant
+2007,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,34,1,sole entrant
+2007,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,34,1,sole entrant
+2007,williams,Williams,att-williams,AT&T Williams,1,34,1,sole entrant
+2008,bmw-sauber,BMW Sauber,bmw-sauber-f1-team,BMW Sauber F1 Team,1,36,1,sole entrant
+2008,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,36,1,sole entrant
+2008,force-india,Force India,force-india-f1-team,Force India F1 Team,1,36,1,sole entrant
+2008,honda,Honda,honda-racing-f1-team,Honda Racing F1 Team,1,36,1,sole entrant
+2008,mclaren,McLaren,vodafone-mclaren-mercedes,Vodafone McLaren Mercedes,1,36,1,sole entrant
+2008,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,36,1,sole entrant
+2008,renault,Renault,ing-renault-f1-team,ING Renault F1 Team,1,36,1,sole entrant
+2008,super-aguri,Super Aguri,super-aguri-f1-team,Super Aguri F1 Team,1,8,1,sole entrant
+2008,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,36,1,sole entrant
+2008,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,36,1,sole entrant
+2008,williams,Williams,att-williams,AT&T Williams,1,36,1,sole entrant
+2009,bmw-sauber,BMW Sauber,bmw-sauber-f1-team,BMW Sauber F1 Team,1,34,1,sole entrant
+2009,brawn,Brawn,brawn-gp-formula-1-team,Brawn GP Formula 1 Team,1,34,1,sole entrant
+2009,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,33,1,sole entrant
+2009,force-india,Force India,force-india-f1-team,Force India F1 Team,1,34,1,sole entrant
+2009,mclaren,McLaren,vodafone-mclaren-mercedes,Vodafone McLaren Mercedes,1,34,1,sole entrant
+2009,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,34,1,sole entrant
+2009,renault,Renault,ing-renault-f1-team,ING Renault F1 Team,1,34,1,sole entrant
+2009,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,34,1,sole entrant
+2009,toyota,Toyota,panasonic-toyota-racing,Panasonic Toyota Racing,1,33,1,sole entrant
+2009,williams,Williams,att-williams,AT&T Williams,1,34,1,sole entrant
+2010,ferrari,Ferrari,scuderia-ferrari-marlboro,Scuderia Ferrari Marlboro,1,38,1,sole entrant
+2010,force-india,Force India,force-india-f1-team,Force India F1 Team,1,38,1,sole entrant
+2010,hrt,HRT,hispania-racing-f1-team,Hispania Racing F1 Team,1,38,1,sole entrant
+2010,lotus-racing,Lotus Racing,lotus-racing,Lotus Racing,1,36,1,sole entrant
+2010,mclaren,McLaren,vodafone-mclaren-mercedes,Vodafone McLaren Mercedes,1,38,1,sole entrant
+2010,mercedes,Mercedes,mercedes-gp-petronas-f1-team,Mercedes GP Petronas F1 Team,1,38,1,sole entrant
+2010,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,38,1,sole entrant
+2010,renault,Renault,renault-f1-team,Renault F1 Team,1,38,1,sole entrant
+2010,sauber,Sauber,bmw-sauber-f1-team,BMW Sauber F1 Team,1,37,1,sole entrant
+2010,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,38,1,sole entrant
+2010,virgin,Virgin,virgin-racing,Virgin Racing,1,36,1,sole entrant
+2010,williams,Williams,att-williams,AT&T Williams,1,38,1,sole entrant
+2011,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,38,1,sole entrant
+2011,force-india,Force India,force-india-f1-team,Force India F1 Team,1,38,1,sole entrant
+2011,hrt,HRT,hrt-formula-1-team,HRT Formula 1 Team,1,36,1,sole entrant
+2011,lotus-racing,Lotus Racing,team-lotus,Team Lotus,1,38,1,sole entrant
+2011,mclaren,McLaren,vodafone-mclaren-mercedes,Vodafone McLaren Mercedes,1,38,1,sole entrant
+2011,mercedes,Mercedes,mercedes-gp-petronas-f1-team,Mercedes GP Petronas F1 Team,1,38,1,sole entrant
+2011,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,38,1,sole entrant
+2011,renault,Renault,lotus-renault-gp,Lotus Renault GP,1,38,1,sole entrant
+2011,sauber,Sauber,sauber-f1-team,Sauber F1 Team,1,37,1,sole entrant
+2011,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,38,1,sole entrant
+2011,virgin,Virgin,marussia-virgin-racing,Marussia Virgin Racing,1,37,1,sole entrant
+2011,williams,Williams,att-williams,AT&T Williams,1,38,1,sole entrant
+2012,caterham,Caterham,caterham-f1-team,Caterham F1 Team,1,39,1,sole entrant
+2012,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,40,1,sole entrant
+2012,force-india,Force India,sahara-force-india-f1-team,Sahara Force India F1 Team,1,40,1,sole entrant
+2012,hrt,HRT,hrt-formula-1-team,HRT Formula 1 Team,1,38,1,sole entrant
+2012,lotus-f1,Lotus,lotus-f1-team,Lotus F1 Team,1,40,1,sole entrant
+2012,marussia,Marussia,marussia-f1-team,Marussia F1 Team,1,39,1,sole entrant
+2012,mclaren,McLaren,vodafone-mclaren-mercedes,Vodafone McLaren Mercedes,1,40,1,sole entrant
+2012,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,40,1,sole entrant
+2012,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,40,1,sole entrant
+2012,sauber,Sauber,sauber-f1-team,Sauber F1 Team,1,40,1,sole entrant
+2012,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,40,1,sole entrant
+2012,williams,Williams,williams-f1-team,Williams F1 Team,1,40,1,sole entrant
+2013,caterham,Caterham,caterham-f1-team,Caterham F1 Team,1,38,1,sole entrant
+2013,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,38,1,sole entrant
+2013,force-india,Force India,sahara-force-india-f1-team,Sahara Force India F1 Team,1,38,1,sole entrant
+2013,lotus-f1,Lotus,lotus-f1-team,Lotus F1 Team,1,38,1,sole entrant
+2013,marussia,Marussia,marussia-f1-team,Marussia F1 Team,1,38,1,sole entrant
+2013,mclaren,McLaren,vodafone-mclaren-mercedes,Vodafone McLaren Mercedes,1,38,1,sole entrant
+2013,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,38,1,sole entrant
+2013,red-bull,Red Bull,infiniti-red-bull-racing,Infiniti Red Bull Racing,1,38,1,sole entrant
+2013,sauber,Sauber,sauber-f1-team,Sauber F1 Team,1,37,1,sole entrant
+2013,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,38,1,sole entrant
+2013,williams,Williams,williams-f1-team,Williams F1 Team,1,38,1,sole entrant
+2014,caterham,Caterham,caterham-f1-team,Caterham F1 Team,1,33,1,sole entrant
+2014,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,38,1,sole entrant
+2014,force-india,Force India,sahara-force-india-f1-team,Sahara Force India F1 Team,1,37,1,sole entrant
+2014,lotus-f1,Lotus,lotus-f1-team,Lotus F1 Team,1,37,1,sole entrant
+2014,marussia,Marussia,marussia-f1-team,Marussia F1 Team,1,31,1,sole entrant
+2014,mclaren,McLaren,mclaren-mercedes,McLaren Mercedes,1,38,1,sole entrant
+2014,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,38,1,sole entrant
+2014,red-bull,Red Bull,infiniti-red-bull-racing,Infiniti Red Bull Racing,1,38,1,sole entrant
+2014,sauber,Sauber,sauber-f1-team,Sauber F1 Team,1,38,1,sole entrant
+2014,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,38,1,sole entrant
+2014,williams,Williams,williams-martini-racing,Williams Martini Racing,1,38,1,sole entrant
+2015,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,38,1,sole entrant
+2015,force-india,Force India,sahara-force-india-f1-team,Sahara Force India F1 Team,1,37,1,sole entrant
+2015,lotus-f1,Lotus,lotus-f1-team,Lotus F1 Team,1,38,1,sole entrant
+2015,marussia,Marussia,manor-marussia-f1-team,Manor Marussia F1 Team,1,35,1,sole entrant
+2015,mclaren,McLaren,mclaren-honda,McLaren Honda,1,36,1,sole entrant
+2015,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,38,1,sole entrant
+2015,red-bull,Red Bull,infiniti-red-bull-racing,Infiniti Red Bull Racing,1,37,1,sole entrant
+2015,sauber,Sauber,sauber-f1-team,Sauber F1 Team,1,37,1,sole entrant
+2015,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,38,1,sole entrant
+2015,williams,Williams,williams-martini-racing,Williams Martini Racing,1,37,1,sole entrant
+2016,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,41,1,sole entrant
+2016,force-india,Force India,sahara-force-india-formula-one-team,Sahara Force India Formula One Team,1,42,1,sole entrant
+2016,haas,Haas,haas-f1-team,Haas F1 Team,1,40,1,sole entrant
+2016,manor,Manor,manor-racing-mrt,Manor Racing MRT,1,42,1,sole entrant
+2016,mclaren,McLaren,mclaren-honda-formula-1-team,McLaren Honda Formula 1 Team,1,42,1,sole entrant
+2016,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,42,1,sole entrant
+2016,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,41,1,sole entrant
+2016,renault,Renault,renault-sport-formula-one-team,Renault Sport Formula One Team,1,41,1,sole entrant
+2016,sauber,Sauber,sauber-f1-team,Sauber F1 Team,1,42,1,sole entrant
+2016,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,42,1,sole entrant
+2016,williams,Williams,williams-martini-racing,Williams Martini Racing,1,42,1,sole entrant
+2017,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,39,1,sole entrant
+2017,force-india,Force India,sahara-force-india-f1-team,Sahara Force India F1 Team,1,40,1,sole entrant
+2017,haas,Haas,haas-f1-team,Haas F1 Team,1,40,1,sole entrant
+2017,mclaren,McLaren,mclaren-honda,McLaren Honda,1,38,1,sole entrant
+2017,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,40,1,sole entrant
+2017,red-bull,Red Bull,red-bull-racing,Red Bull Racing,1,40,1,sole entrant
+2017,renault,Renault,renault-sport-formula-one-team,Renault Sport Formula One Team,1,39,1,sole entrant
+2017,sauber,Sauber,sauber-f1-team,Sauber F1 Team,1,40,1,sole entrant
+2017,toro-rosso,Toro Rosso,scuderia-toro-rosso,Scuderia Toro Rosso,1,40,1,sole entrant
+2017,williams,Williams,williams-martini-racing,Williams Martini Racing,1,40,1,sole entrant
+2018,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,42,1,sole entrant
+2018,force-india,Force India,sahara-force-india-f1-team,Sahara Force India F1 Team,2,24,1,name match
+2018,force-india,Force India,racing-point-force-india-f1-team,Racing Point Force India F1 Team,2,18,1,name match
+2018,haas,Haas,haas-f1-team,Haas F1 Team,1,42,1,sole entrant
+2018,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,42,1,sole entrant
+2018,mercedes,Mercedes,mercedes-amg-petronas-motorsport,Mercedes-AMG Petronas Motorsport,1,42,1,sole entrant
+2018,red-bull,Red Bull,aston-martin-red-bull-racing,Aston Martin Red Bull Racing,1,42,1,sole entrant
+2018,renault,Renault,renault-sport-formula-one-team,Renault Sport Formula One Team,1,42,1,sole entrant
+2018,sauber,Sauber,alfa-romeo-sauber-f1-team,Alfa Romeo Sauber F1 Team,1,42,1,sole entrant
+2018,toro-rosso,Toro Rosso,red-bull-toro-rosso-honda,Red Bull Toro Rosso Honda,1,42,1,sole entrant
+2018,williams,Williams,williams-martini-racing,Williams Martini Racing,1,42,1,sole entrant
+2019,alfa-romeo,Alfa Romeo,alfa-romeo-racing,Alfa Romeo Racing,1,42,1,sole entrant
+2019,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,42,1,sole entrant
+2019,haas,Haas,haas-f1-team,Haas F1 Team,1,42,1,sole entrant
+2019,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,42,1,sole entrant
+2019,mercedes,Mercedes,mercedes-amg-petronas-motorsport,Mercedes-AMG Petronas Motorsport,1,42,1,sole entrant
+2019,racing-point,Racing Point,sportpesa-racing-point-f1-team,SportPesa Racing Point F1 Team,1,42,1,sole entrant
+2019,red-bull,Red Bull,aston-martin-red-bull-racing,Aston Martin Red Bull Racing,1,42,1,sole entrant
+2019,renault,Renault,renault-f1-team,Renault F1 Team,1,42,1,sole entrant
+2019,toro-rosso,Toro Rosso,red-bull-toro-rosso-honda,Red Bull Toro Rosso Honda,1,42,1,sole entrant
+2019,williams,Williams,rokit-williams-racing,ROKiT Williams Racing,1,42,1,sole entrant
+2020,alfa-romeo,Alfa Romeo,alfa-romeo-racing-orlen,Alfa Romeo Racing Orlen,1,34,1,sole entrant
+2020,alphatauri,AlphaTauri,scuderia-alphatauri-honda,Scuderia AlphaTauri Honda,1,34,1,sole entrant
+2020,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,34,1,sole entrant
+2020,haas,Haas,haas-f1-team,Haas F1 Team,1,34,1,sole entrant
+2020,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,33,1,sole entrant
+2020,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,34,1,sole entrant
+2020,racing-point,Racing Point,bwt-racing-point-f1-team,BWT Racing Point F1 Team,1,33,1,sole entrant
+2020,red-bull,Red Bull,aston-martin-red-bull-racing,Aston Martin Red Bull Racing,1,34,1,sole entrant
+2020,renault,Renault,renault-dp-world-f1-team,Renault DP World F1 Team,1,34,1,sole entrant
+2020,williams,Williams,williams-racing,Williams Racing,1,34,1,sole entrant
+2021,alfa-romeo,Alfa Romeo,alfa-romeo-racing-orlen,Alfa Romeo Racing Orlen,1,44,1,sole entrant
+2021,alphatauri,AlphaTauri,scuderia-alphatauri-honda,Scuderia AlphaTauri Honda,1,43,1,sole entrant
+2021,alpine,Alpine,alpine-f1-team,Alpine F1 Team,1,44,1,sole entrant
+2021,aston-martin,Aston Martin,aston-martin-cognizant-f1-team,Aston Martin Cognizant F1 Team,1,44,1,sole entrant
+2021,ferrari,Ferrari,scuderia-ferrari-mission-winnow,Scuderia Ferrari Mission Winnow,1,43,1,sole entrant
+2021,haas,Haas,uralkali-haas-f1-team,Uralkali Haas F1 Team,1,43,1,sole entrant
+2021,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,44,1,sole entrant
+2021,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,44,1,sole entrant
+2021,red-bull,Red Bull,red-bull-racing-honda,Red Bull Racing Honda,1,44,1,sole entrant
+2021,williams,Williams,williams-racing,Williams Racing,1,44,1,sole entrant
+2022,alfa-romeo,Alfa Romeo,alfa-romeo-f1-team-orlen,Alfa Romeo F1 Team Orlen,1,44,1,sole entrant
+2022,alphatauri,AlphaTauri,scuderia-alphatauri,Scuderia AlphaTauri,1,43,1,sole entrant
+2022,alpine,Alpine,bwt-alpine-f1-team,BWT Alpine F1 Team,1,44,1,sole entrant
+2022,aston-martin,Aston Martin,aston-martin-aramco-cognizant-f1-team,Aston Martin Aramco Cognizant F1 Team,1,44,1,sole entrant
+2022,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,44,1,sole entrant
+2022,haas,Haas,haas-f1-team,Haas F1 Team,1,43,1,sole entrant
+2022,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,44,1,sole entrant
+2022,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,44,1,sole entrant
+2022,red-bull,Red Bull,oracle-red-bull-racing,Oracle Red Bull Racing,1,44,1,sole entrant
+2022,williams,Williams,williams-racing,Williams Racing,1,44,1,sole entrant
+2023,alfa-romeo,Alfa Romeo,alfa-romeo-f1-team-stake,Alfa Romeo F1 Team Stake,1,44,1,sole entrant
+2023,alphatauri,AlphaTauri,scuderia-alphatauri,Scuderia AlphaTauri,1,43,1,sole entrant
+2023,alpine,Alpine,bwt-alpine-f1-team,BWT Alpine F1 Team,1,44,1,sole entrant
+2023,aston-martin,Aston Martin,aston-martin-aramco-cognizant-f1-team,Aston Martin Aramco Cognizant F1 Team,1,43,1,sole entrant
+2023,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,42,1,sole entrant
+2023,haas,Haas,moneygram-haas-f1-team,MoneyGram Haas F1 Team,1,44,1,sole entrant
+2023,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,44,1,sole entrant
+2023,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,44,1,sole entrant
+2023,red-bull,Red Bull,oracle-red-bull-racing,Oracle Red Bull Racing,1,44,1,sole entrant
+2023,williams,Williams,williams-racing,Williams Racing,1,44,1,sole entrant
+2024,alpine,Alpine,bwt-alpine-f1-team,BWT Alpine F1 Team,1,47,1,sole entrant
+2024,aston-martin,Aston Martin,aston-martin-aramco-f1-team,Aston Martin Aramco F1 Team,1,47,1,sole entrant
+2024,ferrari,Ferrari,scuderia-ferrari,Scuderia Ferrari,1,48,1,sole entrant
+2024,haas,Haas,moneygram-haas-f1-team,MoneyGram Haas F1 Team,1,48,1,sole entrant
+2024,kick-sauber,Kick Sauber,stake-f1-team-kick-sauber,Stake F1 Team Kick Sauber,1,48,1,sole entrant
+2024,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,48,1,sole entrant
+2024,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,48,1,sole entrant
+2024,rb,RB,visa-cash-app-rb-f1-team,Visa Cash App RB F1 Team,1,48,1,sole entrant
+2024,red-bull,Red Bull,oracle-red-bull-racing,Oracle Red Bull Racing,1,48,1,sole entrant
+2024,williams,Williams,williams-racing,Williams Racing,1,46,1,sole entrant
+2025,alpine,Alpine,bwt-alpine-f1-team,BWT Alpine F1 Team,1,47,1,sole entrant
+2025,aston-martin,Aston Martin,aston-martin-aramco-f1-team,Aston Martin Aramco F1 Team,1,47,1,sole entrant
+2025,ferrari,Ferrari,scuderia-ferrari-hp,Scuderia Ferrari HP,1,48,1,sole entrant
+2025,haas,Haas,moneygram-haas-f1-team,MoneyGram Haas F1 Team,1,48,1,sole entrant
+2025,kick-sauber,Kick Sauber,stake-f1-team-kick-sauber,Stake F1 Team Kick Sauber,1,47,1,sole entrant
+2025,mclaren,McLaren,mclaren-f1-team,McLaren F1 Team,1,48,1,sole entrant
+2025,mercedes,Mercedes,mercedes-amg-petronas-f1-team,Mercedes-AMG Petronas F1 Team,1,48,1,sole entrant
+2025,racing-bulls,Racing Bulls,visa-cash-app-racing-bulls-f1-team,Visa Cash App Racing Bulls F1 Team,1,48,1,sole entrant
+2025,red-bull,Red Bull,oracle-red-bull-racing,Oracle Red Bull Racing,1,48,1,sole entrant
+2025,williams,Williams,atlassian-williams-racing,Atlassian Williams Racing,1,47,1,sole entrant

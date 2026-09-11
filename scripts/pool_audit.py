@@ -1,123 +1,100 @@
 #!/usr/bin/env python3
 """
-Pool audit: every constructor x decade combo, with how many distinct drivers started a
-race for the constructor in that window and how many distinct chassis it entered.
+Pool audit: every constructor x decade combo under the pool rules in scripts/f1pool.py.
 
-    python3 scripts/pool_audit.py                 # writes data/audit/pool_audit.csv, prints summary
-    python3 scripts/pool_audit.py --min-drivers 4 --min-chassis 2
-
-Every column is computed directly from F1DB rows; nothing is estimated.
+    python3 scripts/pool_audit.py            # writes data/audit/pool_audit.csv and prints the distribution
 
 Columns
-  constructor_id, constructor  F1DB constructor
-  decade                       1950s .. 2020s (window = first year .. first year + 9)
-  first_year, last_year        first/last season with a race result in the window
-  seasons                      distinct seasons with a race result
-  races                        distinct Grands Prix with a race result row
-  indy500_races                of those, Indianapolis 500s (1950-1960 only; counted for the
-                               championship, run to different rules, mostly US constructors)
-  drivers_entered              distinct drivers with a race result row
-  drivers_started              distinct drivers with at least one start (not DNS/DNQ/DNPQ/DNP/EX)
-  chassis                      distinct chassis in season_entrant_chassis for the window
-  wins, podiums                context only
+  drivers_any_entrant  distinct drivers with >=1 start for the constructor, any entrant (Indy excluded)
+  drivers_works        same, works entrants only
+  drivers_pool         works entrants and >= MIN_STARTS_PER_DRIVER starts (this is the pool)
+  cars                 constructor-seasons with a works start (one car card each)
+  seasons, races, wins, podiums   context, works entrants only
+  playable             drivers_pool >= POOL_MIN_DRIVERS and cars >= POOL_MIN_CARS
+  wheel_weight         'high' if drivers_pool >= WHEEL_WEIGHT_DRIVERS else 'low'
 """
-import argparse
 import csv
 import os
-import sqlite3
 import sys
+from collections import Counter
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB_PATH = os.path.join(ROOT, "data", "f1db", "f1db.db")
-OUT_PATH = os.path.join(ROOT, "data", "audit", "pool_audit.csv")
-NOT_STARTED = ("DNS", "DNQ", "DNPQ", "DNP", "EX")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import f1pool  # noqa: E402
 
-SQL = f"""
-WITH res AS (
-  SELECT d.constructor_id, d.driver_id, r.id AS race_id, r.year,
-         (r.year / 10) * 10 AS decade_start,
-         r.grand_prix_id = 'indianapolis' AS indy,
-         d.position_text NOT IN ({",".join("?" * len(NOT_STARTED))}) AS started,
-         d.position_number
-  FROM race_data d JOIN race r ON r.id = d.race_id
-  WHERE d.type = 'RACE_RESULT'
+OUT = os.path.join(f1pool.ROOT, "data", "audit", "pool_audit.csv")
+
+SQL = """
+WITH per_driver AS (
+  SELECT constructor_id, (year/10)*10 AS dec, driver_id,
+         MAX(works) AS any_works,
+         COUNT(DISTINCT CASE WHEN started THEN race_id END) AS starts_any,
+         COUNT(DISTINCT CASE WHEN started AND works THEN race_id END) AS starts_works
+  FROM res GROUP BY 1, 2, 3
 ),
-per_combo AS (
-  SELECT constructor_id, decade_start,
+drv AS (
+  SELECT constructor_id, dec,
+         COUNT(DISTINCT CASE WHEN starts_any >= 1 THEN driver_id END) AS drivers_any_entrant,
+         COUNT(DISTINCT CASE WHEN starts_works >= 1 THEN driver_id END) AS drivers_works,
+         COUNT(DISTINCT CASE WHEN starts_works >= ? THEN driver_id END) AS drivers_pool
+  FROM per_driver GROUP BY 1, 2
+),
+ctx AS (
+  SELECT constructor_id, (year/10)*10 AS dec,
          MIN(year) AS first_year, MAX(year) AS last_year,
-         COUNT(DISTINCT year) AS seasons,
-         COUNT(DISTINCT race_id) AS races,
-         COUNT(DISTINCT CASE WHEN indy THEN race_id END) AS indy500_races,
-         COUNT(DISTINCT driver_id) AS drivers_entered,
-         COUNT(DISTINCT CASE WHEN started THEN driver_id END) AS drivers_started,
-         COUNT(DISTINCT CASE WHEN position_number = 1 THEN race_id END) AS wins,
-         COUNT(DISTINCT CASE WHEN position_number <= 3 THEN race_id || '/' || driver_id END) AS podiums
-  FROM res GROUP BY constructor_id, decade_start
-),
-chassis AS (
-  SELECT constructor_id, (year / 10) * 10 AS decade_start, COUNT(DISTINCT chassis_id) AS chassis
-  FROM season_entrant_chassis GROUP BY constructor_id, decade_start
+         COUNT(DISTINCT CASE WHEN works AND started THEN year END) AS cars,
+         COUNT(DISTINCT CASE WHEN works AND started THEN year END) AS seasons,
+         COUNT(DISTINCT CASE WHEN works THEN race_id END) AS races,
+         COUNT(DISTINCT CASE WHEN works AND position_number = 1 THEN race_id END) AS wins,
+         COUNT(DISTINCT CASE WHEN works AND position_number <= 3 THEN race_id || '/' || driver_id END) AS podiums
+  FROM res GROUP BY 1, 2
 )
-SELECT p.constructor_id, c.name AS constructor, p.decade_start,
-       p.first_year, p.last_year, p.seasons, p.races, p.indy500_races,
-       p.drivers_entered, p.drivers_started,
-       COALESCE(ch.chassis, 0) AS chassis, p.wins, p.podiums
-FROM per_combo p
-JOIN constructor c ON c.id = p.constructor_id
-LEFT JOIN chassis ch ON ch.constructor_id = p.constructor_id AND ch.decade_start = p.decade_start
-ORDER BY p.drivers_started DESC, chassis DESC, p.constructor_id, p.decade_start
+SELECT d.constructor_id, c.name AS constructor, d.dec, x.first_year, x.last_year, x.seasons, x.races,
+       d.drivers_any_entrant, d.drivers_works, d.drivers_pool, x.cars, x.wins, x.podiums
+FROM drv d JOIN ctx x ON x.constructor_id = d.constructor_id AND x.dec = d.dec
+JOIN constructor c ON c.id = d.constructor_id
+ORDER BY d.drivers_pool DESC, x.cars DESC, d.constructor_id, d.dec
 """
-
-
-def run(db_path):
-    conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
-    conn.row_factory = sqlite3.Row
-    rows = [dict(r) for r in conn.execute(SQL, NOT_STARTED)]
-    for r in rows:
-        r["decade"] = f"{r.pop('decade_start')}s"
-    return rows
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--db", default=DB_PATH)
-    ap.add_argument("--out", default=OUT_PATH)
-    ap.add_argument("--min-drivers", type=int, default=None, help="report how many combos have at least this many starters")
-    ap.add_argument("--min-chassis", type=int, default=1)
-    args = ap.parse_args()
-    if not os.path.exists(args.db):
-        sys.exit(f"Database not found at {args.db}. Run scripts/fetch_data.sh first.")
-
-    rows = run(args.db)
+    conn = f1pool.connect()
+    rows = [dict(r) for r in conn.execute(SQL, (f1pool.MIN_STARTS_PER_DRIVER,))]
+    for r in rows:
+        r["decade"] = f"{r.pop('dec')}s"
+        r["playable"] = int(r["drivers_pool"] >= f1pool.POOL_MIN_DRIVERS and r["cars"] >= f1pool.POOL_MIN_CARS)
+        r["wheel_weight"] = "high" if r["drivers_pool"] >= f1pool.WHEEL_WEIGHT_DRIVERS else "low"
     cols = ["constructor_id", "constructor", "decade", "first_year", "last_year", "seasons", "races",
-            "indy500_races", "drivers_entered", "drivers_started", "chassis", "wins", "podiums"]
-    os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    with open(args.out, "w", newline="") as f:
+            "drivers_any_entrant", "drivers_works", "drivers_pool", "cars", "wins", "podiums", "playable", "wheel_weight"]
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
         w.writerows({k: r[k] for k in cols} for r in rows)
-    print(f"wrote {len(rows)} combos to {os.path.relpath(args.out, ROOT)}")
+    print(f"wrote {len(rows)} combos to {os.path.relpath(OUT, f1pool.ROOT)}   "
+          f"(window {f1pool.FIRST_SEASON}-{f1pool.LAST_COMPLETE_SEASON}, Indy 500 excluded, works only, "
+          f"min {f1pool.MIN_STARTS_PER_DRIVER} starts)")
 
-    print("\nDistribution of drivers_started per combo:")
-    print(f"{'>= N drivers':>13}  {'combos':>6}  {'with >=1 chassis':>16}  {'with >=2 chassis':>16}")
-    for n in [1, 2, 3, 4, 5, 6, 8, 10, 15, 20]:
-        a = sum(1 for r in rows if r["drivers_started"] >= n)
-        b = sum(1 for r in rows if r["drivers_started"] >= n and r["chassis"] >= 1)
-        c = sum(1 for r in rows if r["drivers_started"] >= n and r["chassis"] >= 2)
-        print(f"{n:>13}  {a:>6}  {b:>16}  {c:>16}")
+    decs = sorted(set(r["decade"] for r in rows))
+    print("\nCombos with at least N pool drivers, by decade:")
+    print("  N   total  " + "  ".join(decs))
+    for n in (1, 2, 3, 4, 5, 6, 8, 10):
+        tot = sum(1 for r in rows if r["drivers_pool"] >= n)
+        per = [sum(1 for r in rows if r["decade"] == d and r["drivers_pool"] >= n) for d in decs]
+        print(f"{n:>3}   {tot:>5}  " + "  ".join(f"{p:>5}" for p in per))
+    play = [r for r in rows if r["playable"]]
+    hi = [r for r in play if r["wheel_weight"] == "high"]
+    print(f"\nPlayable (>= {f1pool.POOL_MIN_DRIVERS} drivers, >= {f1pool.POOL_MIN_CARS} car): {len(play)} of {len(rows)}"
+          f"   high wheel weight (>= {f1pool.WHEEL_WEIGHT_DRIVERS} drivers): {len(hi)}")
+    print("  playable by decade: " + ", ".join(f"{d} {sum(1 for r in play if r['decade']==d)}" for d in decs))
+    h = Counter(r["drivers_pool"] for r in rows)
+    print("\nExact drivers_pool histogram: " + ", ".join(f"{k}:{h[k]}" for k in sorted(h)))
 
-    print("\nExact drivers_started histogram:")
-    from collections import Counter
-    h = Counter(r["drivers_started"] for r in rows)
-    for k in sorted(h):
-        print(f"  {k:>3} drivers: {h[k]:>3} combos")
-
-    if args.min_drivers is not None:
-        ok = [r for r in rows if r["drivers_started"] >= args.min_drivers and r["chassis"] >= args.min_chassis]
-        print(f"\nThreshold drivers_started >= {args.min_drivers} and chassis >= {args.min_chassis}: {len(ok)} of {len(rows)} combos")
-        by_dec = Counter(r["decade"] for r in ok)
-        for d in sorted(by_dec):
-            print(f"  {d}: {by_dec[d]}")
+    print("\nLargest reductions from the works filter (drivers_any_entrant -> drivers_works -> drivers_pool):")
+    for r in sorted(rows, key=lambda r: r["drivers_works"] - r["drivers_any_entrant"])[:15]:
+        print(f"  {r['constructor']:<14} {r['decade']}  {r['drivers_any_entrant']:>3} -> {r['drivers_works']:>3} -> {r['drivers_pool']:>3}")
+    print("\nLargest reductions from the min-starts backstop (drivers_works -> drivers_pool):")
+    for r in sorted(rows, key=lambda r: r["drivers_pool"] - r["drivers_works"])[:10]:
+        print(f"  {r['constructor']:<14} {r['decade']}  {r['drivers_works']:>3} -> {r['drivers_pool']:>3}")
 
 
 if __name__ == "__main__":

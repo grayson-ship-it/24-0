@@ -20,7 +20,13 @@ definitions. Nothing is ever estimated; missing numbers stay blank. Licence attr
 scripts/fetch_data.sh                 # download + verify the pinned F1DB release
 python3 scripts/team_decade.py mclaren 2000s
 python3 scripts/team_decade.py "Red Bull" 2010-2019 --json
-python3 scripts/pool_audit.py --min-drivers 2   # every Team x Decade combo -> data/audit/pool_audit.csv
+python3 scripts/pool_audit.py                    # every Team x Decade combo -> data/audit/pool_audit.csv
+python3 scripts/ratings.py williams 1990s        # raw stats next to era-relative ratings
 ```
+
+Pool rules (complete seasons only, Indy 500 excluded, works entries, minimum starts) live
+in one place, `scripts/f1pool.py`, and are explained in [docs/DATA.md](docs/DATA.md).
+
+``````
 
 Requires Python 3 (stdlib only), curl and unzip.
